@@ -1,12 +1,13 @@
 // HTML templates for every design. Tokens follow the ig-brand-identity skill.
+// Palette taken from the profile photo: cream backdrop, wine scarf, gold ring.
 export const T = {
-  cream: '#F7F3EE', sand: '#EDE4D8', ink: '#1F1D2B', coral: '#E4572E', muted: '#8A8494',
+  cream: '#F8F3EC', sand: '#EFE5D7', ink: '#2B1D22', wine: '#8A1E38', wineDeep: '#5E1427', gold: '#C9A66B', muted: '#8E8287',
 };
 
 const THEMES = {
-  light: { bg: T.cream, fg: T.ink, muted: T.muted, line: '#E2D9CD' },
-  sand: { bg: T.sand, fg: T.ink, muted: '#7D7686', line: '#D9CCBB' },
-  dark: { bg: T.ink, fg: T.cream, muted: '#A9A3B5', line: '#3A3748' },
+  light: { bg: T.cream, fg: T.ink, muted: T.muted, line: '#E4D5BC', accent: T.wine, pill: T.wine },
+  sand: { bg: T.sand, fg: T.ink, muted: '#82757B', line: '#D8C3A0', accent: T.wine, pill: T.wine },
+  dark: { bg: T.wineDeep, fg: T.cream, muted: '#D9C3B5', line: '#8A4A57', accent: T.gold, pill: T.gold },
 };
 
 export const themeFor = (pillar) => (pillar === 'update' ? 'dark' : pillar === 'case' ? 'sand' : 'light');
@@ -32,13 +33,14 @@ function page({ w, h, theme, body, handles, footerSize = 22, pad = 96 }) {
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=block" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:${th.accent}}
 html,body{width:${w}px;height:${h}px;overflow:hidden}
 body{background:${th.bg};color:${th.fg};font-family:'IBM Plex Sans Arabic',sans-serif;position:relative;padding:${pad}px;-webkit-font-smoothing:antialiased}
 .top{display:flex;justify-content:space-between;align-items:center}
-.pill{border:2px solid ${th.fg};border-radius:999px;padding:8px 26px;font-weight:500;font-size:${Math.round(footerSize * 1.2)}px}
+.pill{border:2px solid ${th.pill};color:${th.pill};border-radius:999px;padding:8px 26px;font-weight:500;font-size:${Math.round(footerSize * 1.2)}px}
 .count{color:${th.muted};font-size:${footerSize}px;direction:ltr;letter-spacing:2px}
-.coral{color:${T.coral}}
-.bar{width:88px;height:8px;border-radius:4px;background:${T.coral}}
+.accent{color:${th.accent}}
+.bar{width:88px;height:8px;border-radius:4px;background:${th.accent}}
 .muted{color:${th.muted}}
 .footer{position:absolute;left:${pad}px;right:${pad}px;bottom:${Math.round(pad * 0.6)}px;color:${th.muted}}
 .rule{height:1.5px;background:${th.line};margin-bottom:${Math.round(footerSize * 0.9)}px}
@@ -65,7 +67,7 @@ export function igSlide(day, s, i, total, handles) {
   return page({ w: 1080, h: 1350, theme: themeFor(day.pillar), handles, body: `
 <div class="top"><span class="pill">${esc(day.ig.cover.label)}</span><span class="count">${String(i).padStart(2, '0')} / ${String(total).padStart(2, '0')}</span></div>
 <div style="position:absolute;top:300px;left:96px;right:96px">
-  <div class="coral" style="font-size:120px;font-weight:700;line-height:1;direction:ltr;text-align:right">${String(i - 1).padStart(2, '0')}</div>
+  <div class="accent" style="font-size:120px;font-weight:700;line-height:1;direction:ltr;text-align:right">${String(i - 1).padStart(2, '0')}</div>
   <div style="font-size:64px;font-weight:700;line-height:1.35;margin:48px 0 36px">${br(s.t)}</div>
   <div style="font-size:40px;line-height:1.75;opacity:.88">${br(s.b)}</div>
 </div>` });
@@ -75,7 +77,7 @@ export function igCta(day, total, handles) {
   return page({ w: 1080, h: 1350, theme: themeFor(day.pillar), handles, body: `
 <div class="top"><span class="pill">${esc(day.ig.cover.label)}</span><span class="count">${String(total).padStart(2, '0')} / ${String(total).padStart(2, '0')}</span></div>
 <div style="position:absolute;top:0;bottom:0;left:96px;right:96px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
-  <svg viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="${T.coral}" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+  <svg viewBox="0 0 24 24" width="96" height="96" fill="none" style="stroke:var(--accent)" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
   <div style="font-size:66px;font-weight:700;line-height:1.4;margin-top:48px">${br(day.ig.cta)}</div>
   <div class="muted" style="font-size:32px;margin-top:32px">احفظ · شارك · علّق</div>
 </div>` });
@@ -99,7 +101,7 @@ export function xImage(day, handles) {
   const last = lines.pop();
   return page({ w: 1600, h: 900, theme: themeFor(day.pillar), handles, footerSize: 24, pad: 110, body: `
 <div style="position:absolute;top:0;bottom:110px;left:110px;right:110px;display:flex;flex-direction:column;justify-content:center">
-  <div style="font-size:92px;font-weight:700;line-height:1.35">${lines.map(esc).join('<br>')}${lines.length ? '<br>' : ''}<span class="coral">${esc(last)}</span></div>
+  <div style="font-size:92px;font-weight:700;line-height:1.35">${lines.map(esc).join('<br>')}${lines.length ? '<br>' : ''}<span class="accent">${esc(last)}</span></div>
 </div>` });
 }
 
@@ -108,17 +110,17 @@ export function highlight(word, handles) {
   return `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@700&display=block" rel="stylesheet">
 <style>*{margin:0}body{width:1080px;height:1080px;background:${T.cream};display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'IBM Plex Sans Arabic';color:${T.ink}}</style></head>
-<body><div style="width:22px;height:22px;border-radius:50%;background:${T.coral};margin-bottom:40px"></div><div style="font-size:150px;font-weight:700">${esc(word)}</div></body></html>`;
+<body><div style="width:860px;height:860px;border-radius:50%;border:6px solid ${T.gold};display:flex;align-items:center;justify-content:center"><div style="font-size:150px;font-weight:700;color:${T.wine}">${esc(word)}</div></div></body></html>`;
 }
 
 export function brandBoard(handles) {
   const sw = (n, c, txt) => `<div style="flex:1"><div style="height:180px;border-radius:24px;background:${c};border:1.5px solid #E2D9CD"></div><div style="margin-top:18px;font-size:28px;font-weight:700">${n}</div><div style="direction:ltr;text-align:right;color:${T.muted};font-size:24px">${c}</div><div style="color:${T.muted};font-size:22px;margin-top:4px">${txt}</div></div>`;
   return page({ w: 1600, h: 1100, theme: 'light', handles, pad: 100, body: `
 <div style="font-size:30px" class="muted">هوية الحساب</div>
-<div style="font-size:84px;font-weight:700;margin:10px 0 50px">إعلانات تبيع، <span class="coral">مو بس تنشاف</span></div>
-<div style="display:flex;gap:36px">${sw('كريمي', T.cream, 'الخلفية الأساسية')}${sw('رملي', T.sand, 'الأمثلة العملية')}${sw('حبري', T.ink, 'التحديثات + النص')}${sw('مرجاني', T.coral, 'لمسة وحدة بكل تصميم')}${sw('رمادي', T.muted, 'التذييل والتفاصيل')}</div>
+<div style="font-size:84px;font-weight:700;margin:10px 0 50px">إعلانات تبيع، <span class="accent">مو بس تنشاف</span></div>
+<div style="display:flex;gap:36px">${sw('كريمي', T.cream, 'الخلفية الأساسية')}${sw('رملي', T.sand, 'الأمثلة العملية')}${sw('عنابي', T.wine, 'لمسة وحدة بكل تصميم')}${sw('عنابي غامق', T.wineDeep, 'خلفية التحديثات')}${sw('ذهبي', T.gold, 'الخطوط واللمسة على الداكن')}</div>
 <div style="display:flex;gap:80px;margin-top:64px;align-items:flex-end">
   <div><div class="muted" style="font-size:24px">الخط: IBM Plex Sans Arabic</div><div style="font-size:72px;font-weight:700">عنوان واضح</div><div style="font-size:36px">نص مريح للقراءة بدون زحمة</div></div>
-  <div class="muted" style="font-size:26px;line-height:1.8">٣ عناصر بحد أقصى · مساحة فاضية كثير<br>لون مرجاني واحد بكل تصميم · اليوزرات أسفل التصميم</div>
+  <div class="muted" style="font-size:26px;line-height:1.8">٣ عناصر بحد أقصى · مساحة فاضية كثير<br>لمسة عنابي (أو ذهبي على الداكن) بكل تصميم · اليوزرات أسفل التصميم</div>
 </div>` });
 }
