@@ -23,7 +23,7 @@ git fetch origin claude/laughing-fermat-4r1rtb && git checkout claude/laughing-f
 
 ## 2. Write new days (only if `writeNewDays > 0`)
 Follow the `saudi-ads-content` skill exactly (voice, platform formats, pillars, seasonal calendar).
-1. Read every `topic` already in `content/plan.json` — never repeat a topic or a hook.
+1. Read every `topic` already in `content/plan.json` and `content/past-topics.md` (posts that went out before this plan) — never repeat a topic or a hook; if you revisit one, bring a new angle or a real update.
 2. Research fresh material: run 2–4 `WebSearch` queries for updates from the last ~30 days (Meta ads, Google Ads, TikTok ads, Snapchat ads Saudi, X/LinkedIn ads, Saudi digital-ads market/regulation). Only use facts you can attribute; otherwise phrase as opinion/experience. No invented stats or client names.
 3. Append `writeNewDays` days to `plan.json` with ids from `nextDayId` and consecutive dates from `nextDate`, same shape as existing days (`ig.cover/slides/cta/caption/hashtags`, `li.image/text/hashtags`, `x.image/tweets`). Mix: ~3 update, 3 issue, 2 tip, 1 case, 1 personal/offer per 10 days. Check each tweet ≤ 270 characters.
 4. Render only the new days: `node scripts/render.mjs <id> <id> ...`. Open 2 of the new PNGs with Read to check Arabic, layout and footer.
