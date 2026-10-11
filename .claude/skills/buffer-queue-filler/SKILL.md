@@ -17,7 +17,8 @@ Buffer free plan: **3 channels, max 10 scheduled posts at once**. One day = 3 po
    - Instagram: `metadata.instagram = {type: "post", shouldShareToFeed: true}`, assets = the day's `ig-*.png` in order (carousel), text = caption + hashtags.
    - LinkedIn: text = `li.text`, asset `li.png`.
    - X: single tweet → text + asset `x.png`; thread → `metadata.twitter.thread` with the image on the first item, outer text = first item.
-   - Image URL: `https://raw.githubusercontent.com/raneemali94/raneemRepo/<branch>/designs/day-XX/<file>.png` (branch from `state/config.json`). Each image needs `altText`.
+   - Image URL: `https://raw.githubusercontent.com/raneemali94/raneemRepo/<ref>/designs/day-XX/<file>.png`, where `<ref>` is `image_ref` in `state/scheduled.json` (a pushed commit SHA, so images never change after scheduling; set it to the new SHA whenever you re-render and push). Each image needs `altText`.
+   - Only schedule whole days (3 free slots); a leftover slot waits for the next run.
    - `schedulingType: "automatic"`, `mode: "customScheduled"`, `dueAt` with `+03:00`.
 7. Record each created post id in `state/scheduled.json`, commit, push.
 8. When all 20 days are done, report it and suggest writing the next batch with the `saudi-ads-content` skill.

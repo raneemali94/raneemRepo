@@ -1,4 +1,26 @@
 {
-  "done": {},
-  "buffer_ideas": "All 60 posts (20 days x IG/LI/X) were created as Buffer Ideas on 2026-10-11 in org My organization; titles start with 'اليوم N · <platform>'."
+  "done": {
+    "1": {
+      "linkedin": "6acad841d9cab260a7dfef21",
+      "twitter": "6acad846d9cab260a7dfefa6",
+      "instagram": "6acad849b07d37ac978e0c4f"
+    },
+    "2": {
+      "linkedin": "6acad853f91f772d45aef8ef",
+      "twitter": "6acad860bba9419ccb1cad9b",
+      "instagram": "6acad86ac4de2d2b1244a3c4"
+    },
+    "3": {
+      "linkedin": "6acad86ec4de2d2b1244a427",
+      "twitter": "6acad874f91f772d45aefc00",
+      "instagram": "6acad883d9cab260a7dff5b3"
+    }
+  },
+  "buffer_ideas": "All 60 posts (20 days x IG/LI/X) were created as Buffer Ideas on 2026-10-11 in org My organization; titles start with 'اليوم N · <platform>'.",
+  "channels": {
+    "instagram": "6acad6c56a5c39ccb679d68f",
+    "linkedin": "6acad7326a5c39ccb679d9b1",
+    "twitter": "6acad77c6a5c39ccb679dbc2"
+  },
+  "image_ref": "79baa43503ce7e9e2c71a343d548bf8c95e328d5"
 }
