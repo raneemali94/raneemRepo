@@ -30,3 +30,31 @@ The voice is a real Saudi woman who runs ad campaigns for a living, writing her 
 
 ## Adding a day to plan.json
 Copy the shape of an existing day (`id`, `pillar`, `topic`, `ig`, `li`, `x`). Then render with the `social-design-render` skill.
+
+## Seasonal calendar (Saudi market) — tie content to what's coming in the next 2–4 weeks
+| When | Moment | Angle for ads content |
+|---|---|---|
+| Nov (last Fri ≈ Nov 27, 2026) | White Friday / الجمعة البيضاء | prep checklists, CPM spikes, warm audiences, post-season retention |
+| Dec | Year-end budgets, 11.11/12.12 sales | annual audit, planning next year's media mix |
+| Jan | New year planning | KPI setting, tracking audit, creative testing system |
+| Feb 22 | Founding Day / يوم التأسيس | brand moments without forced sales, creative do's & don'ts |
+| ~Feb–Mar 2027 | Ramadan (approx. starts Feb 8, 2027) then Eid al-Fitr | night-time scheduling, CPM inflation, Ramadan creative, Eid offers |
+| ~May 2027 | Eid al-Adha / summer travel | travel & gifting campaigns, summer slowdown tactics |
+| Aug–Sep | Back to school, National Day (Sep 23) | school-season offers, national-day creative compliance |
+Always double-check exact dates with a quick search before writing date-specific posts.
+
+## Topic bank (unused ideas to draw from — delete a line once used)
+- قراءة تقرير Breakdown في ميتا (العمر/المنصة/الموضع) بدون ما تنخدع
+- Advantage+ Shopping: متى نثق فيه ومتى لا
+- إعلانات البحث في تيك توك وسناب: فرصة ولا موضة؟
+- Lead Ads: ليش العملاء المحتملين رخيصين بس ما يردون
+- اختبار A/B صح: متغير واحد، مدة كافية، حجم عينة
+- واتساب كوجهة للإعلان: متى يفيد ومتى يضيّع
+- ميزانية أول ٣٠ يوم لمتجر جديد: كيف أوزعها
+- إعلانات X و LinkedIn للـ B2B في السعودية
+- Performance Max: قراءة تقارير القنوات والأصول
+- قصص فشل: حملة صرفت وما جابت شي وش تعلمت منها
+- كيف تكتب بريف إعلاني للمصمم يطلع إعلان يبيع
+- مؤشرات الكرييتف: Hook rate و Hold rate
+- الفرق بين ROAS و MER و CAC و LTV بمثال متجر
+- الذكاء الاصطناعي في صناعة الإعلانات: وش ينفع ووش يضر البراند
