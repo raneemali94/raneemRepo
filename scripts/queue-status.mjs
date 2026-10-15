@@ -30,7 +30,9 @@ const out = { now: now.toISOString(), channels: {} };
 let unscheduledDays = 0;
 for (const day of plan.days) if (!['instagram', 'linkedin', 'twitter'].every((c) => done[day.id]?.[c])) unscheduledDays++;
 out.unscheduledDays = unscheduledDays;
-out.writeNewDays = unscheduledDays < MIN_UNSCHEDULED_DAYS ? MIN_UNSCHEDULED_DAYS : 0;
+// days still unscheduled after this run fills every free slot
+const maxFree = Math.max(...['instagram', 'linkedin', 'twitter'].map((c) => Math.max(0, LIMIT - (counts[c] ?? LIMIT))));
+out.writeNewDays = unscheduledDays - maxFree < MIN_UNSCHEDULED_DAYS ? MIN_UNSCHEDULED_DAYS : 0;
 out.nextDayId = Math.max(...plan.days.map((d) => d.id)) + 1;
 out.nextDate = addDays(plan.days.at(-1).date, 1);
 
