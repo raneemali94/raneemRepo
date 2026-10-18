@@ -1,0 +1,859 @@
+<title>Raneem Ali | رنيم علي</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an eight-sheet executive profile on a strict 12-column grid. Navy plates (cover, client review, contact)
+   alternate with off-white editorial sheets; every sheet carries a running header and folio. */
+:root {
+  --paper: #f4f5f8;
+  --ink: #0a1222;
+  --ink-2: #4c566c;
+  --rule: #d6dbe5;
+  --accent: #2347ff;
+  --band: #0a1222;
+  --band-ink: #eef1f7;
+  --band-muted: #8e98b0;
+  --band-rule: #232d44;
+  --band-accent: #7d95ff;
+  --font-display: "Readex Pro", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Readex Pro", "Segoe UI", Tahoma, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gap: clamp(16px, 2.4vw, 32px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #070b13; --ink: #e8ecf4; --ink-2: #9aa4ba; --rule: #1c2537; --accent: #6f8bff;
+    --band: #0e1729; --band-ink: #eef1f7; --band-muted: #8e98b0; --band-rule: #25314b; --band-accent: #8aa0ff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #070b13; --ink: #e8ecf4; --ink-2: #9aa4ba; --rule: #1c2537; --accent: #6f8bff;
+  --band: #0e1729; --band-ink: #eef1f7; --band-muted: #8e98b0; --band-rule: #25314b; --band-accent: #8aa0ff;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { list-style: none; padding: 0; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; }
+.num { font-variant-numeric: tabular-nums lining-nums; direction: ltr; unicode-bidi: isolate; }
+[lang="en"] .page { letter-spacing: 0; }
+
+/* ---------- Grid & sheets ---------- */
+.wrap {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-left: max(clamp(20px, 5vw, 56px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(20px, 5vw, 56px), env(safe-area-inset-right, 0px));
+}
+.g { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); }
+.g > * { min-width: 0; }
+.sheet { padding-block: clamp(72px, 10vw, 136px); }
+.sheet + .sheet { border-top: 1px solid var(--rule); }
+.band {
+  --rule: var(--band-rule); --ink: var(--band-ink); --ink-2: var(--band-muted); --accent: var(--band-accent);
+  background: var(--band); color: var(--ink);
+}
+
+/* Running header + folio */
+.runner {
+  grid-column: 1 / -1;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--rule);
+  margin-bottom: clamp(44px, 6vw, 80px);
+  font-size: .8125rem; font-weight: 500; color: var(--ink-2); line-height: 1.5;
+}
+.runner .marker { display: flex; align-items: baseline; gap: 14px; }
+.runner .marker::before {
+  content: ""; width: 8px; height: 8px; background: var(--accent); align-self: center; flex: none;
+}
+.folio { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; direction: ltr; unicode-bidi: isolate; }
+.folio b { color: var(--ink); font-weight: 500; }
+
+/* Type scale */
+.h-section {
+  font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 400; line-height: 1.2; letter-spacing: -.005em;
+}
+[lang="en"] .h-section { letter-spacing: -.02em; line-height: 1.08; }
+.label-sm { font-size: .8125rem; font-weight: 500; color: var(--ink-2); line-height: 1.5; }
+[lang="en"] .label-sm, [lang="en"] .runner { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 400; }
+
+/* ---------- Top bar ---------- */
+.topbar { background: var(--band); }
+.topbar .wrap { display: flex; justify-content: flex-end; padding-block: 18px 0; }
+.lang-switch { display: inline-flex; border: 1px solid var(--band-rule); padding: 3px; gap: 2px; }
+.lang-switch button {
+  font: 500 .8rem/1.4 var(--font-body); cursor: pointer; border: 0;
+  padding: 5px 14px; background: transparent; color: var(--band-muted);
+}
+.lang-switch button[aria-pressed="true"] { background: var(--band-ink); color: var(--band); }
+.lang-switch button:focus-visible { outline: 2px solid var(--band-accent); outline-offset: 2px; }
+
+/* ---------- 01 Cover ---------- */
+.cover { padding-top: clamp(40px, 6vw, 72px); }
+.cover .runner { margin-bottom: clamp(48px, 7vw, 96px); }
+.cover-grid { align-items: end; }
+.cover-text { grid-column: 1 / span 7; padding-bottom: clamp(56px, 8vw, 112px); display: grid; gap: 0; }
+.cover h1 {
+  font-size: clamp(3.6rem, 10.5vw, 8.4rem); font-weight: 500; line-height: 1.1; color: var(--band-ink);
+}
+[lang="en"] .cover h1 { letter-spacing: -.035em; line-height: .98; }
+.second-name {
+  font-family: var(--font-mono); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--band-accent); margin-top: 18px;
+}
+#ar .second-name { text-align: right; }
+#en .second-name { text-align: left; }
+[lang="en"] .second-name { font-family: var(--font-body); font-size: 1rem; letter-spacing: 0; text-transform: none; }
+.role {
+  font-family: var(--font-display); font-weight: 300; font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  line-height: 1.5; margin-top: clamp(28px, 4vw, 44px); color: var(--band-ink);
+}
+.lede { color: var(--band-muted); max-width: 46ch; margin-top: 14px; font-size: 1.0625rem; }
+.facts {
+  display: grid; grid-template-columns: auto auto 1fr; margin-top: clamp(40px, 5vw, 64px);
+  border-top: 1px solid var(--band-rule);
+}
+.facts li {
+  padding-top: 18px; padding-inline-end: clamp(18px, 3vw, 40px); display: flex; align-items: baseline; gap: 10px;
+  font-size: .95rem; color: var(--band-ink); line-height: 1.5;
+}
+.facts li + li { padding-inline-start: clamp(18px, 3vw, 40px); border-inline-start: 1px solid var(--band-rule); }
+.facts .fig { font-family: var(--font-display); font-weight: 200; font-size: 2.6rem; line-height: 1; color: var(--band-accent); }
+.facts .latin { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .04em; color: var(--band-muted); direction: ltr; unicode-bidi: isolate; }
+
+.portrait {
+  grid-column: 9 / span 4; position: relative; overflow: hidden;
+  aspect-ratio: 394 / 492; max-width: 100%; background: var(--band-rule);
+}
+.portrait img {
+  position: absolute; left: 0; top: 0; max-width: none; display: block;
+  width: 182.74%; transform: translate(-21.944%, -12.091%);
+}
+.portrait figcaption {
+  position: absolute; inset-inline-start: 0; bottom: 0; padding: 8px 12px;
+  background: var(--band); color: var(--band-muted);
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em; direction: ltr;
+}
+
+/* ---------- 02 About ---------- */
+.about-head { grid-column: 1 / span 4; display: grid; gap: 20px; align-content: start; }
+.about-body { grid-column: 6 / span 7; display: grid; gap: 28px; }
+.about-body .lead {
+  font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem, 2.3vw, 1.75rem); line-height: 1.75;
+}
+[lang="en"] .about-body .lead { line-height: 1.5; letter-spacing: -.01em; }
+.about-body p:not(.lead) { color: var(--ink-2); max-width: 60ch; font-size: 1.125rem; padding-top: 28px; border-top: 1px solid var(--rule); }
+
+/* ---------- 03 Results ---------- */
+.results-head { grid-column: 1 / span 7; }
+.results-note { grid-column: 9 / span 4; align-self: end; color: var(--ink-2); font-size: .95rem; line-height: 1.7; border-inline-start: 1px solid var(--rule); padding-inline-start: 20px; }
+.lead-metric { grid-column: 1 / span 7; margin-top: clamp(48px, 6vw, 88px); display: grid; align-content: start; }
+.xl {
+  font-family: var(--font-display); font-weight: 200; font-size: clamp(4rem, 11.5vw, 9.5rem);
+  line-height: .95; letter-spacing: -.04em; color: var(--accent); justify-self: start;
+}
+.lead-metric .m-label { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.2rem, 2vw, 1.5rem); margin-top: 26px; line-height: 1.4; }
+.lead-metric .m-sub { color: var(--ink-2); margin-top: 6px; font-size: 1.05rem; }
+.m-sub .num, .metric .sub .num { color: var(--ink); font-weight: 600; }
+
+.roas { grid-column: 9 / span 4; margin-top: clamp(48px, 6vw, 88px); align-self: end; display: grid; gap: 18px; }
+.roas figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--ink); }
+.roas figcaption span:last-child { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-2); letter-spacing: .06em; }
+.bar { display: grid; gap: 6px; }
+.bar-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: .9rem; line-height: 1.4; }
+.bar-top .v { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; }
+.track { height: 6px; background: var(--rule); position: relative; }
+.track i { position: absolute; inset-block: 0; inset-inline-start: 0; background: var(--ink-2); }
+.bar.top .track i { background: var(--accent); }
+.bar.top .v { color: var(--accent); }
+
+.metrics {
+  grid-column: 1 / -1; margin-top: clamp(64px, 8vw, 112px);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+}
+.metric { padding-top: 24px; padding-inline-end: var(--gap); display: grid; gap: 8px; align-content: start; }
+.metric + .metric { padding-inline-start: var(--gap); border-inline-start: 1px solid var(--rule); }
+.metric .big { font-family: var(--font-display); font-weight: 200; font-size: clamp(2.6rem, 4.6vw, 3.75rem); line-height: 1; letter-spacing: -.03em; justify-self: start; margin-bottom: 10px; }
+.metric .label { font-weight: 600; line-height: 1.5; }
+.metric .sub { color: var(--ink-2); font-size: .92rem; line-height: 1.6; }
+
+/* ---------- 04 Review ---------- */
+.quote-col { grid-column: 1 / span 8; display: grid; gap: 28px; align-content: start; }
+.stars { color: var(--accent); letter-spacing: 3px; font-size: 1rem; line-height: 1; }
+.quote-mark { font-family: var(--font-display); font-weight: 200; font-size: 7rem; line-height: .5; color: var(--accent); height: .45em; }
+.quote-col blockquote {
+  font-family: var(--font-display); font-weight: 300; font-size: clamp(1.45rem, 2.9vw, 2.3rem); line-height: 1.75; text-wrap: pretty;
+}
+[lang="en"] .quote-col blockquote { line-height: 1.45; letter-spacing: -.01em; }
+.who { display: grid; gap: 4px; padding-top: 22px; border-top: 1px solid var(--rule); max-width: 62ch; }
+.who strong { font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; }
+.who span { color: var(--ink-2); font-size: .95rem; line-height: 1.65; }
+.translated { color: var(--ink-2); font-size: .82rem; font-style: italic; }
+.criteria { grid-column: 10 / span 3; align-self: start; }
+.criteria .label-sm { padding-bottom: 12px; border-bottom: 1px solid var(--ink); color: var(--ink); }
+.criteria li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 13px; border-bottom: 1px solid var(--rule); font-size: .92rem; line-height: 1.4; }
+.criteria li .stars { font-size: .72rem; letter-spacing: 2px; flex: none; }
+
+/* ---------- 05 Experience ---------- */
+.exp-head { grid-column: 1 / span 4; }
+.roles { grid-column: 5 / span 8; border-top: 1px solid var(--ink); }
+.roles li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap); padding-block: 26px; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.roles strong { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.65rem); line-height: 1.35; }
+.roles span { color: var(--ink-2); line-height: 1.7; }
+.ledger { grid-column: 5 / span 8; margin-top: clamp(48px, 6vw, 72px); display: grid; }
+.ledger-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap); padding-block: 18px; border-top: 1px solid var(--rule); align-items: baseline; }
+.ledger-row:last-child { border-bottom: 1px solid var(--rule); }
+.ledger-row h3 { font-family: var(--font-body); font-size: .875rem; font-weight: 500; color: var(--ink-2); }
+.inline-list { display: flex; flex-wrap: wrap; gap: 6px 0; font-size: 1.05rem; }
+.inline-list li:not(:last-child)::after { content: "/"; color: var(--rule); margin-inline: 14px; font-weight: 300; }
+
+/* ---------- 06 Skills ---------- */
+.skills-head { grid-column: 1 / -1; margin-bottom: clamp(40px, 5vw, 64px); }
+.skill-col { grid-column: span 4; }
+.skill-col h3 {
+  font-size: 1.2rem; font-weight: 500; line-height: 1.4; padding-bottom: 14px; border-bottom: 1px solid var(--ink);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+}
+.skill-col h3 .folio { color: var(--ink-2); }
+.skill-col li { padding-block: 12px; border-bottom: 1px solid var(--rule); line-height: 1.55; }
+
+/* ---------- 07 Method ---------- */
+.method-head { grid-column: 1 / -1; margin-bottom: clamp(48px, 6vw, 80px); }
+.steps { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: step; }
+.steps li { counter-increment: step; display: grid; gap: 14px; align-content: start; padding-inline-end: var(--gap); }
+.steps li::before {
+  content: "0" counter(step); font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; color: var(--accent);
+  display: block; padding-bottom: 16px; border-bottom: 1px solid var(--ink); position: relative; direction: ltr; text-align: start;
+}
+[dir="rtl"] .steps li::before { text-align: right; }
+.steps li:not(:last-child)::before { border-bottom-color: var(--rule); }
+.steps b { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.3; margin-top: 10px; }
+.steps span { color: var(--ink-2); font-size: 1rem; line-height: 1.75; max-width: 30ch; }
+
+/* ---------- 08 Contact ---------- */
+.closing-head { grid-column: 1 / span 8; display: grid; gap: 24px; }
+.closing-head h2 { font-size: clamp(2.6rem, 7.5vw, 6rem); font-weight: 400; line-height: 1.35; }
+[lang="en"] .closing-head h2 { letter-spacing: -.035em; line-height: 1; }
+.closing-head p { color: var(--ink-2); max-width: 48ch; font-size: 1.15rem; }
+.work-info { grid-column: 1 / -1; display: flex; flex-wrap: wrap; margin-top: clamp(40px, 5vw, 56px); font-size: .95rem; }
+.work-info li { padding-inline-end: 22px; display: flex; align-items: center; gap: 10px; }
+.work-info li + li { padding-inline-start: 22px; border-inline-start: 1px solid var(--rule); }
+.work-info li:first-child::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.contact { grid-column: 1 / -1; margin-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--ink); }
+.contact-item {
+  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr) auto; gap: var(--gap); align-items: center;
+  padding-block: 22px; border-bottom: 1px solid var(--rule);
+}
+.contact-item .k { font-size: .875rem; color: var(--ink-2); }
+[lang="en"] .contact-item .k { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+.contact-item a {
+  font-family: var(--font-display); font-weight: 300; font-size: clamp(1.15rem, 2.6vw, 1.9rem); line-height: 1.3;
+  color: var(--ink); text-decoration: none; overflow-wrap: anywhere; justify-self: start;
+}
+.contact-item a:hover { color: var(--accent); }
+.contact-item button {
+  font: 400 .72rem/1 var(--font-mono); letter-spacing: .06em; cursor: pointer; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); padding: 9px 14px;
+}
+[dir="rtl"] .contact-item button { font-family: var(--font-body); font-size: .8rem; letter-spacing: 0; }
+.contact-item button:hover { border-color: var(--ink); }
+.contact-item button:focus-visible, .contact-item a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.contact-item .spacer { width: 1px; }
+.signature {
+  grid-column: 1 / -1; margin-top: clamp(64px, 8vw, 104px); display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.sig-id { display: flex; align-items: center; gap: 16px; }
+.thumb { width: 56px; aspect-ratio: 394 / 492; position: relative; overflow: hidden; flex: none; max-width: 100%; }
+.thumb img { position: absolute; left: 0; top: 0; max-width: none; width: 182.74%; transform: translate(-21.944%, -12.091%); }
+.sig-id div { display: grid; line-height: 1.4; }
+.sig-id strong { font-family: var(--font-display); font-weight: 500; }
+.sig-id span { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+[lang="en"] .sig-id span { font-family: var(--font-body); font-size: .85rem; letter-spacing: 0; text-transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .cover-text { grid-column: 1 / span 7; }
+  .portrait { grid-column: 8 / span 5; }
+  .about-head, .exp-head { grid-column: 1 / -1; margin-bottom: 36px; }
+  .about-body, .roles, .ledger { grid-column: 1 / -1; }
+  .results-head, .results-note, .lead-metric, .roas { grid-column: 1 / -1; }
+  .results-note { margin-top: 24px; }
+  .roas { margin-top: 48px; }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metric:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; }
+  .metric:nth-child(n+3) { margin-top: 28px; border-top: 1px solid var(--rule); }
+  .quote-col, .criteria { grid-column: 1 / -1; }
+  .criteria { margin-top: 48px; }
+  .skill-col { grid-column: 1 / -1; }
+  .skill-col + .skill-col { margin-top: 40px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 48px; }
+  .closing-head { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  .cover-grid { row-gap: 40px; }
+  .cover .runner { grid-row: 1; }
+  .portrait { grid-column: 1 / span 8; grid-row: 2; }
+  .cover-text { grid-column: 1 / -1; grid-row: 3; }
+  .facts { grid-template-columns: 1fr; }
+  .facts li + li { padding-inline-start: 0; border-inline-start: 0; border-top: 1px solid var(--band-rule); padding-bottom: 0; margin-top: 18px; }
+  .roles li, .ledger-row { grid-template-columns: 1fr; gap: 4px; }
+  .metrics { grid-template-columns: 1fr; }
+  .metric, .metric + .metric { padding-inline: 0; border-inline-start: 0; }
+  .metric + .metric { margin-top: 28px; border-top: 1px solid var(--rule); }
+  .steps { grid-template-columns: 1fr; row-gap: 40px; }
+  .steps span { max-width: none; }
+  .contact-item { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; }
+  .contact-item .k { grid-column: 1 / -1; }
+  .work-info { flex-direction: column; gap: 8px; }
+  .work-info li, .work-info li + li { padding-inline: 0; border-inline-start: 0; }
+  .signature { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .contact-item a, .contact-item button { transition: color .2s, border-color .2s; }
+}
+</style>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" id="btn-ar" data-lang="ar" aria-pressed="true">العربية</button>
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="false">English</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== العربية ===================== -->
+<div class="page" id="ar" dir="rtl" lang="ar">
+
+  <!-- 01 Cover -->
+  <header class="band cover">
+    <div class="wrap g cover-grid">
+      <div class="runner"><span class="marker">التسويق الرقمي والأداء</span><span class="folio"><b>01</b> / 08</span></div>
+      <div class="cover-text">
+        <h1>رنيم علي</h1>
+        <p class="second-name" lang="en" dir="ltr">Raneem Ali</p>
+        <p class="role">مديرة تسويق ومديرة حملات إعلانية</p>
+        <p class="lede">أساعد المتاجر الإلكترونية والشركات في السعودية والخليج على زيادة مبيعاتهم من الإعلانات، بنتائج واضحة يقدرون يقيسونها.</p>
+        <ul class="facts">
+          <li><span class="fig num">4</span><span>سنوات خبرة</span></li>
+          <li>السعودية والخليج</li>
+          <li><span class="latin">Meta · Google · TikTok · Snapchat</span></li>
+        </ul>
+      </div>
+      <figure class="portrait"><img src="profile.jpg" alt="صورة رنيم علي"></figure>
+    </div>
+  </header>
+
+  <main>
+    <!-- 02 About -->
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">نبذة عني</span><span class="folio"><b>02</b> / 08</span></div>
+        <div class="about-head">
+          <h2 class="h-section">مرحبًا، أنا رنيم</h2>
+        </div>
+        <div class="about-body">
+          <p class="lead">متخصصة في التسويق الرقمي والإعلانات المدفوعة، وعندي 4 سنوات خبرة اشتغلت فيها مديرة تسويق ومديرة حملات إعلانية، وقدت فريق حملات. أغلب شغلي كان مع عملاء في السعودية والخليج، في المتاجر الإلكترونية والعقار والتعليم والخدمات والضيافة.</p>
+          <p>اللي يهمني بكل مشروع هو النتيجة الفعلية: مبيعات أكثر وعملاء حقيقيين، مو بس أرقام وصول وتفاعل. لذلك أبدأ دايمًا بالتتبع الصحيح، وأربط كل حملة بهدف واضح يقدر العميل يقيسه.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Results -->
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">نتائج من حملات أدرتها</span><span class="folio"><b>03</b> / 08</span></div>
+        <h2 class="h-section results-head">أرقام حقيقية من حسابات عملاء</h2>
+        <p class="results-note">أغلبها من متاجر إلكترونية، ومن حملات ليدز لشركات عقارية.</p>
+
+        <div class="lead-metric">
+          <span class="xl num">+$1.43M</span>
+          <p class="m-label">مبيعات لمتجر إلكتروني</p>
+          <p class="m-sub">بعائد إعلاني <span class="num">~4x</span> و<span class="num">+20,600</span> عملية شراء</p>
+        </div>
+
+        <figure class="roas" aria-label="مقارنة العائد الإعلاني">
+          <figcaption><span class="label-sm">العائد الإعلاني</span><span>ROAS</span></figcaption>
+          <div class="bar top">
+            <div class="bar-top"><span>حملة على Meta</span><span class="v num">20.6x</span></div>
+            <div class="track"><i style="width:100%"></i></div>
+          </div>
+          <div class="bar">
+            <div class="bar-top"><span>Google Ads</span><span class="v num">4.93</span></div>
+            <div class="track"><i style="width:23.9%"></i></div>
+          </div>
+          <div class="bar">
+            <div class="bar-top"><span>متجر إلكتروني</span><span class="v num">~4x</span></div>
+            <div class="track"><i style="width:19.4%"></i></div>
+          </div>
+        </figure>
+
+        <div class="metrics">
+          <div class="metric">
+            <span class="big num">4.93</span>
+            <span class="label">عائد على الإنفاق في Google Ads</span>
+            <span class="sub">مع أكثر من <span class="num">10,000</span> عملية شراء</span>
+          </div>
+          <div class="metric">
+            <span class="big num">20.6x</span>
+            <span class="label">عائد حملة على Meta</span>
+            <span class="sub">أعلى عائد حققته في حملة واحدة</span>
+          </div>
+          <div class="metric">
+            <span class="big num">$2.40</span>
+            <span class="label">تكلفة العميل المحتمل</span>
+            <span class="sub">ليدات لقطاع الخدمات</span>
+          </div>
+          <div class="metric">
+            <span class="big num">+1,300</span>
+            <span class="label">محادثة مع عملاء</span>
+            <span class="sub">من حملات الرسائل على Meta</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Review -->
+    <section class="sheet band">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">آراء العملاء</span><span class="folio"><b>04</b> / 08</span></div>
+        <div class="quote-col">
+          <h2 class="label-sm">ماذا يقول عملائي</h2>
+          <div class="quote-mark" aria-hidden="true">”</div>
+          <blockquote>اشتغلت أستاذة رنيم على حملاتنا وشغلها رائع جدًا وفاهمة في عملها بشكل واضح. سهولة في التواصل وتعديلات في نظام الحملات ليناسب المتجر الخاص بنا. ليس آخر تعامل بإذن الله.</blockquote>
+          <div class="stars" aria-label="تقييم 5 من 5">★★★★★</div>
+          <div class="who">
+            <strong>زياد أ.</strong>
+            <span>صاحب متجر Shopify · مشروع إدارة وإطلاق حملات على TikTok و Instagram و Google و Snapchat</span>
+          </div>
+        </div>
+        <div class="criteria">
+          <p class="label-sm">تقييم المشروع</p>
+          <ul>
+            <li>الاحترافية بالتعامل <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+            <li>التواصل والمتابعة <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+            <li>جودة العمل المسلّم <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+            <li>الخبرة بمجال المشروع <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+            <li>التسليم في الموعد <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+            <li>التعامل معها مرة أخرى <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Experience -->
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">الخبرة</span><span class="folio"><b>05</b> / 08</span></div>
+        <h2 class="h-section exp-head">الأدوار التي شغلتها</h2>
+        <ul class="roles">
+          <li><strong>مديرة تسويق</strong><span>استراتيجية، خطط ربع سنوية، توحيد الرسائل والهوية</span></li>
+          <li><strong>مديرة حملات إعلانية</strong><span>تخطيط وإطلاق وتحسين الحملات المدفوعة على كل المنصات</span></li>
+          <li><strong>قائدة فريق حملات</strong><span>توزيع المهام، متابعة الأداء، ومعايير التسليم</span></li>
+        </ul>
+        <div class="ledger">
+          <div class="ledger-row">
+            <h3>القطاعات</h3>
+            <ul class="inline-list">
+              <li>المتاجر الإلكترونية</li>
+              <li>العقار</li>
+              <li>التعليم</li>
+              <li>الخدمات</li>
+              <li>الضيافة</li>
+            </ul>
+          </div>
+          <div class="ledger-row">
+            <h3>منصات المتاجر</h3>
+            <ul class="inline-list">
+              <li>سلة</li>
+              <li>زد</li>
+              <li>Shopify</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Skills -->
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">المهارات</span><span class="folio"><b>06</b> / 08</span></div>
+        <h2 class="h-section skills-head">مهاراتي</h2>
+        <div class="skill-col">
+          <h3>الاستراتيجية</h3>
+          <ul>
+            <li>تحليل السوق والمنافسين</li>
+            <li>بناء Personas</li>
+            <li>أهداف مربوطة بالإيراد</li>
+            <li>خطط ربع سنوية</li>
+            <li>تقويم المحتوى والإعلانات</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>الإعلانات وتوليد العملاء</h3>
+          <ul>
+            <li>Meta Ads</li>
+            <li>Google Ads</li>
+            <li>TikTok Ads</li>
+            <li>Snapchat Ads</li>
+            <li>رحلة العميل حتى المبيعات</li>
+            <li>آلية تسليم الـ Leads</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>التتبع والقياس</h3>
+          <ul>
+            <li>Pixel</li>
+            <li>GA4</li>
+            <li>GTM</li>
+            <li>لوحات CAC و CLV والتحويل</li>
+            <li>تقارير وتوصيات</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Method -->
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">طريقتي في العمل</span><span class="folio"><b>07</b> / 08</span></div>
+        <h2 class="h-section method-head">كيف أشتغل مع عملائي</h2>
+        <ol class="steps">
+          <li><b>أفهم</b><span>السوق والمنافسين وعملاءكم، وأراجع التتبع قبل أي إعلان.</span></li>
+          <li><b>أخطط</b><span>خطة واضحة ورسائل موحدة وأهداف مربوطة بالمبيعات.</span></li>
+          <li><b>أشغّل</b><span>حملات على Meta و Google و TikTok و Snapchat، ورحلة عميل حتى البيع.</span></li>
+          <li><b>أقيس وأحسّن</b><span>لوحة قياس وتقارير دورية، وتحسين مستمر مبني على الأرقام.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 08 Contact -->
+    <section class="sheet band">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">تواصل</span><span class="folio"><b>08</b> / 08</span></div>
+        <div class="closing-head">
+          <h2>يسعدني أتعرف عليكم</h2>
+          <p>إذا عندكم متجر إلكتروني أو مشروع وتبون نتائج أوضح من إعلاناتكم، تواصلوا معي.</p>
+        </div>
+        <ul class="work-info">
+          <li>أعمل عن بُعد</li>
+          <li>اللغات: العربية والإنجليزية</li>
+          <li>متاحة بأوقات دوام الخليج</li>
+        </ul>
+        <div class="contact">
+          <div class="contact-item">
+            <span class="k">الإيميل</span>
+            <a href="mailto:raneemali947@gmail.com" dir="ltr">raneemali947@gmail.com</a>
+            <button type="button" data-copy="raneemali947@gmail.com">نسخ</button>
+          </div>
+          <div class="contact-item">
+            <span class="k">واتساب / جوال</span>
+            <a href="https://wa.me/213562941562" class="num" dir="ltr" target="_blank" rel="noopener">+213 562 941 562</a>
+            <button type="button" data-copy="+213562941562">نسخ</button>
+          </div>
+          <div class="contact-item">
+            <span class="k">لينكدإن</span>
+            <a href="https://www.linkedin.com/in/raneemali-ads/" dir="ltr" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
+            <span class="spacer"></span>
+          </div>
+        </div>
+        <div class="signature">
+          <div class="sig-id">
+            <div class="thumb"><img src="profile.jpg" alt=""></div>
+            <div><strong>رنيم علي</strong><span lang="en" dir="ltr">Raneem Ali</span></div>
+          </div>
+          <span class="folio"><b>08</b> / 08</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===================== English ===================== -->
+<div class="page" id="en" dir="ltr" lang="en" hidden>
+
+  <header class="band cover">
+    <div class="wrap g cover-grid">
+      <div class="runner"><span class="marker">Digital &amp; Performance Marketing</span><span class="folio"><b>01</b> / 08</span></div>
+      <div class="cover-text">
+        <h1>Raneem Ali</h1>
+        <p class="second-name" lang="ar" dir="rtl">رنيم علي</p>
+        <p class="role">Marketing Manager &amp; Paid Media Manager</p>
+        <p class="lede">I help e-commerce stores and businesses in Saudi Arabia and the Gulf grow sales from their ads, with results they can measure.</p>
+        <ul class="facts">
+          <li><span class="fig num">4</span><span>years of experience</span></li>
+          <li>Saudi Arabia &amp; GCC</li>
+          <li><span class="latin">Meta · Google · TikTok · Snapchat</span></li>
+        </ul>
+      </div>
+      <figure class="portrait"><img src="profile.jpg" alt="Photo of Raneem Ali"></figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">About me</span><span class="folio"><b>02</b> / 08</span></div>
+        <div class="about-head">
+          <h2 class="h-section">Hi, I'm Raneem</h2>
+        </div>
+        <div class="about-body">
+          <p class="lead">I specialize in digital marketing and paid advertising. Over 4 years I have worked as a marketing manager and paid media manager, and led a campaigns team. Most of my work has been with clients in Saudi Arabia and the Gulf, across e-commerce, real estate, education, services and hospitality.</p>
+          <p>What matters to me in every project is the real outcome: more sales and real customers, not just reach and engagement. That is why I always start with accurate tracking and tie every campaign to a clear goal the client can measure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">Results from campaigns I managed</span><span class="folio"><b>03</b> / 08</span></div>
+        <h2 class="h-section results-head">Real numbers from client accounts</h2>
+        <p class="results-note">Mostly from e-commerce stores and lead generation campaigns for real estate companies.</p>
+
+        <div class="lead-metric">
+          <span class="xl num">+$1.43M</span>
+          <p class="m-label">Sales for an e-commerce store</p>
+          <p class="m-sub">At <span class="num">~4x</span> ROAS with <span class="num">20,600+</span> purchases</p>
+        </div>
+
+        <figure class="roas" aria-label="ROAS comparison">
+          <figcaption><span class="label-sm">Return on ad spend</span><span>ROAS</span></figcaption>
+          <div class="bar top">
+            <div class="bar-top"><span>Meta campaign</span><span class="v num">20.6x</span></div>
+            <div class="track"><i style="width:100%"></i></div>
+          </div>
+          <div class="bar">
+            <div class="bar-top"><span>Google Ads</span><span class="v num">4.93</span></div>
+            <div class="track"><i style="width:23.9%"></i></div>
+          </div>
+          <div class="bar">
+            <div class="bar-top"><span>E-commerce store</span><span class="v num">~4x</span></div>
+            <div class="track"><i style="width:19.4%"></i></div>
+          </div>
+        </figure>
+
+        <div class="metrics">
+          <div class="metric">
+            <span class="big num">4.93</span>
+            <span class="label">ROAS on Google Ads</span>
+            <span class="sub">With more than <span class="num">10,000</span> purchases</span>
+          </div>
+          <div class="metric">
+            <span class="big num">20.6x</span>
+            <span class="label">ROAS on a Meta campaign</span>
+            <span class="sub">My highest return on a single campaign</span>
+          </div>
+          <div class="metric">
+            <span class="big num">$2.40</span>
+            <span class="label">Cost per lead</span>
+            <span class="sub">Lead generation for services</span>
+          </div>
+          <div class="metric">
+            <span class="big num">1,300+</span>
+            <span class="label">Customer conversations</span>
+            <span class="sub">From Meta messaging campaigns</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet band">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">Client reviews</span><span class="folio"><b>04</b> / 08</span></div>
+        <div class="quote-col">
+          <h2 class="label-sm">What my clients say</h2>
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <blockquote>Raneem worked on our campaigns and her work is excellent. She clearly knows what she's doing. Communication was easy, and she adapted the campaign setup to fit our store. This won't be the last time we work together.</blockquote>
+          <div class="stars" aria-label="Rated 5 out of 5">★★★★★</div>
+          <div class="who">
+            <strong>Ziad A.</strong>
+            <span>Shopify store owner · Campaign setup and management on TikTok, Instagram, Google and Snapchat</span>
+            <p class="translated">Translated from Arabic.</p>
+          </div>
+        </div>
+        <div class="criteria">
+          <p class="label-sm">Project rating</p>
+          <ul>
+            <li>Professionalism <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+            <li>Communication <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+            <li>Quality of work <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+            <li>Expertise <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+            <li>On-time delivery <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+            <li>Would hire again <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">Experience</span><span class="folio"><b>05</b> / 08</span></div>
+        <h2 class="h-section exp-head">Roles I've held</h2>
+        <ul class="roles">
+          <li><strong>Marketing Manager</strong><span>Strategy, quarterly plans, consistent messaging and brand</span></li>
+          <li><strong>Paid Media Manager</strong><span>Planning, launching and optimizing paid campaigns across platforms</span></li>
+          <li><strong>Campaigns Team Lead</strong><span>Task allocation, performance tracking and delivery standards</span></li>
+        </ul>
+        <div class="ledger">
+          <div class="ledger-row">
+            <h3>Industries</h3>
+            <ul class="inline-list">
+              <li>E-commerce</li>
+              <li>Real estate</li>
+              <li>Education</li>
+              <li>Services</li>
+              <li>Hospitality</li>
+            </ul>
+          </div>
+          <div class="ledger-row">
+            <h3>Store platforms</h3>
+            <ul class="inline-list">
+              <li>Salla</li>
+              <li>Zid</li>
+              <li>Shopify</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">Skills</span><span class="folio"><b>06</b> / 08</span></div>
+        <h2 class="h-section skills-head">What I do</h2>
+        <div class="skill-col">
+          <h3>Strategy</h3>
+          <ul>
+            <li>Market &amp; competitor analysis</li>
+            <li>Customer personas</li>
+            <li>Revenue-based goals</li>
+            <li>Quarterly plans</li>
+            <li>Content &amp; ads calendar</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Paid media &amp; lead generation</h3>
+          <ul>
+            <li>Meta Ads</li>
+            <li>Google Ads</li>
+            <li>TikTok Ads</li>
+            <li>Snapchat Ads</li>
+            <li>Customer journey to sale</li>
+            <li>Lead handoff to sales</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Tracking &amp; measurement</h3>
+          <ul>
+            <li>Pixel</li>
+            <li>GA4</li>
+            <li>GTM</li>
+            <li>CAC, CLV &amp; conversion dashboards</li>
+            <li>Reports &amp; recommendations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">How I work</span><span class="folio"><b>07</b> / 08</span></div>
+        <h2 class="h-section method-head">Working with clients</h2>
+        <ol class="steps">
+          <li><b>Understand</b><span>Your market, competitors and customers, and audit tracking before any ad goes live.</span></li>
+          <li><b>Plan</b><span>A clear plan, consistent messaging and goals tied to sales.</span></li>
+          <li><b>Launch</b><span>Campaigns on Meta, Google, TikTok and Snapchat, with a customer journey that ends in a sale.</span></li>
+          <li><b>Measure &amp; improve</b><span>A dashboard, regular reports and ongoing optimization based on the numbers.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sheet band">
+      <div class="wrap g">
+        <div class="runner"><span class="marker">Contact</span><span class="folio"><b>08</b> / 08</span></div>
+        <div class="closing-head">
+          <h2>Let's get in touch</h2>
+          <p>If you run an online store or a business and want clearer results from your ads, I'd be glad to hear from you.</p>
+        </div>
+        <ul class="work-info">
+          <li>Working remotely</li>
+          <li>Languages: Arabic &amp; English</li>
+          <li>Available during Gulf business hours</li>
+        </ul>
+        <div class="contact">
+          <div class="contact-item">
+            <span class="k">Email</span>
+            <a href="mailto:raneemali947@gmail.com">raneemali947@gmail.com</a>
+            <button type="button" data-copy="raneemali947@gmail.com">Copy</button>
+          </div>
+          <div class="contact-item">
+            <span class="k">WhatsApp / Phone</span>
+            <a href="https://wa.me/213562941562" class="num" target="_blank" rel="noopener">+213 562 941 562</a>
+            <button type="button" data-copy="+213562941562">Copy</button>
+          </div>
+          <div class="contact-item">
+            <span class="k">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/raneemali-ads/" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
+            <span class="spacer"></span>
+          </div>
+        </div>
+        <div class="signature">
+          <div class="sig-id">
+            <div class="thumb"><img src="profile.jpg" alt=""></div>
+            <div><strong>Raneem Ali</strong><span lang="ar" dir="rtl">رنيم علي</span></div>
+          </div>
+          <span class="folio"><b>08</b> / 08</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function () {
+  var pages = { ar: document.getElementById('ar'), en: document.getElementById('en') };
+  var buttons = document.querySelectorAll('.lang-switch button');
+  function setLang(lang) {
+    Object.keys(pages).forEach(function (k) { pages[k].hidden = k !== lang; });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    try { localStorage.setItem('profile-lang', lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  var initial = 'ar';
+  if (location.hash === '#en') initial = 'en';
+  else { try { initial = localStorage.getItem('profile-lang') || 'ar'; } catch (e) {} }
+  setLang(initial === 'en' ? 'en' : 'ar');
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = btn.closest('[lang="en"]') ? 'Copied' : 'تم النسخ';
+        setTimeout(function () { btn.textContent = label; }, 1600);
+      };
+      var fallback = function () {
+        var link = btn.parentElement.querySelector('a');
+        var range = document.createRange(); range.selectNodeContents(link);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      };
+      try { navigator.clipboard.writeText(btn.dataset.copy).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
