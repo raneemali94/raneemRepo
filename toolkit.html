@@ -1,0 +1,416 @@
+<title>عدة رنيم التسويقية</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: a working kit, one RTL column; a sticky tab bar jumps between posts, messages and case studies; every piece is a card with a copy button. */
+:root {
+  --bg: #faf6f3;
+  --surface: #ffffff;
+  --ink: #2a1a20;
+  --muted: #6e5a61;
+  --line: #e8dcdd;
+  --wine: #8e1f3c;
+  --wine-soft: #f4e3e7;
+  --gold: #b48a3c;
+  --font-display: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+    --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+  --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.8; font-size: 1rem; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.page {
+  direction: rtl; max-width: 820px; margin: 0 auto;
+  padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 48px;
+}
+h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.35; text-wrap: balance; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); font-weight: 800; color: var(--wine); }
+h2 { font-size: 1.5rem; font-weight: 700; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font-size: .8rem; font-weight: 600; color: var(--gold); letter-spacing: .04em; display: block; margin-bottom: 6px; }
+.intro p { color: var(--muted); max-width: 62ch; margin-top: 10px; }
+
+.positioning {
+  margin-top: 20px; background: var(--wine-soft); border-radius: 14px; padding: 18px 20px;
+  display: grid; gap: 8px;
+}
+.positioning strong { font-family: var(--font-display); font-size: 1.1rem; }
+
+.tabs {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  display: flex; gap: 8px; flex-wrap: wrap;
+  background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line);
+}
+.tabs a {
+  text-decoration: none; color: var(--ink); font-weight: 600; font-size: .9rem;
+  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+}
+.tabs a:hover { border-color: var(--gold); }
+.tabs a:focus-visible, button:focus-visible { outline: 2px solid var(--wine); outline-offset: 2px; }
+
+section { display: grid; gap: 16px; scroll-margin-top: 72px; }
+.section-head p { color: var(--muted); max-width: 62ch; margin-top: 6px; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 20px 22px; display: grid; gap: 12px; min-width: 0;
+}
+.card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.card-top h3 { min-width: 0; }
+.meta { color: var(--gold); font-size: .8rem; font-weight: 600; white-space: nowrap; }
+.text { white-space: pre-line; overflow-wrap: anywhere; }
+.text .fill { background: var(--wine-soft); color: var(--wine); border-radius: 4px; padding: 0 4px; font-weight: 600; }
+.copy {
+  justify-self: start; font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+  color: var(--wine); background: transparent; border: 1px solid var(--wine); border-radius: 8px; padding: 4px 14px;
+}
+.copy:hover { background: var(--wine-soft); }
+.note { color: var(--muted); font-size: .9rem; }
+
+.plan { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+.plan li { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding-block: 14px; border-top: 1px solid var(--line); }
+.plan li:last-child { border-bottom: 1px solid var(--line); }
+.plan b { font-family: var(--font-display); color: var(--wine); }
+.plan span { color: var(--muted); }
+
+@media (max-width: 520px) {
+  .card { padding: 16px; }
+  .plan li { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-behavior: smooth; }
+</style>
+
+<main class="page" dir="rtl" lang="ar">
+
+  <header class="intro">
+    <span class="eyebrow">للاستخدام الشخصي</span>
+    <h1>عدة التسويق الذاتي</h1>
+    <p>كل المواد اللي تحتاجيها لتجيبي عملاء: بوستات لينكدإن جاهزة، رسائل تواصل، وقوالب دراسات حالة. كل بطاقة فيها زر نسخ. الأجزاء المظللة باللون العنابي لازم تعبيها أنتِ بمعلومات حقيقية قبل النشر.</p>
+    <div class="positioning">
+      <span class="eyebrow">جملة التموضع (استخدميها بالبايو والبروفايل)</span>
+      <strong>أساعد المتاجر الإلكترونية وشركات العقار في السعودية والخليج على زيادة مبيعاتهم من الإعلانات، بأرقام واضحة يقدرون يقيسونها.</strong>
+      <button type="button" class="copy">نسخ</button>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="أقسام العدة">
+    <a href="#plan">خطة الأسبوعين</a>
+    <a href="#posts">بوستات لينكدإن</a>
+    <a href="#messages">رسائل التواصل</a>
+    <a href="#cases">دراسات الحالة</a>
+  </nav>
+
+  <section id="plan">
+    <div class="section-head">
+      <span class="eyebrow">ابدئي من هنا</span>
+      <h2>خطة أول أسبوعين</h2>
+    </div>
+    <ol class="plan">
+      <li><b>اليوم 1</b><span>حدّثي عنوان لينكدإن والبايو بجملة التموضع، وحطي رابط البروفايل بقسم Featured.</span></li>
+      <li><b>اليوم 2–3</b><span>عبي قالبي دراسات الحالة بتفاصيل حقيقية، واطلبي من عميلين سابقين شهادة قصيرة.</span></li>
+      <li><b>اليوم 4</b><span>انشري البوست رقم 1 (التعريف).</span></li>
+      <li><b>كل يوم</b><span>ابعتي 10 رسائل تواصل: 5 لمتاجر إلكترونية و5 لشركات عقار. سجّلي مين رد.</span></li>
+      <li><b>3 مرات بالأسبوع</b><span>انشري بوست من القائمة، بالترتيب.</span></li>
+      <li><b>بعد 4–5 أيام</b><span>ابعتي رسالة المتابعة لكل اللي ما ردوا.</span></li>
+      <li><b>نهاية الأسبوع 2</b><span>تواصلي مع 5 وكالات أو مطوري متاجر سلة وزد برسالة الشراكة.</span></li>
+    </ol>
+  </section>
+
+  <section id="posts">
+    <div class="section-head">
+      <span class="eyebrow">10 بوستات</span>
+      <h2>بوستات لينكدإن</h2>
+      <p>انشريها بالترتيب، 3 مرات بالأسبوع. البوستات اللي فيها أرقام استخدمت أرقامك الحقيقية فقط.</p>
+    </div>
+
+    <article class="card">
+      <div class="card-top"><h3>1. التعريف</h3><span class="meta">تعريف</span></div>
+      <div class="text">خلال 4 سنوات اشتغلت مديرة تسويق ومديرة حملات إعلانية، وقدت فريق حملات، وأغلب شغلي كان للسوق السعودي والخليجي.
+
+اليوم أركز على مجالين:
+• المتاجر الإلكترونية اللي تبي مبيعات أكثر من نفس الميزانية
+• شركات العقار اللي تبي ليدز حقيقية توصل لفريق المبيعات
+
+من النتائج اللي حققتها:
+• ‎+1.43 مليون $ مبيعات لمتجر إلكتروني بعائد قريب من 4x
+• عائد 4.93 على Google Ads مع أكثر من 10,000 عملية شراء
+• ليدز بتكلفة 2.40$
+
+إذا عندك متجر أو شركة عقارية وتبي تعرف وين تضيع ميزانيتك الإعلانية، أقدم مراجعة مجانية للحساب والتتبع. راسلني.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>2. قصة المليون</h3><span class="meta">دراسة حالة</span></div>
+      <div class="text">‎1.43 مليون دولار مبيعات لمتجر إلكتروني، و‎+20,600 عملية شراء، بعائد قريب من 4x.
+
+أكثر سؤال يجيني: شو السر؟
+الجواب مو إعلان واحد ناجح. الجواب نظام:
+
+1. تتبع صحيح من أول يوم. إذا الأرقام غلط، كل قرار بعدها غلط.
+2. أهداف مربوطة بالإيراد، مو بالنقرات والمشاهدات.
+3. <span class="fill">[اكتبي هنا أهم شي عملتيه بهالحساب: مثلاً طريقة تقسيم الحملات أو نوع الإعلانات اللي نجحت]</span>
+4. تحسين أسبوعي مبني على الأرقام، مو على الإحساس.
+
+الميزانية الكبيرة ما تصنع النتائج. اللي يصنعها هو النظام اللي يدير الميزانية.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>3. أخطاء التتبع</h3><span class="meta">تعليمي</span></div>
+      <div class="text">5 أخطاء تتبع أشوفها كثير في الحسابات الإعلانية، وكل واحد منها يخلّيك تتخذ قرارات على أرقام غلط:
+
+1. حدث الشراء يتسجل مرتين، فيطلع العائد أعلى من الحقيقة.
+2. ما في Conversions API، فتضيع نسبة كبيرة من التحويلات بسبب حظر الكوكيز.
+3. GA4 مو مربوط صح مع المتجر، فأرقام الموقع ما تطابق أرقام المنصة.
+4. روابط الإعلانات بدون UTM، فما تعرف أي حملة جابت البيعة.
+5. الحملة محسّنة على هدف خطأ، مثل "إضافة للسلة" بدل "شراء".
+
+قبل ما تزيد الميزانية، تأكد إن الأرقام اللي تشوفها صحيحة.
+تبي أفحص لك التتبع مجانًا؟ راسلني.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>4. العائد مو الربح</h3><span class="meta">رأي</span></div>
+      <div class="text">عائد 4x على الإعلانات ما يعني إنك تربح.
+
+العائد (ROAS) يقيس المبيعات مقابل الإنفاق الإعلاني فقط. ما يحسب تكلفة المنتج، والشحن، والمرتجعات، ورسوم الدفع.
+
+لذلك أشتغل دايمًا على رقمين معه:
+• CAC: كم يكلفك العميل الجديد فعليًا
+• CLV: كم يدفع العميل خلال كل فترة تعامله معك
+
+إذا CLV أعلى بوضوح من CAC، تقدر تكبّر الميزانية وأنت مطمّن.
+إذا لا، كل زيادة بالميزانية تكبّر الخسارة.
+
+أنت تعرف الـ CAC لمتجرك؟</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>5. الليد الرخيص</h3><span class="meta">عقار</span></div>
+      <div class="text">لشركات العقار: الليد الرخيص مو دايمًا ليد جيد.
+
+ممكن تجيب ليدز بتكلفة قليلة جدًا، وفريق المبيعات يشتكي إن ولا واحد منهم جاد.
+
+اللي يفرق فعلًا:
+• أسئلة تأهيل بالنموذج (الميزانية، المنطقة، موعد الشراء)
+• سرعة الرد: الليد اللي ينتظر يوم كامل يبرد
+• آلية واضحة لتسليم الليد للمبيعات وتسجيل نتيجته
+• قياس تكلفة الصفقة، مو بس تكلفة الليد
+
+الهدف مو أرخص ليد. الهدف أرخص صفقة.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>6. حملات الرسائل</h3><span class="meta">دراسة حالة</span></div>
+      <div class="text">أكثر من 1,300 محادثة مع عملاء من حملات الرسائل على ميتا.
+
+حملات الرسائل قوية جدًا بالسوق الخليجي، لأن العميل يحب يسأل قبل ما يشتري. بس المحادثة لحالها ما تبيع.
+
+اللي يحوّل المحادثة لبيعة:
+• رسالة ترحيب واضحة فيها سؤال يفتح الحوار
+• رد سريع، خصوصًا بأول ساعة
+• سكربت للفريق يجاوب على الأسئلة المتكررة
+• متابعة الناس اللي سألوا وما اشتروا
+
+<span class="fill">[أضيفي نتيجة المحادثات: كم واحد منهم اشترى أو حجز، إذا عندك الرقم]</span></div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>7. اختيار المنصة</h3><span class="meta">تعليمي</span></div>
+      <div class="text">Meta ولا Google ولا TikTok ولا Snapchat؟
+
+ما في منصة أفضل بشكل مطلق. في منصة أنسب لمنتجك ولمرحلة العميل:
+
+• Google: العميل يبحث عن المنتج بنفسه، يعني جاهز للشراء.
+• Meta: ممتاز لبناء الطلب والاستهداف وإعادة الاستهداف.
+• Snapchat و TikTok: انتشار كبير بالسعودية، خصوصًا عند الفئات الأصغر، ويحتاج محتوى بأسلوب المنصة نفسها.
+
+أبدأ دايمًا بسؤال: وين عميلك الآن، وشو يحتاج يشوف عشان يشتري؟
+بعدها أختار المنصة، مو العكس.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>8. عائد 20.6x</h3><span class="meta">دراسة حالة</span></div>
+      <div class="text">حققت عائد 20.6x في حملة على ميتا.
+
+رقم جميل، بس الأهم إنك تعرف تقرأه صح. العائد العالي جدًا يعتمد كثير على نوع الجمهور والعرض والتوقيت، وما ينفع تبني عليه توقعات كل الحملات.
+
+اللي أتعلمه من حملة مثل هذي:
+<span class="fill">[اكتبي ليش نجحت الحملة: نوع الجمهور، العرض، الإبداع، أو التوقيت]</span>
+
+وبعدها السؤال الأهم: كيف نكرر جزء من هالنجاح على نطاق أكبر؟</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>9. طريقتي خلال 30 يوم</h3><span class="meta">عرض</span></div>
+      <div class="text">كيف أشتغل مع أي عميل جديد خلال أول 30 يوم:
+
+الأسبوع 1: التشخيص. السوق والمنافسين والـ Personas، ومراجعة التتبع (Pixel و GA4 و GTM)، وأهداف مربوطة بالإيراد.
+الأسبوع 2: الخطة. خطة ربع سنوية لكل منتج، رسائل موحدة، وتقويم محتوى وإعلانات.
+الأسبوع 3: التشغيل. حملات على Meta و Google و TikTok و Snapchat، ورحلة عميل لين المبيعات.
+الأسبوع 4: القياس. لوحة CAC و CLV والتحويل، وتقرير وتوصيات، وخطة توسّع.
+
+بنهاية الشهر: حملات شغالة وأرقام تقدر تبني عليها.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>10. المراجعة المجانية</h3><span class="meta">دعوة</span></div>
+      <div class="text">أفتح هذا الشهر <span class="fill">[5]</span> مقاعد لمراجعة مجانية للحسابات الإعلانية.
+
+لمين؟ متاجر إلكترونية وشركات عقار في السعودية والخليج، تصرف على الإعلانات وتحس إن النتائج أقل من المتوقع.
+
+شو تشمل المراجعة:
+• فحص التتبع: Pixel و GA4 و GTM و Conversions API
+• مراجعة هيكل الحملات والجمهور والإعلانات
+• تقرير مختصر بأهم 5 فرص لتحسين العائد
+
+بدون أي التزام. علّق بكلمة "مراجعة" أو راسلني مباشرة.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+  </section>
+
+  <section id="messages">
+    <div class="section-head">
+      <span class="eyebrow">4 رسائل</span>
+      <h2>رسائل التواصل</h2>
+      <p>قصيرة عن قصد. غيّري الاسم والتفصيلة الخاصة بكل شركة قبل الإرسال، لأن الرسالة الشخصية تجيب ردود أكثر بكثير.</p>
+    </div>
+
+    <article class="card">
+      <div class="card-top"><h3>لصاحب متجر إلكتروني</h3><span class="meta">لينكدإن / واتساب</span></div>
+      <div class="text">مرحبا <span class="fill">[الاسم]</span>،
+شفت متجر <span class="fill">[اسم المتجر]</span> وعجبني <span class="fill">[شي محدد: المنتجات، الهوية، عرض حالي]</span>.
+
+أنا رنيم، متخصصة في إعلانات المتاجر الإلكترونية بالسوق السعودي. من آخر النتائج: ‎+1.43 مليون $ مبيعات لمتجر بعائد قريب من 4x.
+
+أقدم مراجعة مجانية للحساب الإعلاني والتتبع، وأرسل لك تقرير مختصر بأهم الفرص. يناسبك؟</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>لمدير تسويق بشركة عقار</h3><span class="meta">لينكدإن</span></div>
+      <div class="text">مرحبا <span class="fill">[الاسم]</span>،
+لاحظت إعلانات <span class="fill">[اسم الشركة]</span> لمشروع <span class="fill">[اسم المشروع]</span>.
+
+أشتغل مع شركات عقار على حملات ليدز مربوطة بالمبيعات: نماذج تأهيل، آلية تسليم واضحة للفريق، وقياس تكلفة الصفقة مو بس تكلفة الليد.
+
+إذا تحب، أراجع لك الحملات الحالية مجانًا وأرسل لك أهم 5 نقاط للتحسين. يناسبك نحكي 15 دقيقة هالأسبوع؟</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>رسالة متابعة</h3><span class="meta">بعد 4–5 أيام</span></div>
+      <div class="text">مرحبا <span class="fill">[الاسم]</span>، أتابع رسالتي السابقة بخصوص مراجعة الحساب الإعلاني.
+
+ما تحتاج تجهّز شي، يكفي صلاحية مشاهدة على الحساب، وأرجع لك بالتقرير خلال <span class="fill">[3 أيام]</span>.
+
+إذا مو الوقت المناسب، ما في مشكلة أبدًا.</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>لوكالة أو مطور متاجر</h3><span class="meta">شراكة</span></div>
+      <div class="text">مرحبا <span class="fill">[الاسم]</span>،
+شفت شغلكم في <span class="fill">[تصميم / تطوير متاجر سلة وزد]</span>، وأعتقد إن في تكامل بين شغلنا.
+
+أنا متخصصة في الإعلانات المدفوعة والتتبع للمتاجر وشركات العقار في السعودية. كثير من عملائكم بعد إطلاق المتجر يحتاجون أحد يشغّل الإعلانات ويجيب مبيعات.
+
+يناسبكم نحكي عن تعاون أو نظام إحالة؟</div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+  </section>
+
+  <section id="cases">
+    <div class="section-head">
+      <span class="eyebrow">قالبين</span>
+      <h2>دراسات الحالة</h2>
+      <p>الأرقام معبأة من نتائجك. الأجزاء المظللة لازم تعبيها بالتفاصيل الحقيقية. إذا ما في إذن بذكر اسم العميل، اكتبي نوع النشاط فقط.</p>
+    </div>
+
+    <article class="card">
+      <div class="card-top"><h3>متجر إلكتروني: ‎1.43 مليون $</h3><span class="meta">قالب</span></div>
+      <div class="text">العميل: متجر إلكتروني في <span class="fill">[الدولة]</span>، يبيع <span class="fill">[نوع المنتجات]</span>.
+المدة: <span class="fill">[عدد الأشهر]</span>
+
+المشكلة:
+<span class="fill">[وضع الحساب قبل ما تستلميه: عائد منخفض؟ تتبع ناقص؟ اعتماد على منصة وحدة؟]</span>
+
+شو عملت:
+1. <span class="fill">[ضبط التتبع]</span>
+2. <span class="fill">[هيكلة الحملات والجمهور]</span>
+3. <span class="fill">[الإعلانات والعروض]</span>
+4. <span class="fill">[التحسين والتوسّع]</span>
+
+النتيجة:
+• ‎+1.43 مليون $ مبيعات
+• عائد إعلاني قريب من 4x
+• ‎+20,600 عملية شراء
+
+<span class="fill">[شهادة العميل إذا متاحة]</span></div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><h3>Google Ads: عائد 4.93</h3><span class="meta">قالب</span></div>
+      <div class="text">العميل: <span class="fill">[نوع النشاط]</span>
+المدة: <span class="fill">[عدد الأشهر]</span>
+
+المشكلة:
+<span class="fill">[وضع الحساب قبل]</span>
+
+شو عملت:
+1. <span class="fill">[نوع الحملات: بحث، Performance Max، تسوق...]</span>
+2. <span class="fill">[الكلمات المفتاحية والاستبعادات]</span>
+3. <span class="fill">[استراتيجية المزايدة]</span>
+
+النتيجة:
+• عائد على الإنفاق 4.93
+• أكثر من 10,000 عملية شراء
+
+<span class="fill">[شهادة العميل إذا متاحة]</span></div>
+      <button type="button" class="copy">نسخ</button>
+    </article>
+    <p class="note">لما تعبي القالبين ابعتيلي النص، وبضيفهم كقسم دراسات حالة على البروفايل.</p>
+  </section>
+
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var src = btn.parentElement.querySelector('.text, strong');
+    var text = src.innerText.trim();
+    var done = function () { btn.textContent = 'تم النسخ'; setTimeout(function () { btn.textContent = 'نسخ'; }, 1600); };
+    var fallback = function () {
+      var range = document.createRange(); range.selectNodeContents(src);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+    };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+});
+</script>
