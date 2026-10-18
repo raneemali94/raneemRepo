@@ -120,6 +120,19 @@ p { margin: 0; }
   content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
 }
 
+/* About */
+.about { display: grid; gap: 14px; }
+.about .section-head { margin-bottom: 0; }
+.about p { max-width: 65ch; font-size: 1.05rem; }
+
+/* Steps */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.steps b { font-family: var(--font-display); color: var(--wine); font-size: 1.1rem; }
+.steps span { color: var(--muted); font-size: .93rem; }
+@media (max-width: 720px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .steps { grid-template-columns: 1fr; } }
+
 /* Offer tiers */
 .tiers { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .tier { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 6px; align-content: start; min-width: 0; }
@@ -183,7 +196,7 @@ p { margin: 0; }
       <h1>رنيم علي</h1>
       <p class="latin-name" lang="en" dir="ltr">Raneem Ali</p>
       <p class="role">مديرة تسويق ومديرة حملات إعلانية</p>
-      <p class="lede">أساعد المتاجر الإلكترونية وشركات العقار في السعودية والخليج على زيادة مبيعاتهم من الإعلانات، بأرقام واضحة تقدرون تقيسونها. خلال 4 سنوات أدرت التسويق والحملات الإعلانية وقدت فريق حملات، من التشخيص والاستراتيجية إلى حملات شغّالة ولوحة قياس.</p>
+      <p class="lede">أساعد المتاجر الإلكترونية والشركات في السعودية والخليج على زيادة مبيعاتهم من الإعلانات، بنتائج واضحة يقدرون يقيسونها.</p>
       <ul class="facts">
         <li><span class="num">4</span> سنوات خبرة</li>
         <li>السعودية والخليج</li>
@@ -191,6 +204,15 @@ p { margin: 0; }
       </ul>
     </div>
   </header>
+
+  <section class="about">
+    <div class="section-head">
+      <span class="eyebrow">نبذة عني</span>
+      <h2>مرحبًا، أنا رنيم</h2>
+    </div>
+    <p>متخصصة في التسويق الرقمي والإعلانات المدفوعة، وعندي 4 سنوات خبرة اشتغلت فيها مديرة تسويق ومديرة حملات إعلانية، وقدت فريق حملات. أغلب شغلي كان مع عملاء في السعودية والخليج، في المتاجر الإلكترونية والعقار والتعليم والخدمات والضيافة.</p>
+    <p>اللي يهمني بكل مشروع هو النتيجة الفعلية: مبيعات أكثر وعملاء حقيقيين، مو بس أرقام وصول وتفاعل. لذلك أبدأ دايمًا بالتتبع الصحيح، وأربط كل حملة بهدف واضح يقدر العميل يقيسه.</p>
+  </section>
 
   <section>
     <div class="section-head">
@@ -231,7 +253,7 @@ p { margin: 0; }
     <div>
       <div class="section-head">
         <span class="eyebrow">الخبرة</span>
-        <h2>الأدوار اللي اشتغلت فيها</h2>
+        <h2>الأدوار التي شغلتها</h2>
       </div>
       <ul class="roles">
         <li><strong>مديرة تسويق</strong><span>استراتيجية، خطط ربع سنوية، توحيد الرسائل والهوية</span></li>
@@ -252,7 +274,7 @@ p { margin: 0; }
     <div>
       <div class="section-head">
         <span class="eyebrow">المهارات</span>
-        <h2>كيف أقدر أساعدكم</h2>
+        <h2>مهاراتي</h2>
       </div>
       <div class="skill-group">
         <h3>الاستراتيجية</h3>
@@ -290,117 +312,20 @@ p { margin: 0; }
 
   <section>
     <div class="section-head">
-      <span class="eyebrow">طريقة العمل</span>
-      <h2>كيف بشتغل معكم خلال 30 يوم</h2>
-      <p>كل أسبوع له هدف واضح وتسليمات محددة، وبنهاية الشهر بيكون عندكم حملات شغّالة وأرقام تقدروا تبنوا عليها.</p>
+      <span class="eyebrow">طريقتي في العمل</span>
+      <h2>كيف أشتغل مع عملائي</h2>
     </div>
-    <ol class="weeks">
-      <li class="week">
-        <div class="when">الأسبوع<b class="num">1</b></div>
-        <div>
-          <h3>التشخيص والاستراتيجية</h3>
-          <ul>
-            <li>دراسة السوق والمنافسين</li>
-            <li>بناء Personas للعملاء المستهدفين</li>
-            <li>مراجعة القنوات والتتبع: Pixel و GA4 و GTM</li>
-            <li>تحديد أهداف مربوطة بالإيراد</li>
-          </ul>
-        </div>
-      </li>
-      <li class="week">
-        <div class="when">الأسبوع<b class="num">2</b></div>
-        <div>
-          <h3>الخطة والهوية</h3>
-          <ul>
-            <li>خطة ربع سنوية لكل منتج</li>
-            <li>توحيد الرسائل التسويقية</li>
-            <li>تقويم المحتوى والإعلانات</li>
-          </ul>
-        </div>
-      </li>
-      <li class="week">
-        <div class="when">الأسبوع<b class="num">3</b></div>
-        <div>
-          <h3>التشغيل وتوليد العملاء</h3>
-          <ul>
-            <li>إطلاق الحملات على Meta و Google و TikTok و Snapchat</li>
-            <li>بناء رحلة العميل لحد المبيعات</li>
-            <li>آلية واضحة لتسليم الـ Leads لفريق المبيعات</li>
-          </ul>
-        </div>
-      </li>
-      <li class="week">
-        <div class="when">الأسبوع<b class="num">4</b></div>
-        <div>
-          <h3>القياس والتحسين</h3>
-          <ul>
-            <li>لوحة قياس لتكلفة الاستحواذ CAC وقيمة العميل CLV ونسب التحويل</li>
-            <li>تقرير بالنتائج والتوصيات</li>
-            <li>خطة توسّع للمرحلة القادمة</li>
-          </ul>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <span class="eyebrow">التسليمات</span>
-      <h2>ماذا تستلمون في نهاية الشهر</h2>
-    </div>
-    <ul class="deliver">
-      <li>استراتيجية تسويق</li>
-      <li>خطة ربع سنوية</li>
-      <li>Personas العملاء</li>
-      <li>حملات شغّالة</li>
-      <li>لوحة قياس</li>
-      <li>تقرير ختامي</li>
-    </ul>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <span class="eyebrow">طرق العمل معي</span>
-      <h2>ابدأوا بمراجعة مجانية لحساباتكم</h2>
-      <p>أغلب الحسابات الإعلانية فيها مشاكل تتبع أو هيكلة تضيّع جزء من الميزانية. المراجعة تكشفها قبل أي التزام.</p>
-    </div>
-    <ol class="tiers">
-      <li class="tier featured">
-        <span class="tier-tag">البداية</span>
-        <h3>مراجعة الحساب الإعلاني والتتبع</h3>
-        <p class="tier-price">مجانًا</p>
-        <ul>
-          <li>فحص Pixel و GA4 و GTM و Conversions API</li>
-          <li>مراجعة هيكل الحملات والجمهور والإعلانات</li>
-          <li>تقرير مختصر بأهم 5 فرص لتحسين العائد</li>
-        </ul>
-      </li>
-      <li class="tier">
-        <span class="tier-tag">الإطلاق</span>
-        <h3>باقة الـ 30 يوم</h3>
-        <p class="tier-price">سعر ثابت</p>
-        <ul>
-          <li>الأسابيع الأربعة كاملة كما في الخطة أعلاه</li>
-          <li>حملات شغّالة ولوحة قياس</li>
-          <li>تقرير ختامي وخطة توسّع</li>
-        </ul>
-      </li>
-      <li class="tier">
-        <span class="tier-tag">النمو</span>
-        <h3>إدارة شهرية مستمرة</h3>
-        <p class="tier-price">اشتراك شهري</p>
-        <ul>
-          <li>إدارة الحملات وتحسينها أسبوعيًا</li>
-          <li>اختبار إعلانات وجماهير جديدة</li>
-          <li>تقرير شهري مربوط بالمبيعات</li>
-        </ul>
-      </li>
+    <ol class="steps">
+      <li><b>أفهم</b><span>السوق والمنافسين وعملاءكم، وأراجع التتبع قبل أي إعلان.</span></li>
+      <li><b>أخطط</b><span>خطة واضحة ورسائل موحدة وأهداف مربوطة بالمبيعات.</span></li>
+      <li><b>أشغّل</b><span>حملات على Meta و Google و TikTok و Snapchat، ورحلة عميل حتى البيع.</span></li>
+      <li><b>أقيس وأحسّن</b><span>لوحة قياس وتقارير دورية، وتحسين مستمر مبني على الأرقام.</span></li>
     </ol>
   </section>
 
   <section class="closing">
-    <h2>خلونا نبدأ بالتشخيص</h2>
-    <p>أول خطوة جلسة نفهم فيها منتجكم وأهدافكم وأرقامكم الحالية، ومنها نبني خطة الـ 30 يوم على مقاسكم.</p>
+    <h2>يسعدني أتعرف عليكم</h2>
+    <p>إذا عندكم متجر إلكتروني أو مشروع وتبون نتائج أوضح من إعلاناتكم، تواصلوا معي.</p>
     <div class="contact">
       <div class="contact-item">
         <span class="k">الإيميل</span>
