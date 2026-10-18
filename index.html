@@ -1,0 +1,339 @@
+<title>رنيم | التسويق الرقمي والأداء</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow RTL column; a portrait header, a results ledger, then a four-week track that reads like a campaign flight plan. */
+:root {
+  --bg: #faf6f3;
+  --surface: #ffffff;
+  --ink: #2a1a20;
+  --muted: #6e5a61;
+  --line: #e8dcdd;
+  --wine: #8e1f3c;
+  --wine-soft: #f4e3e7;
+  --gold: #b48a3c;
+  --font-display: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+    --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+  --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.page {
+  direction: rtl;
+  max-width: 920px;
+  margin: 0 auto;
+  padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 64px;
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.3; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.1rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow {
+  font-size: .8rem; font-weight: 600; color: var(--gold);
+  letter-spacing: .04em; margin-bottom: 8px; display: block;
+}
+.num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+
+/* Header */
+.hero { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; }
+.portrait {
+  width: 210px; aspect-ratio: 1; max-width: 100%;
+  border-radius: 50%; overflow: hidden;
+  outline: 1px solid var(--gold); outline-offset: 8px;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); }
+.hero h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; color: var(--wine); }
+.hero .role { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; margin-top: 4px; }
+.hero .lede { color: var(--muted); margin-top: 16px; max-width: 58ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding: 0; list-style: none; }
+.facts li {
+  font-size: .85rem; font-weight: 500; padding: 4px 14px; border-radius: 999px;
+  background: var(--wine-soft); color: var(--ink);
+}
+
+/* Results */
+.section-head { display: grid; gap: 6px; margin-bottom: 28px; }
+.section-head p { color: var(--muted); max-width: 60ch; }
+.results { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.result { background: var(--surface); padding: 24px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.result.wide { grid-column: span 3; }
+.result.third { grid-column: span 2; }
+.result .big { font-family: var(--font-display); font-size: 2.1rem; font-weight: 800; color: var(--wine); line-height: 1.2; }
+.result .label { font-weight: 600; }
+.result .sub { color: var(--muted); font-size: .9rem; }
+.result .sub .num { color: var(--ink); font-weight: 600; }
+
+/* Experience */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.two-col > div { min-width: 0; }
+.roles { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.roles li { display: grid; gap: 2px; padding-inline-start: 16px; border-inline-start: 2px solid var(--gold); }
+.roles li span { color: var(--muted); font-size: .92rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.tags li { border: 1px solid var(--line); background: var(--surface); padding: 6px 14px; border-radius: 8px; font-size: .92rem; }
+.skill-group { display: grid; gap: 10px; }
+.skill-group + .skill-group { margin-top: 24px; }
+.skill-group h3 { font-size: 1rem; color: var(--muted); font-weight: 500; }
+
+/* 30-day plan */
+.weeks { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; position: relative; }
+.week { display: grid; grid-template-columns: 88px 1fr; gap: 24px; padding-block: 24px; border-top: 1px solid var(--line); }
+.week:last-child { border-bottom: 1px solid var(--line); }
+.week .when { font-family: var(--font-display); color: var(--gold); font-weight: 700; font-size: .9rem; }
+.week .when b { display: block; font-size: 2rem; color: var(--wine); font-weight: 800; line-height: 1.1; }
+.week h3 { margin-bottom: 8px; }
+.week ul { margin: 0; padding-inline-start: 20px; color: var(--muted); display: grid; gap: 2px; }
+.week ul li::marker { color: var(--gold); }
+
+/* Deliverables */
+.deliver { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0; }
+.deliver li {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px; font-weight: 600; display: flex; gap: 10px; align-items: center;
+}
+.deliver li::before {
+  content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+}
+
+/* Closing */
+.closing {
+  background: var(--wine); color: #fff; border-radius: 18px;
+  padding: 36px; display: grid; gap: 10px;
+}
+.closing h2 { color: #fff; }
+.closing p { opacity: .9; max-width: 60ch; }
+
+@media (max-width: 720px) {
+  .page { gap: 48px; padding-block: 32px 48px; }
+  .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 28px; }
+  .portrait { width: 170px; }
+  .facts { justify-content: center; }
+  .hero .lede { margin-inline: auto; }
+  .results { grid-template-columns: 1fr 1fr; }
+  .result.wide { grid-column: span 2; }
+  .result.third { grid-column: span 1; }
+  .result:last-child { grid-column: span 2; }
+  .two-col { grid-template-columns: 1fr; }
+  .deliver { grid-template-columns: 1fr 1fr; }
+  .week { grid-template-columns: 64px 1fr; gap: 16px; }
+  .closing { padding: 28px 22px; }
+}
+@media (max-width: 420px) {
+  .results { grid-template-columns: 1fr; }
+  .result.wide, .result.third, .result:last-child { grid-column: span 1; }
+  .deliver { grid-template-columns: 1fr; }
+}
+</style>
+
+<main class="page" dir="rtl" lang="ar">
+
+  <header class="hero">
+    <div class="portrait"><img src="profile.jpg" alt="صورة رنيم"></div>
+    <div>
+      <span class="eyebrow">التسويق الرقمي والأداء</span>
+      <h1>رنيم</h1>
+      <p class="role">مديرة تسويق ومديرة حملات إعلانية</p>
+      <p class="lede">أبني تسويقًا مربوطًا بالمبيعات، من التشخيص والاستراتيجية إلى حملات شغّالة ولوحة قياس واضحة. خلال 4 سنوات أدرت التسويق والحملات الإعلانية وقدت فريق حملات، وأغلب شغلي كان للسوق السعودي والخليجي.</p>
+      <ul class="facts">
+        <li><span class="num">4</span> سنوات خبرة</li>
+        <li>السعودية والخليج</li>
+        <li>Meta · Google · TikTok · Snapchat</li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">نتائج من حملات أدرتها</span>
+      <h2>أرقام حقيقية من حسابات عملاء</h2>
+    </div>
+    <div class="results">
+      <div class="result wide">
+        <span class="big num">+$1.43M</span>
+        <span class="label">مبيعات لمتجر إلكتروني</span>
+        <span class="sub">بعائد إعلاني <span class="num">~4x</span> و<span class="num">+20,600</span> عملية شراء</span>
+      </div>
+      <div class="result wide">
+        <span class="big num">4.93</span>
+        <span class="label">عائد على الإنفاق في Google Ads</span>
+        <span class="sub">مع أكثر من <span class="num">10,000</span> عملية شراء</span>
+      </div>
+      <div class="result third">
+        <span class="big num">20.6x</span>
+        <span class="label">عائد حملة على Meta</span>
+        <span class="sub">أعلى عائد حققته في حملة واحدة</span>
+      </div>
+      <div class="result third">
+        <span class="big num">$2.40</span>
+        <span class="label">تكلفة العميل المحتمل</span>
+        <span class="sub">ليدات لقطاع الخدمات</span>
+      </div>
+      <div class="result third">
+        <span class="big num">+1,300</span>
+        <span class="label">محادثة مع عملاء</span>
+        <span class="sub">من حملات الرسائل على Meta</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">الخبرة</span>
+        <h2>الأدوار اللي اشتغلت فيها</h2>
+      </div>
+      <ul class="roles">
+        <li><strong>مديرة تسويق</strong><span>استراتيجية، خطط ربع سنوية، توحيد الرسائل والهوية</span></li>
+        <li><strong>مديرة حملات إعلانية</strong><span>تخطيط وإطلاق وتحسين الحملات المدفوعة على كل المنصات</span></li>
+        <li><strong>قائدة فريق حملات</strong><span>توزيع المهام، متابعة الأداء، ومعايير التسليم</span></li>
+      </ul>
+      <div class="skill-group" style="margin-top:28px">
+        <h3>القطاعات</h3>
+        <ul class="tags">
+          <li>المتاجر الإلكترونية</li>
+          <li>العقار</li>
+          <li>التعليم</li>
+          <li>الخدمات</li>
+          <li>الضيافة</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">المهارات</span>
+        <h2>شو بقدر أعمل لك</h2>
+      </div>
+      <div class="skill-group">
+        <h3>الاستراتيجية</h3>
+        <ul class="tags">
+          <li>تحليل السوق والمنافسين</li>
+          <li>بناء Personas</li>
+          <li>أهداف مربوطة بالإيراد</li>
+          <li>خطط ربع سنوية</li>
+          <li>تقويم المحتوى والإعلانات</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>الإعلانات وتوليد العملاء</h3>
+        <ul class="tags">
+          <li>Meta Ads</li>
+          <li>Google Ads</li>
+          <li>TikTok Ads</li>
+          <li>Snapchat Ads</li>
+          <li>رحلة العميل حتى المبيعات</li>
+          <li>آلية تسليم الـ Leads</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>التتبع والقياس</h3>
+        <ul class="tags">
+          <li>Pixel</li>
+          <li>GA4</li>
+          <li>GTM</li>
+          <li>لوحات CAC و CLV والتحويل</li>
+          <li>تقارير وتوصيات</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">طريقة العمل</span>
+      <h2>كيف بشتغل معكم خلال 30 يوم</h2>
+      <p>كل أسبوع له هدف واضح وتسليمات محددة، وبنهاية الشهر بيكون عندكم حملات شغّالة وأرقام تقدروا تبنوا عليها.</p>
+    </div>
+    <ol class="weeks">
+      <li class="week">
+        <div class="when">الأسبوع<b class="num">1</b></div>
+        <div>
+          <h3>التشخيص والاستراتيجية</h3>
+          <ul>
+            <li>دراسة السوق والمنافسين</li>
+            <li>بناء Personas للعملاء المستهدفين</li>
+            <li>مراجعة القنوات والتتبع: Pixel و GA4 و GTM</li>
+            <li>تحديد أهداف مربوطة بالإيراد</li>
+          </ul>
+        </div>
+      </li>
+      <li class="week">
+        <div class="when">الأسبوع<b class="num">2</b></div>
+        <div>
+          <h3>الخطة والهوية</h3>
+          <ul>
+            <li>خطة ربع سنوية لكل منتج</li>
+            <li>توحيد الرسائل التسويقية</li>
+            <li>تقويم المحتوى والإعلانات</li>
+          </ul>
+        </div>
+      </li>
+      <li class="week">
+        <div class="when">الأسبوع<b class="num">3</b></div>
+        <div>
+          <h3>التشغيل وتوليد العملاء</h3>
+          <ul>
+            <li>إطلاق الحملات على Meta و Google و TikTok و Snapchat</li>
+            <li>بناء رحلة العميل لحد المبيعات</li>
+            <li>آلية واضحة لتسليم الـ Leads لفريق المبيعات</li>
+          </ul>
+        </div>
+      </li>
+      <li class="week">
+        <div class="when">الأسبوع<b class="num">4</b></div>
+        <div>
+          <h3>القياس والتحسين</h3>
+          <ul>
+            <li>لوحة قياس لتكلفة الاستحواذ CAC وقيمة العميل CLV ونسب التحويل</li>
+            <li>تقرير بالنتائج والتوصيات</li>
+            <li>خطة توسّع للمرحلة الجاية</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">التسليمات</span>
+      <h2>شو بتستلموا بنهاية الشهر</h2>
+    </div>
+    <ul class="deliver">
+      <li>استراتيجية تسويق</li>
+      <li>خطة ربع سنوية</li>
+      <li>Personas العملاء</li>
+      <li>حملات شغّالة</li>
+      <li>لوحة قياس</li>
+      <li>تقرير ختامي</li>
+    </ul>
+  </section>
+
+  <section class="closing">
+    <h2>خلونا نبدأ بالتشخيص</h2>
+    <p>أول خطوة جلسة نفهم فيها منتجكم وأهدافكم وأرقامكم الحالية، ومنها نبني خطة الـ 30 يوم على مقاسكم.</p>
+  </section>
+
+</main>
