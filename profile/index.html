@@ -133,13 +133,15 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; }
 .facts .fig { font-family: var(--font-display); font-weight: 200; font-size: 2.6rem; line-height: 1; color: var(--band-accent); }
 .facts .latin { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .04em; color: var(--band-muted); direction: ltr; unicode-bidi: isolate; }
 
+/* Circular crop taken inside the photo's printed gold ring, so the ring and cream corners never show. */
 .portrait {
-  grid-column: 9 / span 4; position: relative; overflow: hidden;
-  aspect-ratio: 394 / 492; max-width: 100%; background: var(--band-rule);
+  grid-column: 9 / span 4; position: relative; overflow: hidden; align-self: center;
+  aspect-ratio: 1; max-width: 100%; border-radius: 50%; background: var(--band-rule);
+  margin-bottom: clamp(56px, 8vw, 112px);
 }
-.portrait img {
+.portrait img, .thumb img {
   position: absolute; left: 0; top: 0; max-width: none; display: block;
-  width: 182.74%; transform: translate(-21.944%, -12.091%);
+  width: 113.21%; transform: translate(-5.833%, -4.125%);
 }
 .portrait figcaption {
   position: absolute; inset-inline-start: 0; bottom: 0; padding: 8px 12px;
@@ -276,8 +278,7 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; }
   grid-column: 1 / -1; margin-top: clamp(64px, 8vw, 104px); display: flex; align-items: center; justify-content: space-between; gap: 20px;
 }
 .sig-id { display: flex; align-items: center; gap: 16px; }
-.thumb { width: 56px; aspect-ratio: 394 / 492; position: relative; overflow: hidden; flex: none; max-width: 100%; }
-.thumb img { position: absolute; left: 0; top: 0; max-width: none; width: 182.74%; transform: translate(-21.944%, -12.091%); }
+.thumb { width: 56px; aspect-ratio: 1; border-radius: 50%; position: relative; overflow: hidden; flex: none; max-width: 100%; }
 .sig-id div { display: grid; line-height: 1.4; }
 .sig-id strong { font-family: var(--font-display); font-weight: 500; }
 .sig-id span { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
@@ -306,7 +307,7 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; }
   body { font-size: 1rem; }
   .cover-grid { row-gap: 40px; }
   .cover .runner { grid-row: 1; }
-  .portrait { grid-column: 1 / span 8; grid-row: 2; }
+  .portrait { grid-column: 1 / span 7; grid-row: 2; margin-bottom: 0; }
   .cover-text { grid-column: 1 / -1; grid-row: 3; }
   .facts { grid-template-columns: 1fr; }
   .facts li + li { padding-inline-start: 0; border-inline-start: 0; border-top: 1px solid var(--band-rule); padding-bottom: 0; margin-top: 18px; }
