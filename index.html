@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
 <style>
-/* Layout: one narrow RTL column; a portrait header, a results ledger, then a four-week track that reads like a campaign flight plan. */
+/* Layout: one narrow column, Arabic and English versions of the same profile; portrait header, results ledger, client review, skills, working style, contact band. */
 :root {
   --bg: #faf6f3;
   --surface: #ffffff;
@@ -14,19 +14,20 @@
   --wine: #8e1f3c;
   --wine-soft: #f4e3e7;
   --gold: #b48a3c;
+  --star: #d9a321;
   --font-display: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
   --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
-    --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+    --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a; --star: #e8b84a;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
-  --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+  --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a; --star: #e8b84a;
   color-scheme: dark;
 }
 
@@ -38,11 +39,25 @@ body {
   font-size: 1rem;
   line-height: 1.75;
 }
+.lang-bar {
+  max-width: 920px; margin: 0 auto;
+  padding-block: 16px 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; justify-content: flex-end;
+}
+.lang-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); }
+.lang-switch button {
+  font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+  border: 0; border-radius: 999px; padding: 4px 14px; background: transparent; color: var(--muted);
+}
+.lang-switch button[aria-pressed="true"] { background: var(--wine); color: #fff; }
+.lang-switch button:focus-visible { outline: 2px solid var(--wine); outline-offset: 2px; }
+
 .page {
-  direction: rtl;
   max-width: 920px;
   margin: 0 auto;
-  padding-block: 48px 64px;
+  padding-block: 24px 64px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   display: grid;
@@ -67,7 +82,7 @@ p { margin: 0; }
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; color: var(--wine); }
-.hero .latin-name { font-family: var(--font-display); font-weight: 500; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; font-size: .9rem; }
+.hero .second-name { font-family: var(--font-display); font-weight: 500; color: var(--gold); letter-spacing: .06em; font-size: .95rem; }
 .hero .role { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; margin-top: 4px; }
 .hero .lede { color: var(--muted); margin-top: 16px; max-width: 58ch; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding: 0; list-style: none; }
@@ -75,6 +90,11 @@ p { margin: 0; }
   font-size: .85rem; font-weight: 500; padding: 4px 14px; border-radius: 999px;
   background: var(--wine-soft); color: var(--ink);
 }
+
+/* About */
+.about { display: grid; gap: 14px; }
+.about .section-head { margin-bottom: 0; }
+.about p { max-width: 65ch; font-size: 1.05rem; }
 
 /* Results */
 .section-head { display: grid; gap: 6px; margin-bottom: 28px; }
@@ -88,6 +108,27 @@ p { margin: 0; }
 .result .sub { color: var(--muted); font-size: .9rem; }
 .result .sub .num { color: var(--ink); font-weight: 600; }
 
+/* Review */
+.review {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px;
+}
+.review > div { min-width: 0; }
+.stars { color: var(--star); letter-spacing: 2px; font-size: 1.1rem; line-height: 1; }
+.review blockquote {
+  margin: 14px 0 0; font-family: var(--font-display); font-weight: 500;
+  font-size: 1.25rem; line-height: 1.7; text-wrap: pretty;
+}
+.review blockquote::before { content: "“"; color: var(--gold); font-size: 2.4rem; line-height: 0; vertical-align: -.35em; margin-inline-end: 4px; }
+.review .who { margin-top: 18px; display: grid; gap: 2px; }
+.review .who strong { font-weight: 600; }
+.review .who span { color: var(--muted); font-size: .9rem; }
+.review .translated { color: var(--muted); font-size: .8rem; margin-top: 6px; }
+.criteria { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; align-content: start; border-inline-start: 1px solid var(--line); padding-inline-start: 28px; }
+.criteria li { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .92rem; }
+.criteria li .stars { font-size: .85rem; letter-spacing: 1px; flex: none; }
+.criteria-title { font-size: .8rem; font-weight: 600; color: var(--gold); letter-spacing: .04em; margin-bottom: 4px; }
+
 /* Experience */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .two-col > div { min-width: 0; }
@@ -100,48 +141,11 @@ p { margin: 0; }
 .skill-group + .skill-group { margin-top: 24px; }
 .skill-group h3 { font-size: 1rem; color: var(--muted); font-weight: 500; }
 
-/* 30-day plan */
-.weeks { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; position: relative; }
-.week { display: grid; grid-template-columns: 88px 1fr; gap: 24px; padding-block: 24px; border-top: 1px solid var(--line); }
-.week:last-child { border-bottom: 1px solid var(--line); }
-.week .when { font-family: var(--font-display); color: var(--gold); font-weight: 700; font-size: .9rem; }
-.week .when b { display: block; font-size: 2rem; color: var(--wine); font-weight: 800; line-height: 1.1; }
-.week h3 { margin-bottom: 8px; }
-.week ul { margin: 0; padding-inline-start: 20px; color: var(--muted); display: grid; gap: 2px; }
-.week ul li::marker { color: var(--gold); }
-
-/* Deliverables */
-.deliver { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0; }
-.deliver li {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-  padding: 16px 18px; font-weight: 600; display: flex; gap: 10px; align-items: center;
-}
-.deliver li::before {
-  content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
-}
-
-/* About */
-.about { display: grid; gap: 14px; }
-.about .section-head { margin-bottom: 0; }
-.about p { max-width: 65ch; font-size: 1.05rem; }
-
 /* Steps */
 .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .steps b { font-family: var(--font-display); color: var(--wine); font-size: 1.1rem; }
 .steps span { color: var(--muted); font-size: .93rem; }
-@media (max-width: 720px) { .steps { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 420px) { .steps { grid-template-columns: 1fr; } }
-
-/* Offer tiers */
-.tiers { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.tier { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 6px; align-content: start; min-width: 0; }
-.tier.featured { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
-.tier-tag { font-size: .8rem; font-weight: 600; color: var(--gold); letter-spacing: .04em; }
-.tier-price { font-family: var(--font-display); font-weight: 700; color: var(--wine); font-size: 1.15rem; }
-.tier ul { margin: 6px 0 0; padding-inline-start: 18px; color: var(--muted); font-size: .93rem; display: grid; gap: 4px; }
-.tier ul li::marker { color: var(--gold); }
-@media (max-width: 720px) { .tiers { grid-template-columns: 1fr; } }
 
 /* Closing */
 .closing {
@@ -150,6 +154,9 @@ p { margin: 0; }
 }
 .closing h2 { color: #fff; }
 .closing p { opacity: .9; max-width: 60ch; }
+.work-info { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; margin: 4px 0 0; font-size: .92rem; }
+.work-info li { display: flex; gap: 8px; align-items: center; }
+.work-info li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: .7; }
 .contact { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 .contact-item {
   display: flex; align-items: center; gap: 10px; min-width: 0;
@@ -157,7 +164,7 @@ p { margin: 0; }
   border-radius: 12px; padding: 10px 14px;
 }
 .contact-item .k { font-size: .8rem; opacity: .8; }
-.contact-item a { color: #fff; font-weight: 600; text-decoration: none; overflow-wrap: anywhere; user-select: all; }
+.contact-item a { color: #fff; font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
 .contact-item a:hover { text-decoration: underline; }
 .contact-item button {
   font: inherit; font-size: .8rem; cursor: pointer; color: #fff; background: transparent;
@@ -166,7 +173,7 @@ p { margin: 0; }
 .contact-item button:focus-visible, .contact-item a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 @media (max-width: 720px) {
-  .page { gap: 48px; padding-block: 32px 48px; }
+  .page { gap: 48px; padding-block: 16px 48px; }
   .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 28px; }
   .portrait { width: 170px; }
   .facts { justify-content: center; }
@@ -175,26 +182,36 @@ p { margin: 0; }
   .result.wide { grid-column: span 2; }
   .result.third { grid-column: span 1; }
   .result:last-child { grid-column: span 2; }
+  .review { grid-template-columns: 1fr; padding: 24px 20px; gap: 24px; }
+  .criteria { border-inline-start: 0; padding-inline-start: 0; border-top: 1px solid var(--line); padding-top: 20px; }
   .two-col { grid-template-columns: 1fr; }
-  .deliver { grid-template-columns: 1fr 1fr; }
-  .week { grid-template-columns: 64px 1fr; gap: 16px; }
+  .steps { grid-template-columns: 1fr 1fr; }
   .closing { padding: 28px 22px; }
 }
 @media (max-width: 420px) {
   .results { grid-template-columns: 1fr; }
   .result.wide, .result.third, .result:last-child { grid-column: span 1; }
-  .deliver { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .review blockquote { font-size: 1.1rem; }
 }
 </style>
 
-<main class="page" dir="rtl" lang="ar">
+<div class="lang-bar">
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" id="btn-ar" data-lang="ar" aria-pressed="true">العربية</button>
+    <button type="button" id="btn-en" data-lang="en" aria-pressed="false">English</button>
+  </div>
+</div>
+
+<!-- ===================== العربية ===================== -->
+<main class="page" id="ar" dir="rtl" lang="ar">
 
   <header class="hero">
     <div class="portrait"><img src="profile.jpg" alt="صورة رنيم علي"></div>
     <div>
       <span class="eyebrow">التسويق الرقمي والأداء</span>
       <h1>رنيم علي</h1>
-      <p class="latin-name" lang="en" dir="ltr">Raneem Ali</p>
+      <p class="second-name" lang="en" dir="ltr">Raneem Ali</p>
       <p class="role">مديرة تسويق ومديرة حملات إعلانية</p>
       <p class="lede">أساعد المتاجر الإلكترونية والشركات في السعودية والخليج على زيادة مبيعاتهم من الإعلانات، بنتائج واضحة يقدرون يقيسونها.</p>
       <ul class="facts">
@@ -249,6 +266,32 @@ p { margin: 0; }
     </div>
   </section>
 
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">آراء العملاء</span>
+      <h2>ماذا يقول عملائي</h2>
+    </div>
+    <div class="review">
+      <div>
+        <div class="stars" aria-label="تقييم 5 من 5">★★★★★</div>
+        <blockquote>اشتغلت أستاذة رنيم على حملاتنا وشغلها رائع جدًا وفاهمة في عملها بشكل واضح. سهولة في التواصل وتعديلات في نظام الحملات ليناسب المتجر الخاص بنا. ليس آخر تعامل بإذن الله.</blockquote>
+        <div class="who">
+          <strong>زياد أ.</strong>
+          <span>صاحب متجر Shopify · مشروع إدارة وإطلاق حملات على TikTok و Instagram و Google و Snapchat</span>
+        </div>
+      </div>
+      <ul class="criteria">
+        <li class="criteria-title">تقييم المشروع</li>
+        <li>الاحترافية بالتعامل <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+        <li>التواصل والمتابعة <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+        <li>جودة العمل المسلّم <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+        <li>الخبرة بمجال المشروع <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+        <li>التسليم في الموعد <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+        <li>التعامل معها مرة أخرى <span class="stars" aria-label="5 من 5">★★★★★</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="two-col">
     <div>
       <div class="section-head">
@@ -268,6 +311,14 @@ p { margin: 0; }
           <li>التعليم</li>
           <li>الخدمات</li>
           <li>الضيافة</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>منصات المتاجر</h3>
+        <ul class="tags">
+          <li>سلة</li>
+          <li>زد</li>
+          <li>Shopify</li>
         </ul>
       </div>
     </div>
@@ -326,6 +377,11 @@ p { margin: 0; }
   <section class="closing">
     <h2>يسعدني أتعرف عليكم</h2>
     <p>إذا عندكم متجر إلكتروني أو مشروع وتبون نتائج أوضح من إعلاناتكم، تواصلوا معي.</p>
+    <ul class="work-info">
+      <li>أعمل عن بُعد</li>
+      <li>اللغات: العربية والإنجليزية</li>
+      <li>متاحة بأوقات دوام الخليج</li>
+    </ul>
     <div class="contact">
       <div class="contact-item">
         <span class="k">الإيميل</span>
@@ -337,20 +393,245 @@ p { margin: 0; }
         <a href="https://wa.me/213562941562" class="num" dir="ltr" target="_blank" rel="noopener">+213 562 941 562</a>
         <button type="button" data-copy="+213562941562">نسخ</button>
       </div>
+      <div class="contact-item">
+        <span class="k">لينكدإن</span>
+        <a href="https://www.linkedin.com/in/raneemali-ads/" dir="ltr" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
+      </div>
     </div>
   </section>
 
 </main>
+
+<!-- ===================== English ===================== -->
+<main class="page" id="en" dir="ltr" lang="en" hidden>
+
+  <header class="hero">
+    <div class="portrait"><img src="profile.jpg" alt="Photo of Raneem Ali"></div>
+    <div>
+      <span class="eyebrow">Digital &amp; Performance Marketing</span>
+      <h1>Raneem Ali</h1>
+      <p class="second-name" lang="ar" dir="rtl">رنيم علي</p>
+      <p class="role">Marketing Manager &amp; Paid Media Manager</p>
+      <p class="lede">I help e-commerce stores and businesses in Saudi Arabia and the Gulf grow sales from their ads, with results they can measure.</p>
+      <ul class="facts">
+        <li><span class="num">4</span> years of experience</li>
+        <li>Saudi Arabia &amp; GCC</li>
+        <li>Meta · Google · TikTok · Snapchat</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="section-head">
+      <span class="eyebrow">About me</span>
+      <h2>Hi, I'm Raneem</h2>
+    </div>
+    <p>I specialize in digital marketing and paid advertising. Over 4 years I have worked as a marketing manager and paid media manager, and led a campaigns team. Most of my work has been with clients in Saudi Arabia and the Gulf, across e-commerce, real estate, education, services and hospitality.</p>
+    <p>What matters to me in every project is the real outcome: more sales and real customers, not just reach and engagement. That is why I always start with accurate tracking and tie every campaign to a clear goal the client can measure.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Results from campaigns I managed</span>
+      <h2>Real numbers from client accounts</h2>
+      <p>Mostly from e-commerce stores and lead generation campaigns for real estate companies.</p>
+    </div>
+    <div class="results">
+      <div class="result wide">
+        <span class="big num">+$1.43M</span>
+        <span class="label">Sales for an e-commerce store</span>
+        <span class="sub">At <span class="num">~4x</span> ROAS with <span class="num">20,600+</span> purchases</span>
+      </div>
+      <div class="result wide">
+        <span class="big num">4.93</span>
+        <span class="label">ROAS on Google Ads</span>
+        <span class="sub">With more than <span class="num">10,000</span> purchases</span>
+      </div>
+      <div class="result third">
+        <span class="big num">20.6x</span>
+        <span class="label">ROAS on a Meta campaign</span>
+        <span class="sub">My highest return on a single campaign</span>
+      </div>
+      <div class="result third">
+        <span class="big num">$2.40</span>
+        <span class="label">Cost per lead</span>
+        <span class="sub">Lead generation for services</span>
+      </div>
+      <div class="result third">
+        <span class="big num">1,300+</span>
+        <span class="label">Customer conversations</span>
+        <span class="sub">From Meta messaging campaigns</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Client reviews</span>
+      <h2>What my clients say</h2>
+    </div>
+    <div class="review">
+      <div>
+        <div class="stars" aria-label="Rated 5 out of 5">★★★★★</div>
+        <blockquote>Raneem worked on our campaigns and her work is excellent. She clearly knows what she's doing. Communication was easy, and she adapted the campaign setup to fit our store. This won't be the last time we work together.</blockquote>
+        <div class="who">
+          <strong>Ziad A.</strong>
+          <span>Shopify store owner · Campaign setup and management on TikTok, Instagram, Google and Snapchat</span>
+        </div>
+        <p class="translated">Translated from Arabic.</p>
+      </div>
+      <ul class="criteria">
+        <li class="criteria-title">Project rating</li>
+        <li>Professionalism <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+        <li>Communication <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+        <li>Quality of work <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+        <li>Expertise <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+        <li>On-time delivery <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+        <li>Would hire again <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">Experience</span>
+        <h2>Roles I've held</h2>
+      </div>
+      <ul class="roles">
+        <li><strong>Marketing Manager</strong><span>Strategy, quarterly plans, consistent messaging and brand</span></li>
+        <li><strong>Paid Media Manager</strong><span>Planning, launching and optimizing paid campaigns across platforms</span></li>
+        <li><strong>Campaigns Team Lead</strong><span>Task allocation, performance tracking and delivery standards</span></li>
+      </ul>
+      <div class="skill-group" style="margin-top:28px">
+        <h3>Industries</h3>
+        <ul class="tags">
+          <li>E-commerce</li>
+          <li>Real estate</li>
+          <li>Education</li>
+          <li>Services</li>
+          <li>Hospitality</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Store platforms</h3>
+        <ul class="tags">
+          <li>Salla</li>
+          <li>Zid</li>
+          <li>Shopify</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">Skills</span>
+        <h2>What I do</h2>
+      </div>
+      <div class="skill-group">
+        <h3>Strategy</h3>
+        <ul class="tags">
+          <li>Market &amp; competitor analysis</li>
+          <li>Customer personas</li>
+          <li>Revenue-based goals</li>
+          <li>Quarterly plans</li>
+          <li>Content &amp; ads calendar</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Paid media &amp; lead generation</h3>
+        <ul class="tags">
+          <li>Meta Ads</li>
+          <li>Google Ads</li>
+          <li>TikTok Ads</li>
+          <li>Snapchat Ads</li>
+          <li>Customer journey to sale</li>
+          <li>Lead handoff to sales</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Tracking &amp; measurement</h3>
+        <ul class="tags">
+          <li>Pixel</li>
+          <li>GA4</li>
+          <li>GTM</li>
+          <li>CAC, CLV &amp; conversion dashboards</li>
+          <li>Reports &amp; recommendations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">How I work</span>
+      <h2>Working with clients</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Understand</b><span>Your market, competitors and customers, and audit tracking before any ad goes live.</span></li>
+      <li><b>Plan</b><span>A clear plan, consistent messaging and goals tied to sales.</span></li>
+      <li><b>Launch</b><span>Campaigns on Meta, Google, TikTok and Snapchat, with a customer journey that ends in a sale.</span></li>
+      <li><b>Measure &amp; improve</b><span>A dashboard, regular reports and ongoing optimization based on the numbers.</span></li>
+    </ol>
+  </section>
+
+  <section class="closing">
+    <h2>Let's get in touch</h2>
+    <p>If you run an online store or a business and want clearer results from your ads, I'd be glad to hear from you.</p>
+    <ul class="work-info">
+      <li>Working remotely</li>
+      <li>Languages: Arabic &amp; English</li>
+      <li>Available during Gulf business hours</li>
+    </ul>
+    <div class="contact">
+      <div class="contact-item">
+        <span class="k">Email</span>
+        <a href="mailto:raneemali947@gmail.com">raneemali947@gmail.com</a>
+        <button type="button" data-copy="raneemali947@gmail.com">Copy</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">WhatsApp / Phone</span>
+        <a href="https://wa.me/213562941562" class="num" target="_blank" rel="noopener">+213 562 941 562</a>
+        <button type="button" data-copy="+213562941562">Copy</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/raneemali-ads/" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 <script>
-document.querySelectorAll('[data-copy]').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var done = function () { btn.textContent = 'تم النسخ'; setTimeout(function () { btn.textContent = 'نسخ'; }, 1600); };
-    var fallback = function () {
-      var link = btn.parentElement.querySelector('a');
-      var range = document.createRange(); range.selectNodeContents(link);
-      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
-    };
-    try { navigator.clipboard.writeText(btn.dataset.copy).then(done, fallback); } catch (e) { fallback(); }
+(function () {
+  var pages = { ar: document.getElementById('ar'), en: document.getElementById('en') };
+  var buttons = document.querySelectorAll('.lang-switch button');
+  function setLang(lang) {
+    Object.keys(pages).forEach(function (k) { pages[k].hidden = k !== lang; });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('profile-lang', lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  var initial = 'ar';
+  if (location.hash === '#en') initial = 'en';
+  else { try { initial = localStorage.getItem('profile-lang') || 'ar'; } catch (e) {} }
+  setLang(initial === 'en' ? 'en' : 'ar');
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = btn.closest('[lang="en"]') ? 'Copied' : 'تم النسخ';
+        setTimeout(function () { btn.textContent = label; }, 1600);
+      };
+      var fallback = function () {
+        var link = btn.parentElement.querySelector('a');
+        var range = document.createRange(); range.selectNodeContents(link);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      };
+      try { navigator.clipboard.writeText(btn.dataset.copy).then(done, fallback); } catch (e) { fallback(); }
+    });
   });
-});
+})();
 </script>
