@@ -1,4 +1,4 @@
-<title>رنيم | التسويق الرقمي والأداء</title>
+<title>Raneem Ali | رنيم علي</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,6 +67,7 @@ p { margin: 0; }
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; color: var(--wine); }
+.hero .latin-name { font-family: var(--font-display); font-weight: 500; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; font-size: .9rem; }
 .hero .role { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; margin-top: 4px; }
 .hero .lede { color: var(--muted); margin-top: 16px; max-width: 58ch; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding: 0; list-style: none; }
@@ -126,6 +127,20 @@ p { margin: 0; }
 }
 .closing h2 { color: #fff; }
 .closing p { opacity: .9; max-width: 60ch; }
+.contact { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.contact-item {
+  display: flex; align-items: center; gap: 10px; min-width: 0;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+  border-radius: 12px; padding: 10px 14px;
+}
+.contact-item .k { font-size: .8rem; opacity: .8; }
+.contact-item a { color: #fff; font-weight: 600; text-decoration: none; overflow-wrap: anywhere; user-select: all; }
+.contact-item a:hover { text-decoration: underline; }
+.contact-item button {
+  font: inherit; font-size: .8rem; cursor: pointer; color: #fff; background: transparent;
+  border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 2px 10px;
+}
+.contact-item button:focus-visible, .contact-item a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 @media (max-width: 720px) {
   .page { gap: 48px; padding-block: 32px 48px; }
@@ -152,10 +167,11 @@ p { margin: 0; }
 <main class="page" dir="rtl" lang="ar">
 
   <header class="hero">
-    <div class="portrait"><img src="profile.jpg" alt="صورة رنيم"></div>
+    <div class="portrait"><img src="profile.jpg" alt="صورة رنيم علي"></div>
     <div>
       <span class="eyebrow">التسويق الرقمي والأداء</span>
-      <h1>رنيم</h1>
+      <h1>رنيم علي</h1>
+      <p class="latin-name" lang="en" dir="ltr">Raneem Ali</p>
       <p class="role">مديرة تسويق ومديرة حملات إعلانية</p>
       <p class="lede">أبني تسويقًا مربوطًا بالمبيعات، من التشخيص والاستراتيجية إلى حملات شغّالة ولوحة قياس واضحة. خلال 4 سنوات أدرت التسويق والحملات الإعلانية وقدت فريق حملات، وأغلب شغلي كان للسوق السعودي والخليجي.</p>
       <ul class="facts">
@@ -170,6 +186,7 @@ p { margin: 0; }
     <div class="section-head">
       <span class="eyebrow">نتائج من حملات أدرتها</span>
       <h2>أرقام حقيقية من حسابات عملاء</h2>
+      <p>أغلبها من متاجر إلكترونية، ومن حملات ليدز لشركات عقارية.</p>
     </div>
     <div class="results">
       <div class="result wide">
@@ -334,6 +351,31 @@ p { margin: 0; }
   <section class="closing">
     <h2>خلونا نبدأ بالتشخيص</h2>
     <p>أول خطوة جلسة نفهم فيها منتجكم وأهدافكم وأرقامكم الحالية، ومنها نبني خطة الـ 30 يوم على مقاسكم.</p>
+    <div class="contact">
+      <div class="contact-item">
+        <span class="k">الإيميل</span>
+        <a href="mailto:raneemali947@gmail.com" dir="ltr">raneemali947@gmail.com</a>
+        <button type="button" data-copy="raneemali947@gmail.com">نسخ</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">واتساب / جوال</span>
+        <a href="https://wa.me/213562941562" class="num" dir="ltr" target="_blank" rel="noopener">+213 562 941 562</a>
+        <button type="button" data-copy="+213562941562">نسخ</button>
+      </div>
+    </div>
   </section>
 
 </main>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'تم النسخ'; setTimeout(function () { btn.textContent = 'نسخ'; }, 1600); };
+    var fallback = function () {
+      var link = btn.parentElement.querySelector('a');
+      var range = document.createRange(); range.selectNodeContents(link);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+    };
+    try { navigator.clipboard.writeText(btn.dataset.copy).then(done, fallback); } catch (e) { fallback(); }
+  });
+});
+</script>
