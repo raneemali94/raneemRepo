@@ -102,7 +102,7 @@ p { margin: 0; }
 .results { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .result { background: var(--surface); padding: 24px; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .result.wide { grid-column: span 6; }
-.result.third { grid-column: span 3; }
+.result.third { grid-column: span 4; }
 .result .big { font-family: var(--font-display); font-size: 2.1rem; font-weight: 800; color: var(--wine); line-height: 1.2; }
 .result .label { font-weight: 600; }
 .result .sub { color: var(--muted); font-size: .9rem; }
@@ -128,6 +128,30 @@ p { margin: 0; }
 .criteria li { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .92rem; }
 .criteria li .stars { font-size: .85rem; letter-spacing: 1px; flex: none; }
 .criteria-title { font-size: .8rem; font-weight: 600; color: var(--gold); letter-spacing: .04em; margin-bottom: 4px; }
+
+/* Case study */
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; display: grid; gap: 24px; }
+.case-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.case-top > div { display: grid; gap: 2px; min-width: 0; }
+.case-top .big { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--wine); line-height: 1.2; justify-self: start; }
+.case-top .k { color: var(--muted); font-size: .9rem; }
+.platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.platform { border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 12px; min-width: 0; }
+.p-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.p-head .num { font-weight: 600; color: var(--wine); }
+.p-bar { height: 6px; border-radius: 999px; background: var(--wine-soft); overflow: hidden; }
+.p-bar i { display: block; height: 100%; background: var(--gold); border-radius: 999px; }
+.platform dl { margin: 0; display: grid; gap: 6px; }
+.platform dl div { display: flex; justify-content: space-between; gap: 12px; font-size: .92rem; }
+.platform dt { color: var(--muted); }
+.platform dd { margin: 0; font-weight: 600; }
+.case-note { color: var(--muted); font-size: .8rem; }
+@media (max-width: 720px) {
+  .case { padding: 20px; }
+  .case-top { grid-template-columns: 1fr 1fr; }
+  .platforms { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) { .case-top { grid-template-columns: 1fr; } }
 
 /* Experience */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -181,6 +205,7 @@ p { margin: 0; }
   .results { grid-template-columns: 1fr 1fr; }
   .result.wide { grid-column: span 2; }
   .result.third { grid-column: span 1; }
+  .result:last-child { grid-column: span 2; }
   .review { grid-template-columns: 1fr; padding: 24px 20px; gap: 24px; }
   .criteria { border-inline-start: 0; padding-inline-start: 0; border-top: 1px solid var(--line); padding-top: 20px; }
   .two-col { grid-template-columns: 1fr; }
@@ -189,7 +214,7 @@ p { margin: 0; }
 }
 @media (max-width: 420px) {
   .results { grid-template-columns: 1fr; }
-  .result.wide, .result.third { grid-column: span 1; }
+  .result.wide, .result.third, .result:last-child { grid-column: span 1; }
   .steps { grid-template-columns: 1fr; }
   .review blockquote { font-size: 1.1rem; }
 }
@@ -258,15 +283,46 @@ p { margin: 0; }
         <span class="sub">ليدات لقطاع الخدمات</span>
       </div>
       <div class="result third">
-        <span class="big num">+828</span>
-        <span class="label">ليد على Snapchat</span>
-        <span class="sub">بتكلفة <span class="num">~$2.05</span> لليد خلال أقل من 3 أسابيع</span>
-      </div>
-      <div class="result third">
         <span class="big num">+1,300</span>
         <span class="label">محادثة مع عملاء</span>
         <span class="sub">من حملات الرسائل على Meta</span>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">دراسة حالة حديثة · أكتوبر 2026</span>
+      <h2>حملة ليدز لعميل في السعودية على Snapchat و TikTok</h2>
+      <p>أدير الحملتين بالتوازي. خلال 19 يوم بقيت تكلفة الليد ثابتة حول 2 دولار على المنصتين.</p>
+    </div>
+    <div class="case">
+      <div class="case-top">
+        <div><span class="big num">+928</span><span class="k">ليد خلال 19 يوم</span></div>
+        <div><span class="big num">~$2.08</span><span class="k">متوسط تكلفة الليد</span></div>
+        <div><span class="big num">430K+</span><span class="k">ظهور على المنصتين</span></div>
+      </div>
+      <div class="platforms">
+        <div class="platform">
+          <div class="p-head"><h3>Snapchat</h3><span class="num">828 ليد</span></div>
+          <div class="p-bar"><i style="width:89.2%"></i></div>
+          <dl>
+            <div><dt>تكلفة الليد</dt><dd class="num">$2.05</dd></div>
+            <div><dt>نسبة النقر</dt><dd class="num">2.16%</dd></div>
+            <div><dt>الظهور</dt><dd class="num">273,514</dd></div>
+          </dl>
+        </div>
+        <div class="platform">
+          <div class="p-head"><h3>TikTok</h3><span class="num">100 ليد</span></div>
+          <div class="p-bar"><i style="width:10.8%"></i></div>
+          <dl>
+            <div><dt>تكلفة الليد</dt><dd class="num">$2.35</dd></div>
+            <div><dt>من النقرات إلى ليد</dt><dd class="num">13.8%</dd></div>
+            <div><dt>الظهور</dt><dd class="num">158,269</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="case-note">الأرقام من Snapchat Ads Manager و TikTok Ads Manager للفترة 1–19 أكتوبر 2026. تكلفة تيك توك محوّلة من الريال (8.82 ريال لليد).</p>
     </div>
   </section>
 
@@ -461,15 +517,46 @@ p { margin: 0; }
         <span class="sub">Lead generation for services</span>
       </div>
       <div class="result third">
-        <span class="big num">828+</span>
-        <span class="label">Leads on Snapchat</span>
-        <span class="sub">At <span class="num">~$2.05</span> per lead in under 3 weeks</span>
-      </div>
-      <div class="result third">
         <span class="big num">1,300+</span>
         <span class="label">Customer conversations</span>
         <span class="sub">From Meta messaging campaigns</span>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Recent case study · October 2026</span>
+      <h2>Lead generation for a Saudi client on Snapchat and TikTok</h2>
+      <p>I run both campaigns in parallel. Over 19 days the cost per lead stayed steady at around $2 on both platforms.</p>
+    </div>
+    <div class="case">
+      <div class="case-top">
+        <div><span class="big num">928+</span><span class="k">leads in 19 days</span></div>
+        <div><span class="big num">~$2.08</span><span class="k">average cost per lead</span></div>
+        <div><span class="big num">430K+</span><span class="k">impressions across both platforms</span></div>
+      </div>
+      <div class="platforms">
+        <div class="platform">
+          <div class="p-head"><h3>Snapchat</h3><span class="num">828 leads</span></div>
+          <div class="p-bar"><i style="width:89.2%"></i></div>
+          <dl>
+            <div><dt>Cost per lead</dt><dd class="num">$2.05</dd></div>
+            <div><dt>Click rate</dt><dd class="num">2.16%</dd></div>
+            <div><dt>Impressions</dt><dd class="num">273,514</dd></div>
+          </dl>
+        </div>
+        <div class="platform">
+          <div class="p-head"><h3>TikTok</h3><span class="num">100 leads</span></div>
+          <div class="p-bar"><i style="width:10.8%"></i></div>
+          <dl>
+            <div><dt>Cost per lead</dt><dd class="num">$2.35</dd></div>
+            <div><dt>Click to lead</dt><dd class="num">13.8%</dd></div>
+            <div><dt>Impressions</dt><dd class="num">158,269</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="case-note">Figures from Snapchat Ads Manager and TikTok Ads Manager, 1–19 October 2026. TikTok cost converted from SAR (8.82 SAR per lead).</p>
     </div>
   </section>
 
