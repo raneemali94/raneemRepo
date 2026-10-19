@@ -119,6 +119,15 @@ p { margin: 0; }
 @media (max-width: 720px) { .whys { grid-template-columns: 1fr; gap: 20px; } }
 @media print { .whys li, .faq > div { break-inside: avoid; } }
 
+/* Glossary */
+.glossary { margin: 16px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.glossary > div { background: var(--bg); padding: 14px 16px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.glossary dt { font-weight: 700; color: var(--wine); font-size: .9rem; }
+.glossary dd { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+@media (max-width: 720px) { .glossary { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .glossary { grid-template-columns: 1fr; } }
+@media print { .glossary { break-inside: avoid; } }
+
 /* About */
 .about { display: grid; gap: 14px; }
 .about .section-head { margin-bottom: 0; }
@@ -382,6 +391,12 @@ p { margin: 0; }
       </div>
       <p class="case-note">الأرقام من Snapchat Ads Manager و TikTok Ads Manager للفترة 1–19 أكتوبر 2026. تكلفة تيك توك محوّلة من الريال (8.82 ريال لليد).</p>
     </div>
+    <dl class="glossary">
+      <div><dt>ROAS</dt><dd>العائد على الإنفاق الإعلاني. عائد 4 يعني كل دولار إعلان جاب 4 دولار مبيعات.</dd></div>
+      <div><dt>CPL</dt><dd>تكلفة الليد، يعني قديش كلّف كل عميل محتمل ترك بياناته.</dd></div>
+      <div><dt>CTR</dt><dd>نسبة النقر، يعني كم شخص من كل 100 شافوا الإعلان كبسوا عليه.</dd></div>
+      <div><dt>CAC</dt><dd>تكلفة الحصول على عميل فعلي اشترى، مش بس ترك بياناته.</dd></div>
+    </dl>
   </section>
 
   <section>
@@ -691,6 +706,12 @@ p { margin: 0; }
       </div>
       <p class="case-note">Figures from Snapchat Ads Manager and TikTok Ads Manager, 1–19 October 2026. TikTok cost converted from SAR (8.82 SAR per lead).</p>
     </div>
+    <dl class="glossary">
+      <div><dt>ROAS</dt><dd>Return on ad spend. A ROAS of 4 means every $1 in ads brought $4 in sales.</dd></div>
+      <div><dt>CPL</dt><dd>Cost per lead: what each potential customer who left their details cost.</dd></div>
+      <div><dt>CTR</dt><dd>Click rate: how many of every 100 people who saw the ad clicked it.</dd></div>
+      <div><dt>CAC</dt><dd>Cost to acquire a paying customer, not just a lead.</dd></div>
+    </dl>
   </section>
 
   <section>
