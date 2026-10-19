@@ -134,6 +134,7 @@ a { color: inherit; text-decoration: none; }
 
 /* image crops — the original portrait, cropped inside its frame */
 .crop { background-image: url("assets/portrait.jpg"); background-repeat: no-repeat; }
+.crop.circle { border-radius: 50%; }
 
 /* ==========================================================================
    01 COVER
@@ -146,11 +147,11 @@ a { color: inherit; text-decoration: none; }
 }
 .cover-intro { font-size: 16px; line-height: 1.6; color: var(--mist); margin-top: 14px; max-width: 470px; }
 
-.cover-portrait { position: absolute; right: var(--m); top: 96px; width: 330px; height: 440px; }
+.cover-portrait { position: absolute; right: var(--m); top: 88px; width: 400px; height: 400px; }
 .cover-portrait .crop { position: relative; z-index: 1; }
 .cover-portrait .frame-line {
-  position: absolute; left: -18px; top: 18px; width: 330px; height: 440px;
-  border: 1px solid var(--blue-lt); z-index: 0;
+  position: absolute; left: -22px; top: 22px; width: 400px; height: 400px;
+  border: 1px solid var(--blue-lt); border-radius: 50%; z-index: 0;
 }
 
 .cover-base {
@@ -363,7 +364,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-body { margin-top: 18px; font-size: 15px; line-height: 1.65; color: var(--slate); max-width: 560px; }
 .about-portrait { position: absolute; right: var(--m); top: 104px; }
-.about-portrait .crop { box-shadow: -18px 18px 0 var(--paper); }
+.about-portrait .crop { box-shadow: -16px 16px 0 var(--paper); }
 .glossary {
   position: absolute; left: var(--m); right: var(--m); bottom: 52px;
   display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--g);

@@ -36,7 +36,7 @@ presentation has changed.
 | Folio / index | Inter SemiBold 9.5–10.5 px, tabular |
 
 ## Page types
-1. **Cover**: name as display type, portrait framed with an offset hairline, the lead result as a hero metric.
+1. **Cover**: name as display type, circular portrait with an offset blue hairline circle, the lead result as a hero metric.
 2. **Results**: data-led. One dominant metric, then a four-column metric row.
 3. **Case study opener**: navy, headline, then three oversized KPIs.
 4. **Case study breakdown**: lead-share bar (828 vs 100, drawn to scale) and Snapchat/TikTok spec tables.
@@ -45,7 +45,7 @@ presentation has changed.
 7. **Industries**: split layout with a 2 × 2 grid; each result in blue.
 8. **Seasons**: oversized headline with four columns.
 9. **Why**: navy, numbered editorial list.
-10. **About**: text with a tighter crop of the same portrait, plus a metrics glossary.
+10. **About**: text with a smaller circular crop of the same portrait, plus a metrics glossary.
 11. **Experience**: oversized role titles and typographic lists (no pills).
 12. **Skills**: three-column typographic lists.
 13. **Process**: navy, four steps on a connecting line.
@@ -53,10 +53,10 @@ presentation has changed.
 15. **Contact**: navy, display headline, linked contact table, QR on a white tile.
 
 ## Image treatment
-- The portrait is the original file. It is cropped only inside its baked-in ring, to a 3:4 frame (cover) and a 25:34 frame (about). No colour or retouching changes.
+- The portrait is the original file. It is cropped to a clean circle inside its baked-in gold ring, so the ring itself is not shown (cover and about). No colour or retouching changes.
 - The QR code is the original file, set on a white tile so it still scans.
 - No stock or added imagery.
 
 ## Rules
-- Square corners, no shadows, no gradients. Structure comes from hairlines and 2–4 px rules, not boxes.
+- Square corners (portrait circles aside), no shadows, no gradients. Structure comes from hairlines and 2–4 px rules, not boxes.
 - Numerals like `01` are index marks only. Every figure shown comes from the source.
