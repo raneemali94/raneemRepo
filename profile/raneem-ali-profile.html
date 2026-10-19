@@ -86,9 +86,10 @@ a{color:inherit;text-decoration:none}
 .rule.k{background:var(--rule-strong);height:1.5px}
 
 /* =========================== 01 COVER =========================== */
-.cover .photo{position:absolute;top:96px;left:var(--m);width:356px;height:482px;overflow:hidden;background:#e9e2d6}
-.cover .photo img{position:absolute;width:693px;left:-168px;top:-96px}
-.cover .photo-rule{position:absolute;top:120px;left:calc(var(--m) - 24px);width:356px;height:482px;border:1px solid var(--blue-soft);opacity:.55}
+/* portrait: clean circle cut from inside the original gold ring (centre 359,345 · r 314 in source px) */
+.cover .photo{position:absolute;top:150px;left:var(--m);width:380px;height:380px;border-radius:50%;overflow:hidden;background:#e9e2d6}
+.cover .photo img{position:absolute;width:435.7px;left:-27.2px;top:-18.8px}
+.cover .photo-rule{position:absolute;top:134px;left:calc(var(--m) - 16px);width:412px;height:412px;border-radius:50%;border:1px solid var(--blue-soft);opacity:.55}
 .cover .copy{position:absolute;top:96px;right:var(--m);width:560px}
 .cover .name{font-size:var(--t-display);font-weight:700;line-height:1.05;margin-top:26px;letter-spacing:-.01em}
 .cover .latin{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--on-navy-mute);margin-top:10px;direction:ltr;text-align:right}
@@ -201,9 +202,10 @@ a{color:inherit;text-decoration:none}
 .why .row .body{font-size:16px}
 
 /* =========================== 09 ABOUT =========================== */
-.about .photo{position:absolute;top:0;left:0;bottom:0;width:430px;background:#e9e2d6}
-.about .photo-in{position:absolute;inset:0;overflow:hidden}
-.about .photo img{position:absolute;width:1018px;left:-294px;top:-96px}
+.about .photo{position:absolute;top:0;left:0;bottom:0;width:430px;background:var(--navy)}
+.about .photo::before{content:"";position:absolute;top:216px;left:34px;width:362px;height:362px;border-radius:50%;border:1px solid var(--blue-soft);opacity:.55}
+.about .photo-in{position:absolute;top:232px;left:50px;width:330px;height:330px;border-radius:50%;overflow:hidden;background:#e9e2d6}
+.about .photo img{position:absolute;width:378.3px;left:-23.6px;top:-16.3px}
 .about .copy{position:absolute;right:var(--m);top:96px;width:540px}
 .about .h1.xl{font-size:64px}
 .about .p1{font-size:21px;font-weight:400;line-height:1.85;margin-top:30px;color:var(--ink)}
