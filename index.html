@@ -109,6 +109,19 @@ p { margin: 0; }
 .result .sub { color: var(--muted); font-size: .9rem; }
 .result .sub .num { color: var(--ink); font-weight: 600; }
 
+/* Short quotes */
+.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.quote { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 10px; align-content: space-between; min-width: 0; }
+.quote blockquote { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; line-height: 1.7; }
+.quote blockquote::before { content: "“"; color: var(--gold); font-size: 1.8rem; line-height: 0; vertical-align: -.35em; margin-inline-end: 4px; }
+.quote figcaption { color: var(--muted); font-size: .85rem; }
+.review .verified { color: var(--gold); font-size: .82rem; font-weight: 600; }
+.more-reviews { display: inline-block; margin-top: 14px; color: var(--wine); font-weight: 600; text-decoration: none; }
+.more-reviews:hover { text-decoration: underline; }
+.more-reviews:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+@media (max-width: 720px) { .quotes { grid-template-columns: 1fr; } }
+@media print { .quote { break-inside: avoid; } }
+
 /* Review */
 .review {
   background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
@@ -347,6 +360,7 @@ p { margin: 0; }
     <div class="section-head">
       <span class="eyebrow">آراء العملاء</span>
       <h2>ماذا يقول عملائي</h2>
+      <p>تقييم موثّق على مستقل، ورسائل وصلتني من عملاء على واتساب.</p>
     </div>
     <div class="review">
       <div>
@@ -355,6 +369,7 @@ p { margin: 0; }
         <div class="who">
           <strong>زياد أ.</strong>
           <span>صاحب متجر Shopify · مشروع إدارة وإطلاق حملات على TikTok و Instagram و Google و Snapchat</span>
+          <span class="verified">تقييم موثّق على منصة مستقل</span>
         </div>
       </div>
       <ul class="criteria">
@@ -367,6 +382,17 @@ p { margin: 0; }
         <li>التعامل معها مرة أخرى <span class="stars" aria-label="5 من 5">★★★★★</span></li>
       </ul>
     </div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>والله كلمات الشكر قليلة بحقك. من بعد شغلك ربنا أكرمني وصارت ناس غريبة تتواصل معي للشغل.</blockquote>
+        <figcaption>عميل · من محادثة واتساب</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>الترويج البارحة كان يجنن، طلبيات كثيرة.</blockquote>
+        <figcaption>عميل متجر · من محادثة واتساب</figcaption>
+      </figure>
+    </div>
+    <a class="more-reviews" href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">شوفوا كل تقييماتي على مستقل ←</a>
   </section>
 
   <section class="about">
@@ -482,6 +508,10 @@ p { margin: 0; }
         <span class="k">لينكدإن</span>
         <a href="https://www.linkedin.com/in/raneemali-ads/" dir="ltr" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
       </div>
+      <div class="contact-item">
+        <span class="k">مستقل</span>
+        <a href="https://mostaql.com/u/raneemali_21/reviews" dir="ltr" target="_blank" rel="noopener">mostaql.com/u/raneemali_21</a>
+      </div>
     </div>
     <div class="qr"><img src="profile-qr.png" alt="رمز QR للبروفايل"><span>امسح الرمز لفتح البروفايل أونلاين</span></div>
   </section>
@@ -583,6 +613,7 @@ p { margin: 0; }
     <div class="section-head">
       <span class="eyebrow">Client reviews</span>
       <h2>What my clients say</h2>
+      <p>A verified review on Mostaql, and messages clients sent me on WhatsApp.</p>
     </div>
     <div class="review">
       <div>
@@ -591,6 +622,7 @@ p { margin: 0; }
         <div class="who">
           <strong>Ziad A.</strong>
           <span>Shopify store owner · Campaign setup and management on TikTok, Instagram, Google and Snapchat</span>
+          <span class="verified">Verified review on Mostaql</span>
         </div>
         <p class="translated">Translated from Arabic.</p>
       </div>
@@ -604,6 +636,17 @@ p { margin: 0; }
         <li>Would hire again <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
       </ul>
     </div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>Words of thanks aren't enough. Since your work, I've been blessed with people I don't know reaching out to work with me.</blockquote>
+        <figcaption>Client · from a WhatsApp chat (translated)</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>Yesterday's promotion was amazing. Lots of orders.</blockquote>
+        <figcaption>Store client · from a WhatsApp chat (translated)</figcaption>
+      </figure>
+    </div>
+    <a class="more-reviews" href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">See all my reviews on Mostaql →</a>
   </section>
 
   <section class="about">
@@ -718,6 +761,10 @@ p { margin: 0; }
       <div class="contact-item">
         <span class="k">LinkedIn</span>
         <a href="https://www.linkedin.com/in/raneemali-ads/" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
+      </div>
+      <div class="contact-item">
+        <span class="k">Mostaql</span>
+        <a href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">mostaql.com/u/raneemali_21</a>
       </div>
     </div>
     <div class="qr"><img src="profile-qr.png" alt="QR code for the profile"><span>Scan to open the online profile</span></div>
