@@ -82,6 +82,7 @@ p { margin: 0; }
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; color: var(--wine); }
+#en .hero .second-name { text-align: left; }
 .hero .second-name { font-family: var(--font-display); font-weight: 500; color: var(--gold); letter-spacing: .06em; font-size: .95rem; }
 .hero .role { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; margin-top: 4px; }
 .hero .lede { color: var(--muted); margin-top: 16px; max-width: 58ch; }
@@ -196,8 +197,33 @@ p { margin: 0; }
 }
 .contact-item button:focus-visible, .contact-item a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
+/* Floating WhatsApp */
+.wa-float {
+  position: fixed; z-index: 20;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  left: calc(16px + env(safe-area-inset-left, 0px));
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--wine); color: #fff; text-decoration: none; font-weight: 600; font-size: .92rem;
+  padding: 10px 16px; border-radius: 999px; box-shadow: 0 6px 20px rgba(42, 26, 32, .25);
+}
+.wa-float:hover { filter: brightness(1.08); }
+.wa-float:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.page { padding-bottom: 96px; }
+
+.qr { display: none; }
+@media print {
+  .qr { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+  .qr img { width: 96px; height: 96px; border-radius: 8px; background: #fff; padding: 4px; }
+  .qr span { font-size: .85rem; opacity: .9; }
+  .lang-bar, .wa-float, .contact-item button { display: none !important; }
+  .page { padding-block: 0; gap: 36px; }
+  :root { --bg: #ffffff; }
+  .result, .review, .case, .steps li, .closing, .roles li, .skill-group, .section-head { break-inside: avoid; }
+  .section-head { break-after: avoid; }
+}
+
 @media (max-width: 720px) {
-  .page { gap: 48px; padding-block: 16px 48px; }
+  .page { gap: 48px; padding-block: 16px 96px; }
   .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 28px; }
   .portrait { width: 170px; }
   .facts { justify-content: center; }
@@ -246,20 +272,11 @@ p { margin: 0; }
     </div>
   </header>
 
-  <section class="about">
-    <div class="section-head">
-      <span class="eyebrow">نبذة عني</span>
-      <h2>مرحبًا، أنا رنيم</h2>
-    </div>
-    <p>متخصصة في التسويق الرقمي والإعلانات المدفوعة، وعندي 4 سنوات خبرة اشتغلت فيها مديرة حملات إعلانية وقدت فريق حملات. أغلب شغلي كان مع عملاء في السعودية والخليج، في المتاجر الإلكترونية والعقار والتعليم والخدمات والضيافة.</p>
-    <p>اللي يهمني بكل مشروع هو النتيجة الفعلية: مبيعات أكثر وعملاء حقيقيين، مو بس أرقام وصول وتفاعل. لذلك أبدأ دايمًا بالتتبع الصحيح، وأربط كل حملة بهدف واضح يقدر العميل يقيسه.</p>
-  </section>
-
   <section>
     <div class="section-head">
       <span class="eyebrow">نتائج من حملات أدرتها</span>
       <h2>أرقام حقيقية من حسابات عملاء</h2>
-      <p>أغلبها من متاجر إلكترونية، ومن حملات ليدز لشركات عقارية.</p>
+      <p>من متاجر إلكترونية، ومن حملات ليدز لشركات عقار وتمويل عقاري.</p>
     </div>
     <div class="results">
       <div class="result wide">
@@ -280,7 +297,7 @@ p { margin: 0; }
       <div class="result third">
         <span class="big num">$2.40</span>
         <span class="label">تكلفة العميل المحتمل</span>
-        <span class="sub">ليدات لقطاع الخدمات</span>
+        <span class="sub">ليدات لشركة تمويل عقاري</span>
       </div>
       <div class="result third">
         <span class="big num">+1,300</span>
@@ -293,7 +310,7 @@ p { margin: 0; }
   <section>
     <div class="section-head">
       <span class="eyebrow">دراسة حالة حديثة · أكتوبر 2026</span>
-      <h2>حملة ليدز لعميل في السعودية على Snapchat و TikTok</h2>
+      <h2>حملة ليدز لشركة عقارية سعودية على Snapchat و TikTok</h2>
       <p>أدير الحملتين بالتوازي. خلال 19 يوم بقيت تكلفة الليد ثابتة حول 2 دولار على المنصتين.</p>
     </div>
     <div class="case">
@@ -350,6 +367,15 @@ p { margin: 0; }
         <li>التعامل معها مرة أخرى <span class="stars" aria-label="5 من 5">★★★★★</span></li>
       </ul>
     </div>
+  </section>
+
+  <section class="about">
+    <div class="section-head">
+      <span class="eyebrow">نبذة عني</span>
+      <h2>مرحبًا، أنا رنيم</h2>
+    </div>
+    <p>متخصصة في التسويق الرقمي والإعلانات المدفوعة، وعندي 4 سنوات خبرة اشتغلت فيها مديرة حملات إعلانية وقدت فريق حملات. أغلب شغلي كان مع عملاء في السعودية والخليج، في المتاجر الإلكترونية والعقار والتعليم والخدمات والضيافة.</p>
+    <p>اللي يهمني بكل مشروع هو النتيجة الفعلية: مبيعات أكثر وعملاء حقيقيين، مو بس أرقام وصول وتفاعل. لذلك أبدأ دايمًا بالتتبع الصحيح، وأربط كل حملة بهدف واضح يقدر العميل يقيسه.</p>
   </section>
 
   <section class="two-col">
@@ -457,8 +483,10 @@ p { margin: 0; }
         <a href="https://www.linkedin.com/in/raneemali-ads/" dir="ltr" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
       </div>
     </div>
+    <div class="qr"><img src="profile-qr.png" alt="رمز QR للبروفايل"><span>امسح الرمز لفتح البروفايل أونلاين</span></div>
   </section>
 
+  <a class="wa-float" href="https://wa.me/213562941562" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>واتساب</span></a>
 </main>
 
 <!-- ===================== English ===================== -->
@@ -480,20 +508,11 @@ p { margin: 0; }
     </div>
   </header>
 
-  <section class="about">
-    <div class="section-head">
-      <span class="eyebrow">About me</span>
-      <h2>Hi, I'm Raneem</h2>
-    </div>
-    <p>I specialize in digital marketing and paid advertising. Over 4 years I have worked as a paid media manager and led a campaigns team. Most of my work has been with clients in Saudi Arabia and the Gulf, across e-commerce, real estate, education, services and hospitality.</p>
-    <p>What matters to me in every project is the real outcome: more sales and real customers, not just reach and engagement. That is why I always start with accurate tracking and tie every campaign to a clear goal the client can measure.</p>
-  </section>
-
   <section>
     <div class="section-head">
       <span class="eyebrow">Results from campaigns I managed</span>
       <h2>Real numbers from client accounts</h2>
-      <p>Mostly from e-commerce stores and lead generation campaigns for real estate companies.</p>
+      <p>From e-commerce stores and lead generation campaigns for real estate and real estate financing companies.</p>
     </div>
     <div class="results">
       <div class="result wide">
@@ -514,7 +533,7 @@ p { margin: 0; }
       <div class="result third">
         <span class="big num">$2.40</span>
         <span class="label">Cost per lead</span>
-        <span class="sub">Lead generation for services</span>
+        <span class="sub">Leads for a real estate financing company</span>
       </div>
       <div class="result third">
         <span class="big num">1,300+</span>
@@ -527,7 +546,7 @@ p { margin: 0; }
   <section>
     <div class="section-head">
       <span class="eyebrow">Recent case study · October 2026</span>
-      <h2>Lead generation for a Saudi client on Snapchat and TikTok</h2>
+      <h2>Lead generation for a Saudi real estate company on Snapchat and TikTok</h2>
       <p>I run both campaigns in parallel. Over 19 days the cost per lead stayed steady at around $2 on both platforms.</p>
     </div>
     <div class="case">
@@ -585,6 +604,15 @@ p { margin: 0; }
         <li>Would hire again <span class="stars" aria-label="5 out of 5">★★★★★</span></li>
       </ul>
     </div>
+  </section>
+
+  <section class="about">
+    <div class="section-head">
+      <span class="eyebrow">About me</span>
+      <h2>Hi, I'm Raneem</h2>
+    </div>
+    <p>I specialize in digital marketing and paid advertising. Over 4 years I have worked as a paid media manager and led a campaigns team. Most of my work has been with clients in Saudi Arabia and the Gulf, across e-commerce, real estate, education, services and hospitality.</p>
+    <p>What matters to me in every project is the real outcome: more sales and real customers, not just reach and engagement. That is why I always start with accurate tracking and tie every campaign to a clear goal the client can measure.</p>
   </section>
 
   <section class="two-col">
@@ -692,8 +720,10 @@ p { margin: 0; }
         <a href="https://www.linkedin.com/in/raneemali-ads/" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
       </div>
     </div>
+    <div class="qr"><img src="profile-qr.png" alt="QR code for the profile"><span>Scan to open the online profile</span></div>
   </section>
 
+  <a class="wa-float" href="https://wa.me/213562941562" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>WhatsApp</span></a>
 </main>
 
 <script>
