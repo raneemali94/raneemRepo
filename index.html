@@ -99,10 +99,10 @@ p { margin: 0; }
 /* Results */
 .section-head { display: grid; gap: 6px; margin-bottom: 28px; }
 .section-head p { color: var(--muted); max-width: 60ch; }
-.results { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.results { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .result { background: var(--surface); padding: 24px; display: grid; gap: 6px; align-content: start; min-width: 0; }
-.result.wide { grid-column: span 3; }
-.result.third { grid-column: span 2; }
+.result.wide { grid-column: span 6; }
+.result.third { grid-column: span 3; }
 .result .big { font-family: var(--font-display); font-size: 2.1rem; font-weight: 800; color: var(--wine); line-height: 1.2; }
 .result .label { font-weight: 600; }
 .result .sub { color: var(--muted); font-size: .9rem; }
@@ -181,7 +181,6 @@ p { margin: 0; }
   .results { grid-template-columns: 1fr 1fr; }
   .result.wide { grid-column: span 2; }
   .result.third { grid-column: span 1; }
-  .result:last-child { grid-column: span 2; }
   .review { grid-template-columns: 1fr; padding: 24px 20px; gap: 24px; }
   .criteria { border-inline-start: 0; padding-inline-start: 0; border-top: 1px solid var(--line); padding-top: 20px; }
   .two-col { grid-template-columns: 1fr; }
@@ -190,7 +189,7 @@ p { margin: 0; }
 }
 @media (max-width: 420px) {
   .results { grid-template-columns: 1fr; }
-  .result.wide, .result.third, .result:last-child { grid-column: span 1; }
+  .result.wide, .result.third { grid-column: span 1; }
   .steps { grid-template-columns: 1fr; }
   .review blockquote { font-size: 1.1rem; }
 }
@@ -257,6 +256,11 @@ p { margin: 0; }
         <span class="big num">$2.40</span>
         <span class="label">تكلفة العميل المحتمل</span>
         <span class="sub">ليدات لقطاع الخدمات</span>
+      </div>
+      <div class="result third">
+        <span class="big num">+828</span>
+        <span class="label">ليد على Snapchat</span>
+        <span class="sub">بتكلفة <span class="num">~$2.05</span> لليد خلال أقل من 3 أسابيع</span>
       </div>
       <div class="result third">
         <span class="big num">+1,300</span>
@@ -455,6 +459,11 @@ p { margin: 0; }
         <span class="big num">$2.40</span>
         <span class="label">Cost per lead</span>
         <span class="sub">Lead generation for services</span>
+      </div>
+      <div class="result third">
+        <span class="big num">828+</span>
+        <span class="label">Leads on Snapchat</span>
+        <span class="sub">At <span class="num">~$2.05</span> per lead in under 3 weeks</span>
       </div>
       <div class="result third">
         <span class="big num">1,300+</span>

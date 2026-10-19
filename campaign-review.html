@@ -1,0 +1,293 @@
+<title>مراجعة حملات الليدز أكتوبر</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: an audit memo in one RTL column; verdict first, then a per-campaign ledger, then prioritized actions with a severity stripe. */
+:root {
+  --bg: #faf6f3;
+  --surface: #ffffff;
+  --ink: #2a1a20;
+  --muted: #6e5a61;
+  --line: #e8dcdd;
+  --wine: #8e1f3c;
+  --wine-soft: #f4e3e7;
+  --gold: #b48a3c;
+  --good: #2f7d4f;
+  --warn: #b7791f;
+  --bad: #b3322f;
+  --font-display: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+    --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+    --good: #5cc488; --warn: #e3a94a; --bad: #ee7a76;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+  --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a;
+  --good: #5cc488; --warn: #e3a94a; --bad: #ee7a76;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.8; }
+.page {
+  direction: rtl; max-width: 900px; margin: 0 auto;
+  padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 56px;
+}
+h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.35; text-wrap: balance; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 800; color: var(--wine); }
+h2 { font-size: 1.45rem; font-weight: 700; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font-size: .8rem; font-weight: 600; color: var(--gold); letter-spacing: .04em; display: block; margin-bottom: 6px; }
+.num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+.section-head { display: grid; gap: 6px; margin-bottom: 20px; }
+.section-head p { color: var(--muted); max-width: 64ch; }
+.intro p { color: var(--muted); max-width: 64ch; margin-top: 10px; }
+
+/* Verdict tiles */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.kpi { background: var(--surface); padding: 18px 20px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.kpi .v { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--wine); line-height: 1.2; }
+.kpi .k { font-weight: 600; font-size: .92rem; }
+.kpi .s { color: var(--muted); font-size: .82rem; }
+.verdict { margin-top: 16px; background: var(--wine-soft); border-radius: 12px; padding: 16px 20px; max-width: none; }
+.verdict strong { font-family: var(--font-display); }
+
+/* Ledger */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: .92rem; }
+th, td { padding: 12px 14px; text-align: start; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-weight: 600; color: var(--muted); font-size: .8rem; background: var(--bg); }
+td.n { font-variant-numeric: tabular-nums; direction: ltr; text-align: end; }
+th.n { text-align: end; }
+tr:last-child td { border-bottom: 0; }
+tr.platform td { background: var(--wine-soft); font-weight: 700; font-family: var(--font-display); }
+.pill { display: inline-block; font-size: .75rem; font-weight: 600; padding: 1px 10px; border-radius: 999px; border: 1px solid currentColor; }
+.pill.good { color: var(--good); }
+.pill.warn { color: var(--warn); }
+.pill.bad { color: var(--bad); }
+.pill.off { color: var(--muted); }
+.note { color: var(--muted); font-size: .85rem; margin-top: 10px; }
+
+/* Findings */
+.findings { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.findings > div { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+.findings ul { margin: 10px 0 0; padding-inline-start: 20px; display: grid; gap: 8px; }
+.findings .good-list li::marker { color: var(--good); }
+.findings .bad-list li::marker { color: var(--bad); }
+
+/* Actions */
+.actions { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.action {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 20px; display: grid; gap: 6px;
+  border-inline-start: 4px solid var(--line);
+}
+.action.p1 { border-inline-start-color: var(--bad); }
+.action.p2 { border-inline-start-color: var(--warn); }
+.action.p3 { border-inline-start-color: var(--good); }
+.action-top { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline; justify-content: space-between; }
+.action-top h3 { min-width: 0; }
+.tag { font-size: .75rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.action p { color: var(--muted); }
+.action p b { color: var(--ink); font-weight: 600; }
+.group-title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--gold); margin: 12px 0 0; }
+
+.ask { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.ask li { display: flex; gap: 10px; align-items: baseline; }
+.ask li::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); transform: translateY(-2px); }
+
+@media (max-width: 720px) {
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .findings { grid-template-columns: 1fr; }
+}
+</style>
+
+<main class="page" dir="rtl" lang="ar">
+
+  <header class="intro">
+    <span class="eyebrow">مراجعة أداء · <span class="num">1–19</span> أكتوبر 2026</span>
+    <h1>حملات الليدز على سناب شات وتيك توك</h1>
+    <p>قراءة للأرقام الظاهرة في لقطتي الشاشة من Snapchat Ads Manager و TikTok Ads Manager، مع أهم التحسينات مرتبة حسب الأولوية. أرقام تيك توك بالريال، وحوّلتها للدولار بسعر 3.75 للمقارنة.</p>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">الخلاصة</span>
+      <h2>الحملات صحية، والفرصة في التوسّع وتحسين إعلانات تيك توك</h2>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><span class="v num">$2.05</span><span class="k">تكلفة الليد على سناب</span><span class="s"><span class="num">828</span> ليد من حملتين</span></div>
+      <div class="kpi"><span class="v num">$2.35</span><span class="k">تكلفة الليد على تيك توك</span><span class="s"><span class="num">8.82</span> ريال · <span class="num">100</span> ليد</span></div>
+      <div class="kpi"><span class="v num">2.16%</span><span class="k">نسبة النقر على سناب</span><span class="s">ممتازة لسناب</span></div>
+      <div class="kpi"><span class="v num">0.46%</span><span class="k">نسبة النقر على تيك توك</span><span class="s">أقل من المعتاد</span></div>
+    </div>
+    <p class="verdict"><strong>الحكم:</strong> تكلفة الليد على المنصتين قريبة وممتازة (حوالي 2 دولار). سناب جاهز للتوسّع لأن المصروف اليومي ثابت عند السقف والتكلفة مستقرة. نقطة الضعف الواضحة هي نسبة النقر على تيك توك: الناس اللي بتضغط بتتحول بشكل ممتاز، بس قليل منهم بيضغط، فالمشكلة بالإعلان نفسه مش بالاستهداف أو الصفحة.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">تفاصيل الحملات</span>
+      <h2>الأرقام حملة حملة</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>الحملة</th><th>الحالة</th>
+            <th class="n">المصروف</th><th class="n">الليدز</th><th class="n">تكلفة الليد</th>
+            <th class="n">الظهور</th><th class="n">CPM</th><th class="n">CTR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="platform"><td colspan="8">Snapchat · بالدولار</td></tr>
+          <tr>
+            <td>2026-10-01</td><td><span class="pill good">شغالة</span></td>
+            <td class="n">$1,477.90</td><td class="n">729</td><td class="n">$2.03</td>
+            <td class="n">232,730</td><td class="n">$6.35</td><td class="n">—</td>
+          </tr>
+          <tr>
+            <td>Lead Hajjer - 11 Oct</td><td><span class="pill good">شغالة</span></td>
+            <td class="n">$216.28</td><td class="n">99</td><td class="n">$2.18</td>
+            <td class="n">34,350</td><td class="n">$6.30</td><td class="n">—</td>
+          </tr>
+          <tr>
+            <td>إجمالي الحساب</td><td></td>
+            <td class="n">$1,762.44</td><td class="n">828+</td><td class="n">~$2.05</td>
+            <td class="n">273,514</td><td class="n">~$6.44</td><td class="n">2.16%</td>
+          </tr>
+          <tr class="platform"><td colspan="8">TikTok · بالريال · 11–19 أكتوبر</td></tr>
+          <tr>
+            <td>Lead - TC - 11 Oct</td><td><span class="pill warn">شغالة · صرف أقل من الميزانية</span></td>
+            <td class="n">527.07</td><td class="n">61</td><td class="n">8.64</td>
+            <td class="n">105,604</td><td class="n">4.99</td><td class="n">0.46%</td>
+          </tr>
+          <tr>
+            <td>2026-08-19</td><td><span class="pill off">متوقفة</span></td>
+            <td class="n">355.41</td><td class="n">39</td><td class="n">9.11</td>
+            <td class="n">52,665</td><td class="n">6.75</td><td class="n">0.46%</td>
+          </tr>
+          <tr>
+            <td>الإجمالي</td><td></td>
+            <td class="n">882.48</td><td class="n">100</td><td class="n">8.82</td>
+            <td class="n">158,269</td><td class="n">5.58</td><td class="n">0.46%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">إجمالي سناب يشمل حوالي 68 دولار من حملات غير ظاهرة باللقطة، لذلك عدد الليدز الفعلي ممكن يكون أعلى من 828 بقليل.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">القراءة</span>
+      <h2>شو شغّال وشو محتاج تدخّل</h2>
+    </div>
+    <div class="findings">
+      <div>
+        <h3>شغّال منيح</h3>
+        <ul class="good-list">
+          <li>تكلفة الليد على سناب ثابتة حول 2 دولار على 19 يوم بدون ارتفاع.</li>
+          <li>من 9 أكتوبر صار الظهور اليومي على سناب أعلى (حوالي 16,500) مع مصروف أقل (حوالي 80 دولار)، يعني الخوارزمية لقت جمهورها والتكلفة لكل ظهور نزلت.</li>
+          <li>على تيك توك، حوالي 14% من اللي بيضغطوا بيصيروا ليدز. هاي نسبة قوية وبتعني إن النموذج والعرض مقنعين.</li>
+          <li>CPM تيك توك رخيص جدًا (حوالي 1.33 دولار)، فأي تحسين بنسبة النقر رح ينزّل تكلفة الليد بسرعة.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>محتاج تدخّل</h3>
+        <ul class="bad-list">
+          <li>نسبة النقر على تيك توك 0.46%، تقريبًا نص المعدل المعتاد للمنصة. هذا أكبر سبب لارتفاع تكلفة الليد هناك.</li>
+          <li>حملة تيك توك الجديدة صرفت حوالي 59 ريال باليوم من ميزانية 168 ريال، يعني حوالي 35% بس.</li>
+          <li>في إعلان عليه مشكلة مراجعة على تيك توك.</li>
+          <li>حملتين ليدز على سناب شغالين بنفس الوقت، وإذا جمهورهم نفسه رح ينافسوا بعض ويرفعوا التكلفة.</li>
+          <li>مصروف سناب اليومي خط مستقيم، يعني الحملة بتوصل لسقف الميزانية كل يوم وفي طلب أكثر من اللي عم ندفعه.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">خطة التحسين</span>
+      <h2>الخطوات مرتبة حسب الأولوية</h2>
+      <p>الأحمر اليوم، والأصفر هالأسبوع، والأخضر متابعة مستمرة.</p>
+    </div>
+
+    <p class="group-title">تيك توك</p>
+    <ol class="actions">
+      <li class="action p1">
+        <div class="action-top"><h3>صلّحي الإعلان اللي عليه مشكلة مراجعة</h3><span class="tag">اليوم</span></div>
+        <p>إعلان مرفوض بيقلل عدد الإعلانات اللي الخوارزمية بتختبرها، وممكن يكون سبب جزئي لضعف الصرف. شوفي سبب الرفض، عدّلي النص أو الفيديو، وأعيدي التقديم.</p>
+      </li>
+      <li class="action p1">
+        <div class="action-top"><h3>اطلقي 3 إلى 5 فيديوهات جديدة بهوك أقوى</h3><span class="tag">هالأسبوع</span></div>
+        <p>الهدف <b>رفع CTR من 0.46% لفوق 1%</b>. أول ثانيتين هم الأهم: سؤال مباشر أو رقم أو مشهد للمنتج. أسلوب UGC وكأنه محتوى عادي مش إعلان، ونص عربي ظاهر على الشاشة، ودعوة واضحة لتعبئة النموذج. إذا CTR وصل 1% مع نفس نسبة التحويل، تكلفة الليد بتنزل تقريبًا للنص.</p>
+      </li>
+      <li class="action p2">
+        <div class="action-top"><h3>حلّي مشكلة الصرف الأقل من الميزانية</h3><span class="tag">هالأسبوع</span></div>
+        <p>إذا الحملة على <b>Cost Cap</b> أو حد مزايدة، ارفعيه 15 إلى 20% أو جربي Lowest Cost. وإذا الجمهور ضيق، وسّعيه أو جربي الاستهداف المفتوح. ملاحظة: إذا الميزانية انرفعت مؤخرًا لـ 168 ريال، فالصرف الأقل طبيعي لكم يوم.</p>
+      </li>
+      <li class="action p3">
+        <div class="action-top"><h3>نظّفي المسودات وزيدي أعمدة المتابعة</h3><span class="tag">متابعة</span></div>
+        <p>في 16 حملة مسودة، احذفي اللي ما رح تستعمليها. وزيدي أعمدة: <b>Frequency</b>، ونسبة مشاهدة الفيديو لثانيتين و6 ثواني، ونسبة إكمال النموذج. هيك بتعرفي إذا المشكلة بالهوك أو بباقي الفيديو.</p>
+      </li>
+    </ol>
+
+    <p class="group-title">سناب شات</p>
+    <ol class="actions">
+      <li class="action p2">
+        <div class="action-top"><h3>كبّري ميزانية حملة 2026-10-01 تدريجيًا</h3><span class="tag">هالأسبوع</span></div>
+        <p>الحملة بتصرف كامل ميزانيتها يوميًا وتكلفة الليد مستقرة عند 2.03 دولار. زيدي الميزانية <b>20% كل 3 أيام</b>، وطالما تكلفة الليد تحت 2.50 دولار وجودة الليدز تمام، استمري. زيادات كبيرة دفعة وحدة بترجّع الحملة لمرحلة التعلّم.</p>
+      </li>
+      <li class="action p2">
+        <div class="action-top"><h3>تأكدي إن الحملتين ما بيتنافسوا على نفس الجمهور</h3><span class="tag">هالأسبوع</span></div>
+        <p>إذا الحملتين لنفس المشروع ونفس الجمهور، الأفضل تدمجيهم بحملة وحدة بميزانية أكبر، أو تستثني جمهور الوحدة من الثانية. إذا كل وحدة لمشروع مختلف، ما في مشكلة.</p>
+      </li>
+      <li class="action p3">
+        <div class="action-top"><h3>جهّزي إعلانات جديدة قبل ما يتعب الجمهور</h3><span class="tag">متابعة</span></div>
+        <p>الحملة شغالة من 19 يوم. زيدي عمود <b>Frequency</b>، وإذا تعدّى 3 أو بلشت نسبة النقر تنزل، بدّلي الإعلانات. خلي عندك 2 أو 3 إعلانات جاهزة.</p>
+      </li>
+    </ol>
+
+    <p class="group-title">المنصتين</p>
+    <ol class="actions">
+      <li class="action p1">
+        <div class="action-top"><h3>قيسي جودة الليدز، مش بس تكلفتها</h3><span class="tag">هالأسبوع</span></div>
+        <p>اطلبي من فريق المبيعات لكل منصة: كم ليد تم التواصل معه، كم واحد جاد، وكم وصل لموعد أو صفقة. ممكن تيك توك يطلع أغلى بالليد بس أرخص بالصفقة، أو العكس. <b>القرار بتوزيع الميزانية لازم ينبني على هالأرقام.</b></p>
+      </li>
+      <li class="action p2">
+        <div class="action-top"><h3>زيدي سؤال تأهيل بنموذج الليد</h3><span class="tag">هالأسبوع</span></div>
+        <p>سؤال واحد متل الميزانية أو موعد الشراء المتوقع. ممكن ترتفع تكلفة الليد شوي، بس فريق المبيعات بيوفّر وقت كبير على الليدز غير الجادة.</p>
+      </li>
+      <li class="action p3">
+        <div class="action-top"><h3>ثبّتي سرعة الرد على الليدز</h3><span class="tag">متابعة</span></div>
+        <p>الليد اللي بيتواصلوا معه خلال أول ساعة نسبة تحويله أعلى بكثير. إذا ممكن، خلي الليدز توصل لفريق المبيعات مباشرة على واتساب أو CRM، مش بملف بآخر اليوم.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">لتحليل أدق</span>
+      <h2>شو بحتاج أشوف كمان</h2>
+    </div>
+    <ul class="ask">
+      <li>جودة الليدز من فريق المبيعات لكل منصة: كم جاد وكم صفقة.</li>
+      <li>عمود Frequency على المنصتين.</li>
+      <li>الإعلانات نفسها (الفيديوهات والصور) مع CTR لكل إعلان.</li>
+      <li>إعدادات المزايدة والجمهور لحملة تيك توك الجديدة.</li>
+      <li>المجال والمشروع، حتى أقارن الأرقام بمعدلات القطاع.</li>
+    </ul>
+  </section>
+
+</main>
