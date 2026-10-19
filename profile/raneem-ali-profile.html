@@ -86,9 +86,9 @@ a{color:inherit;text-decoration:none}
 .rule.k{background:var(--rule-strong);height:1.5px}
 
 /* =========================== 01 COVER =========================== */
-/* portrait: clean circle cut from inside the original gold ring (centre 359,345 · r 314 in source px) */
-.cover .photo{position:absolute;top:150px;left:var(--m);width:380px;height:380px;border-radius:50%;overflow:hidden;background:#e9e2d6}
-.cover .photo img{position:absolute;width:435.7px;left:-27.2px;top:-18.8px}
+/* portrait-circle.jpg: circle cut from inside the original gold ring of portrait.jpg (centre 359,345 · r 314) */
+.cover .photo{position:absolute;top:150px;left:var(--m);width:380px;height:380px}
+.cover .photo img{display:block;width:100%;height:100%}
 .cover .photo-rule{position:absolute;top:134px;left:calc(var(--m) - 16px);width:412px;height:412px;border-radius:50%;border:1px solid var(--blue-soft);opacity:.55}
 .cover .copy{position:absolute;top:96px;right:var(--m);width:560px}
 .cover .name{font-size:var(--t-display);font-weight:700;line-height:1.05;margin-top:26px;letter-spacing:-.01em}
@@ -204,8 +204,8 @@ a{color:inherit;text-decoration:none}
 /* =========================== 09 ABOUT =========================== */
 .about .photo{position:absolute;top:0;left:0;bottom:0;width:430px;background:var(--navy)}
 .about .photo::before{content:"";position:absolute;top:216px;left:34px;width:362px;height:362px;border-radius:50%;border:1px solid var(--blue-soft);opacity:.55}
-.about .photo-in{position:absolute;top:232px;left:50px;width:330px;height:330px;border-radius:50%;overflow:hidden;background:#e9e2d6}
-.about .photo img{position:absolute;width:378.3px;left:-23.6px;top:-16.3px}
+.about .photo-in{position:absolute;top:232px;left:50px;width:330px;height:330px}
+.about .photo img{display:block;width:100%;height:100%}
 .about .copy{position:absolute;right:var(--m);top:96px;width:540px}
 .about .h1.xl{font-size:64px}
 .about .p1{font-size:21px;font-weight:400;line-height:1.85;margin-top:30px;color:var(--ink)}
@@ -276,7 +276,7 @@ a{color:inherit;text-decoration:none}
 <!-- ============ 01 · COVER ============ -->
 <section class="page dark cover">
   <div class="photo-rule"></div>
-  <div class="photo"><img src="assets/portrait.jpg" alt="رنيم علي"></div>
+  <div class="photo"><img src="assets/portrait-circle.jpg" alt="رنيم علي"></div>
   <div class="copy">
     <div class="eyebrow"><span class="bar"></span>التسويق الرقمي والأداء</div>
     <h1 class="name">رنيم علي</h1>
@@ -476,7 +476,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- ============ 09 · ABOUT ============ -->
 <section class="page about">
-  <div class="photo"><div class="photo-in"><img src="assets/portrait.jpg" alt="رنيم علي"></div></div>
+  <div class="photo"><div class="photo-in"><img src="assets/portrait-circle.jpg" alt="رنيم علي"></div></div>
   <div class="rh" style="left:470px"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
   <div class="copy">
     <div class="eyebrow"><span class="idx">06</span><span class="bar"></span>نبذة عني</div>
