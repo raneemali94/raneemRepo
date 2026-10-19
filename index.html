@@ -128,6 +128,14 @@ p { margin: 0; }
 @media (max-width: 420px) { .glossary { grid-template-columns: 1fr; } }
 @media print { .glossary { break-inside: avoid; } }
 
+/* Seasons */
+.seasons { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.seasons li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 6px; align-content: start; min-width: 0; border-top: 3px solid var(--gold); }
+.seasons p { color: var(--muted); font-size: .9rem; }
+@media (max-width: 860px) { .seasons { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .seasons { grid-template-columns: 1fr; } }
+@media print { .seasons li { break-inside: avoid; } }
+
 /* About */
 .about { display: grid; gap: 14px; }
 .about .section-head { margin-bottom: 0; }
@@ -469,6 +477,20 @@ p { margin: 0; }
 
   <section>
     <div class="section-head">
+      <span class="eyebrow">المواسم</span>
+      <h2>خبرة بمواسم البيع بالسعودية والخليج</h2>
+      <p>المواسم هي أعلى فترات البيع بالسنة، وبتحتاج تحضير قبلها بأسابيع حتى ما تضيع الفرصة.</p>
+    </div>
+    <ul class="seasons">
+      <li><h3>رمضان والعيد</h3><p>حملات بتبدأ قبل رمضان، ورسائل بتتغير مع أيام الشهر، وعروض العيد بآخر أسبوع.</p></li>
+      <li><h3>الجمعة البيضاء</h3><p>بناء جمهور قبل الموسم، وإطلاق العروض بوقتها، وإعادة استهداف اللي ما اشتروا.</p></li>
+      <li><h3>اليوم الوطني</h3><p>عروض وإعلانات بطابع وطني، ومحتوى مناسب للمناسبة على سناب وتيك توك.</p></li>
+      <li><h3>العودة للمدارس</h3><p>حملات للأهالي قبل بداية السنة الدراسية، للمتاجر ومراكز التعليم والتسجيل.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
       <span class="eyebrow">ليش تشتغلوا معي</span>
       <h2>اللي بيميّز شغلي</h2>
     </div>
@@ -781,6 +803,20 @@ p { margin: 0; }
         <p class="fit-proof">1,300+ conversations from Meta messaging campaigns</p>
       </article>
     </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Seasons</span>
+      <h2>Experience with Saudi and Gulf sales seasons</h2>
+      <p>Seasons are the biggest sales periods of the year, and they need preparation weeks ahead so the opportunity isn't missed.</p>
+    </div>
+    <ul class="seasons">
+      <li><h3>Ramadan &amp; Eid</h3><p>Campaigns that start before Ramadan, messaging that changes through the month, and Eid offers in the final week.</p></li>
+      <li><h3>White Friday</h3><p>Audience building before the season, offers launched on time, and retargeting people who didn't buy.</p></li>
+      <li><h3>Saudi National Day</h3><p>Offers and ads with a national theme, and content made for the occasion on Snapchat and TikTok.</p></li>
+      <li><h3>Back to school</h3><p>Campaigns for parents before the school year starts, for stores and education and registration centers.</p></li>
+    </ul>
   </section>
 
   <section>
