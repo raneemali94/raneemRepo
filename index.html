@@ -83,6 +83,7 @@ p { margin: 0; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; color: var(--wine); }
 #en .hero .second-name { text-align: left; }
+#ar .hero .second-name { text-align: right; }
 .hero .second-name { font-family: var(--font-display); font-weight: 500; color: var(--gold); letter-spacing: .06em; font-size: .95rem; }
 .hero .role { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; margin-top: 4px; }
 .hero .lede { color: var(--muted); margin-top: 16px; max-width: 58ch; }
@@ -91,6 +92,21 @@ p { margin: 0; }
   font-size: .85rem; font-weight: 500; padding: 4px 14px; border-radius: 999px;
   background: var(--wine-soft); color: var(--ink);
 }
+
+/* Headline stat */
+.hero .headline-stat {
+  margin-top: 14px; display: inline-block; justify-self: start;
+  font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--wine);
+  background: var(--wine-soft); border-radius: 10px; padding: 6px 14px;
+}
+
+/* Industries */
+.fits { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fit { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.fit p { color: var(--muted); font-size: .95rem; }
+.fit .fit-proof { color: var(--wine); font-weight: 600; font-size: .88rem; padding-top: 8px; border-top: 1px solid var(--line); margin-top: 4px; }
+@media (max-width: 720px) { .fits { grid-template-columns: 1fr; } }
+@media print { .fit { break-inside: avoid; } }
 
 /* About */
 .about { display: grid; gap: 14px; }
@@ -277,6 +293,7 @@ p { margin: 0; }
       <p class="second-name" lang="en" dir="ltr">Raneem Ali</p>
       <p class="role">مديرة حملات إعلانية</p>
       <p class="lede">أساعد المتاجر الإلكترونية والشركات في السعودية والخليج على زيادة مبيعاتهم من الإعلانات، بنتائج واضحة يقدرون يقيسونها.</p>
+      <p class="headline-stat"><span class="num">+928</span> ليد لشركة عقارية سعودية خلال <span class="num">19</span> يوم، بتكلفة حوالي <span class="num">$2</span> لليد</p>
       <ul class="facts">
         <li><span class="num">4</span> سنوات خبرة</li>
         <li>السعودية والخليج</li>
@@ -393,6 +410,35 @@ p { margin: 0; }
       </figure>
     </div>
     <a class="more-reviews" href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">شوفوا كل تقييماتي على مستقل ←</a>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">مع مين بشتغل</span>
+      <h2>المجالات اللي عندي فيها نتائج</h2>
+    </div>
+    <div class="fits">
+      <article class="fit">
+        <h3>المتاجر الإلكترونية</h3>
+        <p>حملات مبيعات على Meta و Google و TikTok و Snapchat، مربوطة بمتاجر سلة وزد و Shopify.</p>
+        <p class="fit-proof"><span class="num">+$1.43M</span> مبيعات · عائد <span class="num">4.93</span> على Google Ads</p>
+      </article>
+      <article class="fit">
+        <h3>شركات العقار</h3>
+        <p>حملات ليدز لمشاريع عقارية، مع نماذج تأهيل وآلية واضحة لتسليم الليدز لفريق المبيعات.</p>
+        <p class="fit-proof"><span class="num">+928</span> ليد خلال <span class="num">19</span> يوم بتكلفة حوالي <span class="num">$2</span></p>
+      </article>
+      <article class="fit">
+        <h3>التمويل العقاري</h3>
+        <p>حملات ليدز لعملاء جاهزين للتمويل، بتكلفة منخفضة وقابلة للتوسّع.</p>
+        <p class="fit-proof">ليدات بتكلفة <span class="num">$2.40</span></p>
+      </article>
+      <article class="fit">
+        <h3>المشاريع والخدمات</h3>
+        <p>حملات رسائل على واتساب و Messenger لمشاريع بتبيع بالمحادثة، من الاستفسار حتى الطلب.</p>
+        <p class="fit-proof"><span class="num">+1,300</span> محادثة من حملات الرسائل على Meta</p>
+      </article>
+    </div>
   </section>
 
   <section class="about">
@@ -530,6 +576,7 @@ p { margin: 0; }
       <p class="second-name" lang="ar" dir="rtl">رنيم علي</p>
       <p class="role">Paid Media Manager</p>
       <p class="lede">I help e-commerce stores and businesses in Saudi Arabia and the Gulf grow sales from their ads, with results they can measure.</p>
+      <p class="headline-stat"><span class="num">928+</span> leads for a Saudi real estate company in <span class="num">19</span> days, at <span class="num">~$2</span> per lead</p>
       <ul class="facts">
         <li><span class="num">4</span> years of experience</li>
         <li>Saudi Arabia &amp; GCC</li>
@@ -647,6 +694,35 @@ p { margin: 0; }
       </figure>
     </div>
     <a class="more-reviews" href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">See all my reviews on Mostaql →</a>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Who I work with</span>
+      <h2>Industries where I have results</h2>
+    </div>
+    <div class="fits">
+      <article class="fit">
+        <h3>E-commerce</h3>
+        <p>Sales campaigns on Meta, Google, TikTok and Snapchat, connected to Salla, Zid and Shopify stores.</p>
+        <p class="fit-proof">+$1.43M in sales · 4.93 ROAS on Google Ads</p>
+      </article>
+      <article class="fit">
+        <h3>Real estate</h3>
+        <p>Lead generation for property projects, with qualifying forms and a clear handoff of leads to the sales team.</p>
+        <p class="fit-proof">928+ leads in 19 days at ~$2 each</p>
+      </article>
+      <article class="fit">
+        <h3>Real estate financing</h3>
+        <p>Lead campaigns that reach people ready for financing, at a low cost that scales.</p>
+        <p class="fit-proof">Leads at $2.40 each</p>
+      </article>
+      <article class="fit">
+        <h3>Service businesses</h3>
+        <p>Messaging campaigns on WhatsApp and Messenger for businesses that sell through conversation, from first question to order.</p>
+        <p class="fit-proof">1,300+ conversations from Meta messaging campaigns</p>
+      </article>
+    </div>
   </section>
 
   <section class="about">
