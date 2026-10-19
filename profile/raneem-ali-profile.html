@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Raneem Ali | رنيم علي</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+/* ==========================================================
+   DESIGN SYSTEM — Raneem Ali · Executive Profile (AR / RTL)
+   Canvas: A4 landscape 297×210mm (1123×794px @96dpi)
+   Grid:   12 columns · 64px outer margin · 24px gutter
+   Type:   IBM Plex Sans Arabic (text/display) + IBM Plex Mono (folios)
+   ========================================================== */
+:root{
+  --ink:#0A1324;        /* deep navy / near black */
+  --navy:#0E1B36;       /* page navy */
+  --navy-2:#16274A;
+  --paper:#F6F4EF;      /* off white */
+  --white:#FFFFFF;
+  --blue:#2D5BFF;       /* electric blue accent */
+  --blue-soft:#8FA8FF;  /* accent on navy */
+  --mute:#5D6679;
+  --mute-2:#8A93A5;
+  --rule:rgba(10,19,36,.14);
+  --rule-strong:rgba(10,19,36,.85);
+  --on-navy:#F3F1EC;
+  --on-navy-mute:#9DA8C0;
+  --rule-navy:rgba(243,241,236,.16);
+
+  --m:64px;  --g:24px;
+
+  /* type scale */
+  --t-display:112px; --t-hero-num:150px; --t-num-l:96px; --t-num-m:58px; --t-num-s:40px;
+  --t-h1:44px; --t-h2:26px; --t-h3:20px; --t-lead:19px; --t-body:15px; --t-small:13px; --t-cap:12px;
+}
+@page{size:297mm 210mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'IBM Plex Sans Arabic',sans-serif;color:var(--ink);background:#d9d9d9;
+  font-size:var(--t-body);line-height:1.85;font-weight:400;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"kern" 1}
+a{color:inherit;text-decoration:none}
+.n,bdi{direction:ltr;unicode-bidi:isolate;font-feature-settings:"lnum" 1,"tnum" 1}
+
+/* ---------- page ---------- */
+.page{width:297mm;height:210mm;position:relative;overflow:hidden;background:var(--paper);
+  margin:0 auto 24px;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto;margin-bottom:0}
+@media print{body{background:none}.page{margin:0}}
+.page.dark{background:var(--navy);color:var(--on-navy)}
+.frame{position:absolute;inset:96px var(--m) 76px var(--m)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g)}
+
+/* running header + folio */
+.rh{position:absolute;top:34px;right:var(--m);left:var(--m);display:flex;justify-content:space-between;
+  align-items:baseline;font-size:var(--t-cap);color:var(--mute);line-height:1}
+.rh .who{font-weight:600;color:var(--ink);display:flex;align-items:baseline;gap:12px}
+.rh .who .mono{color:var(--mute-2)}
+.dark .rh{color:var(--on-navy-mute)} .dark .rh .who{color:var(--on-navy)}
+.folio{position:absolute;bottom:32px;right:var(--m);left:var(--m);display:flex;justify-content:space-between;
+  align-items:center;font-size:var(--t-cap);color:var(--mute);line-height:1}
+.folio::before{content:"";position:absolute;top:-14px;right:0;left:0;height:1px;background:var(--rule)}
+.dark .folio{color:var(--on-navy-mute)} .dark .folio::before{background:var(--rule-navy)}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;direction:ltr;unicode-bidi:isolate}
+.folio .pg{color:var(--ink);font-weight:500}
+.dark .folio .pg{color:var(--on-navy)}
+
+/* ---------- type roles ---------- */
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:var(--t-small);font-weight:600;color:var(--blue);line-height:1.4}
+.eyebrow .idx{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--blue)}
+.eyebrow .bar{width:28px;height:2px;background:var(--blue)}
+.dark .eyebrow,.dark .eyebrow .idx{color:var(--blue-soft)} .dark .eyebrow .bar{background:var(--blue-soft)}
+.h1{font-size:var(--t-h1);font-weight:600;line-height:1.3;letter-spacing:-.005em;margin-top:18px}
+.h1.xl{font-size:60px;line-height:1.22}
+.sub{font-size:var(--t-lead);font-weight:300;line-height:1.75;color:var(--mute);margin-top:14px}
+.dark .sub{color:var(--on-navy-mute)}
+.h2{font-size:var(--t-h2);font-weight:600;line-height:1.4}
+.h3{font-size:var(--t-h3);font-weight:600;line-height:1.45}
+.body{font-size:var(--t-body);line-height:1.85;color:var(--mute)}
+.dark .body{color:var(--on-navy-mute)}
+.cap{font-size:var(--t-cap);line-height:1.7;color:var(--mute)}
+.label{font-size:var(--t-small);font-weight:500;color:var(--mute);line-height:1.5}
+.num{font-weight:200;line-height:.95;letter-spacing:-.02em;direction:ltr;unicode-bidi:isolate;font-feature-settings:"lnum" 1}
+.blue{color:var(--blue)} .dark .blue{color:var(--blue-soft)}
+.rule{height:1px;background:var(--rule)} .dark .rule{background:var(--rule-navy)}
+.rule.k{background:var(--rule-strong);height:1.5px}
+
+/* =========================== 01 COVER =========================== */
+.cover .photo{position:absolute;top:96px;left:var(--m);width:356px;height:482px;overflow:hidden;background:#e9e2d6}
+.cover .photo img{position:absolute;width:693px;left:-168px;top:-96px}
+.cover .photo-rule{position:absolute;top:120px;left:calc(var(--m) - 24px);width:356px;height:482px;border:1px solid var(--blue-soft);opacity:.55}
+.cover .copy{position:absolute;top:96px;right:var(--m);width:560px}
+.cover .name{font-size:var(--t-display);font-weight:700;line-height:1.05;margin-top:26px;letter-spacing:-.01em}
+.cover .latin{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--on-navy-mute);margin-top:10px;direction:ltr;text-align:right}
+.cover .role{font-size:var(--t-h2);font-weight:400;margin-top:34px;display:flex;align-items:center;gap:14px}
+.cover .role::before{content:"";width:40px;height:2px;background:var(--blue)}
+.cover .lead{font-size:var(--t-lead);font-weight:300;line-height:1.85;color:var(--on-navy-mute);margin-top:16px;max-width:520px}
+.cover .signature{position:absolute;right:var(--m);bottom:150px;width:560px;display:flex;align-items:flex-end;gap:22px;
+  padding-top:22px;border-top:1px solid var(--rule-navy)}
+.cover .signature .num{font-size:84px;color:var(--blue-soft);font-weight:300}
+.cover .signature .txt{font-size:17px;font-weight:500;line-height:1.6;padding-bottom:6px}
+.cover .facts{position:absolute;right:var(--m);left:var(--m);bottom:56px;display:grid;grid-template-columns:repeat(3,auto) 1fr;
+  column-gap:0;border-top:1px solid var(--rule-navy);padding-top:18px}
+.cover .facts div{font-size:var(--t-small);font-weight:500;color:var(--on-navy);padding-inline-end:28px;margin-inline-end:28px;border-inline-end:1px solid var(--rule-navy);line-height:1.2}
+.cover .facts div:nth-child(3){border:0}
+.cover .facts .mono{justify-self:end;color:var(--on-navy-mute);border:0;margin:0;padding:0}
+
+/* =========================== 02 RESULTS =========================== */
+.results .head{grid-column:1 / span 7}
+.results .hero{position:absolute;right:0;bottom:0;width:440px}
+.results .hero .num{font-size:112px;color:var(--ink);margin-bottom:18px;text-align:right}
+.results .hero .h3{margin-top:22px}
+.results .hero .cap{font-size:14px;margin-top:4px}
+.results .hero .accent{width:56px;height:3px;background:var(--blue)}
+.results .set{position:absolute;left:0;bottom:0;width:520px;display:grid;grid-template-columns:1fr 1fr;column-gap:40px;row-gap:34px}
+.results .set > div{border-top:1px solid var(--rule-strong);padding-top:18px}
+.results .set .num{font-size:var(--t-num-m);text-align:right}
+.results .set .h3{font-size:16px;margin-top:16px}
+.results .set .cap{margin-top:2px}
+.results .vline{position:absolute;bottom:0;left:560px;width:1px;height:330px;background:var(--rule)}
+
+/* =========================== 03 CASE OPENER =========================== */
+.case-open .head{width:760px}
+.case-open .h1.xl{font-size:56px}
+.case-open .metrics{position:absolute;right:0;left:0;bottom:0;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--rule-navy)}
+.case-open .metrics > div{padding:26px 0 0;padding-inline-end:32px}
+.case-open .metrics > div + div{border-inline-start:1px solid var(--rule-navy);padding-inline-start:32px}
+.case-open .metrics .num{font-size:100px;text-align:right}
+.case-open .metrics > div:first-child .num{color:var(--blue-soft);font-weight:300}
+.case-open .metrics .label{color:var(--on-navy);font-size:16px;margin-top:20px}
+
+/* =========================== 04 CASE BREAKDOWN =========================== */
+.case-data .share{margin-top:0}
+.case-data .share .split{display:flex;height:14px;margin-top:14px;gap:3px}
+.case-data .share .split .s{background:var(--ink)} .case-data .share .split .t{background:var(--blue)}
+.case-data .share .legend{display:flex;justify-content:space-between;font-size:var(--t-small);color:var(--mute);margin-top:10px}
+.case-data .plat{display:grid;grid-template-columns:1fr 1fr;column-gap:72px;margin-top:40px}
+.case-data .plat .top{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:16px;border-bottom:1.5px solid var(--rule-strong)}
+.case-data .plat .top .h2{font-size:30px;direction:ltr}
+.case-data .plat .top .leads{display:flex;align-items:baseline;gap:10px}
+.case-data .plat .top .leads .num{font-size:64px;font-weight:300}
+.case-data .plat .top .leads span.l{font-size:16px;font-weight:500;color:var(--mute)}
+.case-data .plat .t .leads .num{color:var(--blue)}
+.case-data .row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.case-data .row .v{font-size:20px;font-weight:500;direction:ltr;unicode-bidi:isolate}
+.case-data .src{margin-top:18px;font-size:var(--t-cap);color:var(--mute)}
+.case-data .gloss{position:absolute;right:0;left:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);column-gap:var(--g);
+  padding-top:16px;border-top:1px solid var(--rule)}
+.case-data .gloss .k{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.12em;color:var(--blue);direction:ltr;text-align:right}
+.case-data .gloss p{font-size:var(--t-cap);line-height:1.75;color:var(--mute);margin-top:6px}
+
+/* =========================== 05 TESTIMONIALS =========================== */
+.voices .main{position:absolute;right:0;top:0;width:610px}
+.voices .stars{color:var(--blue);letter-spacing:.2em;font-size:15px;direction:ltr;unicode-bidi:isolate}
+.voices .oq{color:var(--blue);font-weight:600;margin-inline-end:8px}
+.voices .q-mark{font-size:120px;line-height:.6;height:52px;color:var(--blue);font-weight:300;margin-top:30px;display:block}
+.voices blockquote{font-size:25px;font-weight:400;line-height:1.75;margin-top:6px}
+.voices .attr{display:flex;gap:16px;align-items:flex-start;margin-top:22px}
+.voices .attr .bar{width:28px;height:1.5px;background:var(--ink);margin-top:14px;flex:none}
+.voices .attr .nm{font-size:17px;font-weight:600;line-height:1.6}
+.voices .attr .cap{font-size:13px}
+.voices .attr .verified{font-size:13px;font-weight:600;color:var(--ink);margin-top:2px}
+.voices .ratings{position:absolute;left:0;top:0;width:300px}
+.voices .ratings .h3{font-size:16px;padding-bottom:14px;border-bottom:1.5px solid var(--rule-strong)}
+.voices .ratings .r{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.voices .ratings .r .stars{font-size:12px;letter-spacing:.18em}
+.voices .more{position:absolute;right:0;left:0;bottom:0;display:grid;grid-template-columns:1fr 1fr auto;column-gap:48px;align-items:end;border-top:1px solid var(--rule);padding-top:22px}
+.voices .more .wq{font-size:18px;font-weight:500;line-height:1.7}
+.voices .more .wq::before{content:"“";color:var(--blue);font-size:28px;line-height:0;margin-inline-end:6px;position:relative;top:6px}
+.voices .more .cap{margin-top:8px}
+.voices .more a{font-size:14px;font-weight:600;color:var(--blue);white-space:nowrap;border-bottom:1.5px solid var(--blue);padding-bottom:2px;line-height:1.6}
+
+/* =========================== 06 SECTORS =========================== */
+.sectors .head{position:absolute;right:0;top:0;width:290px}
+.sectors .list{position:absolute;left:0;top:0;width:660px;display:grid;grid-template-columns:1fr 1fr;column-gap:48px;row-gap:0}
+.sectors .item{padding:22px 0 30px;border-top:1.5px solid var(--rule-strong)}
+.sectors .item:nth-child(n+3){border-top:1px solid var(--rule)}
+.sectors .item .ix{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mute-2);letter-spacing:.1em;direction:ltr;text-align:right}
+.sectors .item .h2{margin-top:10px;font-size:24px}
+.sectors .item .body{margin-top:8px;min-height:84px}
+.sectors .item .proof bdi{white-space:nowrap}
+.sectors .item .proof{margin-top:16px;font-size:14px;font-weight:600;color:var(--blue);display:flex;gap:12px;align-items:baseline}
+.sectors .item .proof::before{content:"";width:16px;height:2px;background:var(--blue);flex:none;position:relative;top:-4px}
+
+/* =========================== 07 SEASONS =========================== */
+.seasons .head{width:640px}
+.seasons .cols{position:absolute;right:0;left:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);column-gap:var(--g)}
+.seasons .cols > div{border-top:1.5px solid var(--rule-strong);padding-top:22px}
+.seasons .cols > div:first-child{border-top:3px solid var(--blue)}
+.seasons .cols .ix{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mute-2);letter-spacing:.1em;direction:ltr;text-align:right}
+.seasons .cols .h2{font-size:28px;margin-top:40px}
+.seasons .cols .body{margin-top:12px;font-size:15px;padding-inline-end:12px}
+
+/* =========================== 08 WHY ME =========================== */
+.why .head{grid-column:1 / span 4}
+.why .rows{position:absolute;right:0;left:0;bottom:0}
+.why .row{display:grid;grid-template-columns:110px 330px 1fr;column-gap:var(--g);align-items:baseline;padding:24px 0;border-top:1px solid var(--rule)}
+.why .row:first-child{border-top:1.5px solid var(--rule-strong)}
+.why .row .num{font-size:44px;color:var(--blue);font-weight:200;text-align:right}
+.why .row .h3{font-size:22px}
+.why .row .body{font-size:16px}
+
+/* =========================== 09 ABOUT =========================== */
+.about .photo{position:absolute;top:0;left:0;bottom:0;width:430px;background:#e9e2d6}
+.about .photo-in{position:absolute;inset:0;overflow:hidden}
+.about .photo img{position:absolute;width:1018px;left:-294px;top:-96px}
+.about .copy{position:absolute;right:var(--m);top:96px;width:540px}
+.about .h1.xl{font-size:64px}
+.about .p1{font-size:21px;font-weight:400;line-height:1.85;margin-top:30px;color:var(--ink)}
+.about .p2{font-size:16px;line-height:1.95;color:var(--mute);margin-top:24px;padding-top:22px;border-top:1px solid var(--rule)}
+.about .p2 strong{font-weight:600;color:var(--ink)}
+
+/* =========================== 10 EXPERIENCE / SKILLS =========================== */
+.cv .side{position:absolute;top:0;bottom:0}
+.cv .exp{right:0;width:420px}
+.cv .skl{left:0;width:540px}
+.cv .divider{position:absolute;top:0;bottom:0;left:578px;width:1px;background:var(--rule)}
+.cv .h1{font-size:34px;margin-top:14px}
+.cv .roles{margin-top:28px}
+.cv .roles .r{padding:16px 0;border-top:1.5px solid var(--rule-strong);display:grid;grid-template-columns:auto 1fr;column-gap:16px}
+.cv .roles .r + .r{border-top:1px solid var(--rule)}
+.cv .roles .ix{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--blue);letter-spacing:.1em;padding-top:7px}
+.cv .roles .h3{font-size:19px}
+.cv .roles .body{font-size:14px;line-height:1.7}
+.cv .group-title{font-size:var(--t-small);font-weight:600;color:var(--ink);padding-bottom:10px;border-bottom:1.5px solid var(--rule-strong)}
+.cv .lst{list-style:none}
+.cv .lst li{font-size:14px;padding:8px 0;border-bottom:1px solid var(--rule);line-height:1.5;position:relative;padding-inline-start:16px}
+.cv .lst li::before{content:"";width:5px;height:5px;background:var(--blue);position:absolute;right:0;top:16px}
+.cv .exp .two{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;margin-top:30px}
+.cv .skl .three{display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:24px;margin-top:28px}
+
+/* =========================== 11 PROCESS =========================== */
+.process .head{width:600px}
+.process .steps{position:absolute;right:0;left:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);column-gap:var(--g)}
+.process .line{position:absolute;right:0;left:0;bottom:208px;height:1px;background:var(--rule-navy)}
+.process .step .num{font-size:96px;font-weight:200;color:var(--on-navy);text-align:right}
+.process .step .dot{width:9px;height:9px;background:var(--blue-soft);margin:30px 0 26px;position:relative}
+.process .step:first-child .num{color:var(--blue-soft)}
+.process .step .h2{font-size:28px;color:var(--on-navy)}
+.process .step .body{margin-top:10px;font-size:15px;padding-inline-end:16px;min-height:84px}
+
+/* =========================== 12 FAQ =========================== */
+.faq .head{position:absolute;right:0;top:0;width:300px}
+.faq .list{position:absolute;left:0;top:0;width:640px}
+.faq .qa{display:grid;grid-template-columns:44px 1fr;column-gap:16px;padding:17px 0 18px;border-top:1px solid var(--rule)}
+.faq .qa:first-child{border-top:1.5px solid var(--rule-strong);padding-top:20px}
+.faq .qa:last-child{border-bottom:1px solid var(--rule)}
+.faq .qa .ix{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--blue);letter-spacing:.1em;padding-top:6px;direction:ltr;text-align:right}
+.faq .qa .h3{font-size:18px}
+.faq .qa .body{font-size:14.5px;line-height:1.8;margin-top:3px}
+
+/* =========================== 13 CONTACT =========================== */
+.contact .head{width:620px}
+.contact .h1.xl{font-size:76px;line-height:1.15}
+.contact .sub{font-size:20px;margin-top:20px}
+.contact .avail{display:flex;gap:0;margin-top:30px}
+.contact .avail span{font-size:14px;font-weight:500;color:var(--on-navy);padding-inline-end:22px;margin-inline-end:22px;border-inline-end:1px solid var(--rule-navy);line-height:1.2}
+.contact .avail span:last-child{border:0}
+.contact .channels{position:absolute;right:0;bottom:0;width:620px}
+.contact .ch{display:grid;grid-template-columns:140px 1fr;align-items:baseline;padding:14px 0;border-top:1px solid var(--rule-navy)}
+.contact .ch:last-child{border-bottom:1px solid var(--rule-navy)}
+.contact .ch .k{font-size:13px;color:var(--on-navy-mute)}
+.contact .ch .v{font-size:20px;font-weight:500;direction:ltr;text-align:right;letter-spacing:.005em}
+.contact .ch:first-child .v{color:var(--blue-soft)}
+.contact .qr{position:absolute;left:0;bottom:0;width:250px}
+.contact .qr .box{width:150px;height:150px;background:#fff;padding:12px}
+.contact .qr .box img{width:100%;height:100%;display:block;image-rendering:pixelated}
+.contact .qr .cap{color:var(--on-navy-mute);margin-top:14px;font-size:13px}
+.contact .mark{position:absolute;left:0;top:0;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.32em;color:var(--on-navy-mute);direction:ltr}
+</style>
+</head>
+<body>
+
+<!-- ============ 01 · COVER ============ -->
+<section class="page dark cover">
+  <div class="photo-rule"></div>
+  <div class="photo"><img src="assets/portrait.jpg" alt="رنيم علي"></div>
+  <div class="copy">
+    <div class="eyebrow"><span class="bar"></span>التسويق الرقمي والأداء</div>
+    <h1 class="name">رنيم علي</h1>
+    <div class="latin">Raneem Ali</div>
+    <div class="role">مديرة حملات إعلانية</div>
+    <p class="lead">أساعد المتاجر الإلكترونية والشركات في السعودية والخليج على زيادة مبيعاتهم من الإعلانات، بنتائج واضحة يقدرون يقيسونها.</p>
+  </div>
+  <div class="signature">
+    <div class="num">+928</div>
+    <div class="txt">ليد لشركة عقارية سعودية خلال <bdi>19</bdi> يوم،<br>بتكلفة حوالي <bdi>$2</bdi> لليد</div>
+  </div>
+  <div class="facts">
+    <div><bdi>4</bdi> سنوات خبرة</div>
+    <div>السعودية والخليج</div>
+    <div><bdi>Meta · Google · TikTok · Snapchat</bdi></div>
+    <span class="mono">01 / 13</span>
+  </div>
+</section>
+
+<!-- ============ 02 · RESULTS ============ -->
+<section class="page results">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="grid"><div class="head">
+      <div class="eyebrow"><span class="idx">01</span><span class="bar"></span>نتائج من حملات أدرتها</div>
+      <h2 class="h1">أرقام حقيقية من حسابات عملاء</h2>
+      <p class="sub">من متاجر إلكترونية، ومن حملات ليدز لشركات عقار وتمويل عقاري.</p>
+    </div></div>
+
+    <div class="hero">
+      <div class="num">+$1.43M</div>
+      <div class="accent"></div>
+      <div class="h3">مبيعات لمتجر إلكتروني</div>
+      <div class="cap">بعائد إعلاني <bdi>~4x</bdi> و<bdi>+20,600</bdi> عملية شراء</div>
+    </div>
+    <div class="vline"></div>
+    <div class="set">
+      <div><div class="num">4.93</div><div class="h3">عائد على الإنفاق في <bdi>Google Ads</bdi></div><div class="cap">مع أكثر من <bdi>10,000</bdi> عملية شراء</div></div>
+      <div><div class="num blue">20.6x</div><div class="h3">عائد حملة على <bdi>Meta</bdi></div><div class="cap">أعلى عائد حققته في حملة واحدة</div></div>
+      <div><div class="num">$2.40</div><div class="h3">تكلفة العميل المحتمل</div><div class="cap">ليدات لشركة تمويل عقاري</div></div>
+      <div><div class="num">+1,300</div><div class="h3">محادثة مع عملاء</div><div class="cap">من حملات الرسائل على <bdi>Meta</bdi></div></div>
+    </div>
+  </div>
+  <div class="folio"><span>نتائج من حملات أدرتها</span><span class="mono pg">02 / 13</span></div>
+</section>
+
+<!-- ============ 03 · CASE STUDY — OPENER ============ -->
+<section class="page dark case-open">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="head">
+      <div class="eyebrow"><span class="idx">02</span><span class="bar"></span><span>دراسة حالة حديثة · أكتوبر <bdi>2026</bdi></span></div>
+      <h2 class="h1 xl">حملة ليدز لشركة عقارية سعودية على <bdi>Snapchat</bdi> و <bdi>TikTok</bdi></h2>
+      <p class="sub">أدير الحملتين بالتوازي. خلال <bdi>19</bdi> يوم بقيت تكلفة الليد ثابتة حول <bdi>2</bdi> دولار على المنصتين.</p>
+    </div>
+    <div class="metrics">
+      <div><div class="num">+928</div><div class="label">ليد خلال <bdi>19</bdi> يوم</div></div>
+      <div><div class="num">~$2.08</div><div class="label">متوسط تكلفة الليد</div></div>
+      <div><div class="num">430K+</div><div class="label">ظهور على المنصتين</div></div>
+    </div>
+  </div>
+  <div class="folio"><span>دراسة حالة حديثة</span><span class="mono pg">03 / 13</span></div>
+</section>
+
+<!-- ============ 04 · CASE STUDY — BREAKDOWN ============ -->
+<section class="page case-data">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="share">
+      <div class="eyebrow"><span class="idx">02</span><span class="bar"></span><span>دراسة حالة حديثة · أكتوبر <bdi>2026</bdi></span></div>
+      <div class="split"><div class="s" style="width:89.2%"></div><div class="t" style="width:10.8%"></div></div>
+      <div class="legend"><span><bdi>Snapchat</bdi> · <bdi>828</bdi> ليد</span><span><bdi>TikTok</bdi> · <bdi>100</bdi> ليد</span></div>
+    </div>
+
+    <div class="plat">
+      <div class="s">
+        <div class="top"><div class="h2">Snapchat</div><div class="leads"><span class="num">828</span><span class="l">ليد</span></div></div>
+        <div class="row"><span>تكلفة الليد</span><span class="v">$2.05</span></div>
+        <div class="row"><span>نسبة النقر</span><span class="v">2.16%</span></div>
+        <div class="row"><span>الظهور</span><span class="v">273,514</span></div>
+      </div>
+      <div class="t">
+        <div class="top"><div class="h2">TikTok</div><div class="leads"><span class="num">100</span><span class="l">ليد</span></div></div>
+        <div class="row"><span>تكلفة الليد</span><span class="v">$2.35</span></div>
+        <div class="row"><span>من النقرات إلى ليد</span><span class="v">13.8%</span></div>
+        <div class="row"><span>الظهور</span><span class="v">158,269</span></div>
+      </div>
+    </div>
+    <p class="src">الأرقام من <bdi>Snapchat Ads Manager</bdi> و <bdi>TikTok Ads Manager</bdi> للفترة <bdi>1–19</bdi> أكتوبر <bdi>2026</bdi>. تكلفة تيك توك محوّلة من الريال (<bdi>8.82</bdi> ريال لليد).</p>
+
+    <div class="gloss">
+      <div><div class="k">ROAS</div><p>العائد على الإنفاق الإعلاني. عائد <bdi>4</bdi> يعني كل دولار إعلان جاب <bdi>4</bdi> دولار مبيعات.</p></div>
+      <div><div class="k">CPL</div><p>تكلفة الليد، يعني قديش كلّف كل عميل محتمل ترك بياناته.</p></div>
+      <div><div class="k">CTR</div><p>نسبة النقر، يعني كم شخص من كل <bdi>100</bdi> شافوا الإعلان كبسوا عليه.</p></div>
+      <div><div class="k">CAC</div><p>تكلفة الحصول على عميل فعلي اشترى، مش بس ترك بياناته.</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>دراسة حالة حديثة</span><span class="mono pg">04 / 13</span></div>
+</section>
+
+<!-- ============ 05 · TESTIMONIALS ============ -->
+<section class="page voices">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="main">
+      <div class="eyebrow"><span class="idx">03</span><span class="bar"></span>آراء العملاء</div>
+      <h2 class="h1">ماذا يقول عملائي</h2>
+      <p class="sub" style="font-size:16px;margin-top:6px">تقييم موثّق على مستقل، ورسائل وصلتني من عملاء على واتساب.</p>
+      <div class="stars" style="margin-top:34px">★★★★★</div>
+      <blockquote><span class="oq">“</span>اشتغلت أستاذة رنيم على حملاتنا وشغلها رائع جدًا وفاهمة في عملها بشكل واضح. سهولة في التواصل وتعديلات في نظام الحملات ليناسب المتجر الخاص بنا. ليس آخر تعامل بإذن الله.</blockquote>
+      <div class="attr"><span class="bar"></span><div>
+        <div class="nm">زياد أ.</div>
+        <div class="cap">صاحب متجر <bdi>Shopify</bdi> · مشروع إدارة وإطلاق حملات على <bdi>TikTok</bdi> و <bdi>Instagram</bdi> و <bdi>Google</bdi> و <bdi>Snapchat</bdi></div>
+        <div class="verified">تقييم موثّق على منصة مستقل</div>
+      </div></div>
+    </div>
+    <div class="ratings">
+      <div class="h3">تقييم المشروع</div>
+      <div class="r"><span>الاحترافية بالتعامل</span><span class="stars">★★★★★</span></div>
+      <div class="r"><span>التواصل والمتابعة</span><span class="stars">★★★★★</span></div>
+      <div class="r"><span>جودة العمل المسلّم</span><span class="stars">★★★★★</span></div>
+      <div class="r"><span>الخبرة بمجال المشروع</span><span class="stars">★★★★★</span></div>
+      <div class="r"><span>التسليم في الموعد</span><span class="stars">★★★★★</span></div>
+      <div class="r"><span>التعامل معها مرة أخرى</span><span class="stars">★★★★★</span></div>
+    </div>
+    <div class="more">
+      <div><div class="wq">والله كلمات الشكر قليلة بحقك. من بعد شغلك ربنا أكرمني وصارت ناس غريبة تتواصل معي للشغل.</div><div class="cap">عميل · من محادثة واتساب</div></div>
+      <div><div class="wq">الترويج البارحة كان يجنن، طلبيات كثيرة.</div><div class="cap">عميل متجر · من محادثة واتساب</div></div>
+      <a href="https://mostaql.com/u/raneemali_21/reviews">شوفوا كل تقييماتي على مستقل ←</a>
+    </div>
+  </div>
+  <div class="folio"><span>آراء العملاء</span><span class="mono pg">05 / 13</span></div>
+</section>
+
+<!-- ============ 06 · SECTORS ============ -->
+<section class="page sectors">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="head">
+      <div class="eyebrow"><span class="idx">04</span><span class="bar"></span>مع مين بشتغل</div>
+      <h2 class="h1 xl" style="font-size:52px">المجالات اللي عندي فيها نتائج</h2>
+    </div>
+    <div class="list">
+      <div class="item"><div class="ix">01</div><div class="h2">المتاجر الإلكترونية</div>
+        <p class="body">حملات مبيعات على <bdi>Meta</bdi> و <bdi>Google</bdi> و <bdi>TikTok</bdi> و <bdi>Snapchat</bdi>، مربوطة بمتاجر سلة وزد و <bdi>Shopify</bdi>.</p>
+        <div class="proof"><span><bdi>+$1.43M</bdi> مبيعات · عائد <bdi>4.93</bdi> على <bdi>Google Ads</bdi></span></div></div>
+      <div class="item"><div class="ix">02</div><div class="h2">شركات العقار</div>
+        <p class="body">حملات ليدز لمشاريع عقارية، مع نماذج تأهيل وآلية واضحة لتسليم الليدز لفريق المبيعات.</p>
+        <div class="proof"><span><bdi>+928</bdi> ليد خلال <bdi>19</bdi> يوم بتكلفة حوالي <bdi>$2</bdi></span></div></div>
+      <div class="item"><div class="ix">03</div><div class="h2">التمويل العقاري</div>
+        <p class="body">حملات ليدز لعملاء جاهزين للتمويل، بتكلفة منخفضة وقابلة للتوسّع.</p>
+        <div class="proof"><span>ليدات بتكلفة <bdi>$2.40</bdi></span></div></div>
+      <div class="item"><div class="ix">04</div><div class="h2">المشاريع والخدمات</div>
+        <p class="body">حملات رسائل على واتساب و <bdi>Messenger</bdi> لمشاريع بتبيع بالمحادثة، من الاستفسار حتى الطلب.</p>
+        <div class="proof"><span><bdi>+1,300</bdi> محادثة من حملات الرسائل على <bdi>Meta</bdi></span></div></div>
+    </div>
+  </div>
+  <div class="folio"><span>مع مين بشتغل</span><span class="mono pg">06 / 13</span></div>
+</section>
+
+<!-- ============ 07 · SEASONS ============ -->
+<section class="page seasons">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="head">
+      <div class="eyebrow"><span class="idx">04</span><span class="bar"></span>المواسم</div>
+      <h2 class="h1 xl">خبرة بمواسم البيع بالسعودية والخليج</h2>
+      <p class="sub">المواسم هي أعلى فترات البيع بالسنة، وبتحتاج تحضير قبلها بأسابيع حتى ما تضيع الفرصة.</p>
+    </div>
+    <div class="cols">
+      <div><div class="ix">01</div><div class="h2">رمضان والعيد</div><p class="body">حملات بتبدأ قبل رمضان، ورسائل بتتغير مع أيام الشهر، وعروض العيد بآخر أسبوع.</p></div>
+      <div><div class="ix">02</div><div class="h2">الجمعة البيضاء</div><p class="body">بناء جمهور قبل الموسم، وإطلاق العروض بوقتها، وإعادة استهداف اللي ما اشتروا.</p></div>
+      <div><div class="ix">03</div><div class="h2">اليوم الوطني</div><p class="body">عروض وإعلانات بطابع وطني، ومحتوى مناسب للمناسبة على سناب وتيك توك.</p></div>
+      <div><div class="ix">04</div><div class="h2">العودة للمدارس</div><p class="body">حملات للأهالي قبل بداية السنة الدراسية، للمتاجر ومراكز التعليم والتسجيل.</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>المواسم</span><span class="mono pg">07 / 13</span></div>
+</section>
+
+<!-- ============ 08 · WHY ME ============ -->
+<section class="page why">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div>
+      <div class="eyebrow"><span class="idx">05</span><span class="bar"></span>ليش تشتغلوا معي</div>
+      <h2 class="h1 xl" style="font-size:64px">اللي بيميّز شغلي</h2>
+    </div>
+    <div class="rows">
+      <div class="row"><div class="num">01</div><div class="h3">فاهمة السوق الخليجي</div><p class="body">أغلب خبرتي خلال <bdi>4</bdi> سنوات كانت مع عملاء في السعودية والخليج، وبعرف شو بيشد الجمهور هناك.</p></div>
+      <div class="row"><div class="num">02</div><div class="h3">كل المنصات المهمة بالخليج</div><p class="body"><bdi>Snapchat</bdi> و <bdi>TikTok</bdi> و <bdi>Meta</bdi> و <bdi>Google</bdi>. باختار المنصة حسب منتجكم ووين عملاءكم، مش حسب العادة.</p></div>
+      <div class="row"><div class="num">03</div><div class="h3">التتبع قبل أي إعلان</div><p class="body">بضبط <bdi>Pixel</bdi> و <bdi>GA4</bdi> و <bdi>GTM</bdi> من البداية، حتى كل ريال ينصرف نعرف شو جاب.</p></div>
+      <div class="row"><div class="num">04</div><div class="h3">بقيس بالمبيعات</div><p class="body">تقاريري مبنية على تكلفة العميل وقيمته والمبيعات، مش على الإعجابات والمشاهدات.</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>ليش تشتغلوا معي</span><span class="mono pg">08 / 13</span></div>
+</section>
+
+<!-- ============ 09 · ABOUT ============ -->
+<section class="page about">
+  <div class="photo"><div class="photo-in"><img src="assets/portrait.jpg" alt="رنيم علي"></div></div>
+  <div class="rh" style="left:470px"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="copy">
+    <div class="eyebrow"><span class="idx">06</span><span class="bar"></span>نبذة عني</div>
+    <h2 class="h1 xl">مرحبًا، أنا رنيم</h2>
+    <p class="p1">متخصصة في التسويق الرقمي والإعلانات المدفوعة، وعندي <bdi>4</bdi> سنوات خبرة اشتغلت فيها مديرة حملات إعلانية وقدت فريق حملات. أغلب شغلي كان مع عملاء في السعودية والخليج، في المتاجر الإلكترونية والعقار والتعليم والخدمات والضيافة.</p>
+    <p class="p2"><strong>اللي يهمني بكل مشروع هو النتيجة الفعلية: مبيعات أكثر وعملاء حقيقيين، مو بس أرقام وصول وتفاعل.</strong> لذلك أبدأ دايمًا بالتتبع الصحيح، وأربط كل حملة بهدف واضح يقدر العميل يقيسه.</p>
+  </div>
+  <div class="folio" style="left:470px"><span>نبذة عني</span><span class="mono pg">09 / 13</span></div>
+</section>
+
+<!-- ============ 10 · EXPERIENCE + SKILLS ============ -->
+<section class="page cv">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="side exp">
+      <div class="eyebrow"><span class="idx">06</span><span class="bar"></span>الخبرة</div>
+      <h2 class="h1">الأدوار التي شغلتها</h2>
+      <div class="roles">
+        <div class="r"><span class="ix">01</span><div><div class="h3">مديرة حملات إعلانية</div><div class="body">تخطيط وإطلاق وتحسين الحملات المدفوعة على كل المنصات</div></div></div>
+        <div class="r"><span class="ix">02</span><div><div class="h3">قائدة فريق حملات</div><div class="body">توزيع المهام، متابعة الأداء، ومعايير التسليم</div></div></div>
+      </div>
+      <div class="two">
+        <div><div class="group-title">القطاعات</div><ul class="lst"><li>المتاجر الإلكترونية</li><li>العقار</li><li>التعليم</li><li>الخدمات</li><li>الضيافة</li></ul></div>
+        <div><div class="group-title">منصات المتاجر</div><ul class="lst"><li>سلة</li><li>زد</li><li>Shopify</li></ul></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="side skl">
+      <div class="eyebrow"><span class="idx">07</span><span class="bar"></span>المهارات</div>
+      <h2 class="h1">مهاراتي</h2>
+      <div class="three">
+        <div><div class="group-title">الاستراتيجية</div><ul class="lst"><li>تحليل السوق والمنافسين</li><li>بناء <bdi>Personas</bdi></li><li>أهداف مربوطة بالإيراد</li><li>خطط ربع سنوية</li><li>تقويم المحتوى والإعلانات</li></ul></div>
+        <div><div class="group-title">الإعلانات وتوليد العملاء</div><ul class="lst"><li>Meta Ads</li><li>Google Ads</li><li>TikTok Ads</li><li>Snapchat Ads</li><li>رحلة العميل حتى المبيعات</li><li>آلية تسليم الـ <bdi>Leads</bdi></li></ul></div>
+        <div><div class="group-title">التتبع والقياس</div><ul class="lst"><li>Pixel</li><li>GA4</li><li>GTM</li><li>لوحات <bdi>CAC</bdi> و <bdi>CLV</bdi> والتحويل</li><li>تقارير وتوصيات</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>الخبرة · المهارات</span><span class="mono pg">10 / 13</span></div>
+</section>
+
+<!-- ============ 11 · PROCESS ============ -->
+<section class="page dark process">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="head">
+      <div class="eyebrow"><span class="idx">08</span><span class="bar"></span>طريقتي في العمل</div>
+      <h2 class="h1 xl">كيف أشتغل مع عملائي</h2>
+    </div>
+    <div class="line"></div>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><div class="dot"></div><div class="h2">أفهم</div><p class="body">السوق والمنافسين وعملاءكم، وأراجع التتبع قبل أي إعلان.</p></div>
+      <div class="step"><div class="num">02</div><div class="dot"></div><div class="h2">أخطط</div><p class="body">خطة واضحة ورسائل موحدة وأهداف مربوطة بالمبيعات.</p></div>
+      <div class="step"><div class="num">03</div><div class="dot"></div><div class="h2">أشغّل</div><p class="body">حملات على <bdi>Meta</bdi> و <bdi>Google</bdi> و <bdi>TikTok</bdi> و <bdi>Snapchat</bdi>، ورحلة عميل حتى البيع.</p></div>
+      <div class="step"><div class="num">04</div><div class="dot"></div><div class="h2">أقيس وأحسّن</div><p class="body">لوحة قياس وتقارير دورية، وتحسين مستمر مبني على الأرقام.</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>طريقتي في العمل</span><span class="mono pg">11 / 13</span></div>
+</section>
+
+<!-- ============ 12 · FAQ ============ -->
+<section class="page faq">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="head">
+      <div class="eyebrow"><span class="idx">09</span><span class="bar"></span>أسئلة شائعة</div>
+      <h2 class="h1 xl" style="font-size:52px">أسئلة بتوصلني كتير</h2>
+    </div>
+    <div class="list">
+      <div class="qa"><span class="ix">01</span><div><div class="h3">أي منصة أنسب لمشروعي؟</div><p class="body">بتعتمد على منتجكم وجمهوركم. <bdi>Google</bdi> لما العميل بيدوّر بنفسه، و <bdi>Meta</bdi> لبناء الطلب، و <bdi>Snapchat</bdi> و <bdi>TikTok</bdi> للوصول الواسع بالسعودية. بنحددها سوا بعد ما أفهم مشروعكم.</p></div></div>
+      <div class="qa"><span class="ix">02</span><div><div class="h3">بتشتغلي مع متاجر سلة وزد؟</div><p class="body">أكيد. بشتغل مع سلة وزد و <bdi>Shopify</bdi>، وبربط التتبع مع المتجر حتى تنقاس المبيعات صح.</p></div></div>
+      <div class="qa"><span class="ix">03</span><div><div class="h3">ليش تكلفة الليد مش كل شي؟</div><p class="body">لأن الليد الرخيص ممكن ما يكون جاد. الأهم كم ليد بيتحول لعميل فعلي، وهاد اللي بركز عليه مع فريق المبيعات.</p></div></div>
+      <div class="qa"><span class="ix">04</span><div><div class="h3">كيف منشتغل وأنا بالسعودية؟</div><p class="body">بشتغل عن بُعد بأوقات دوام الخليج، والتواصل على واتساب أو الإيميل.</p></div></div>
+      <div class="qa"><span class="ix">05</span><div><div class="h3">شو بتحتاجي مني لنبلش؟</div><p class="body">صلاحية على الحسابات الإعلانية والمتجر أو الموقع، وفكرة عن أهدافكم وميزانيتكم. والباقي عليّ.</p></div></div>
+    </div>
+  </div>
+  <div class="folio"><span>أسئلة شائعة</span><span class="mono pg">12 / 13</span></div>
+</section>
+
+<!-- ============ 13 · CONTACT ============ -->
+<section class="page dark contact">
+  <div class="rh"><span class="who">رنيم علي<span class="mono">Raneem Ali</span></span><span>التسويق الرقمي والأداء</span></div>
+  <div class="frame">
+    <div class="head">
+      <div class="eyebrow"><span class="idx">10</span><span class="bar"></span>تواصلوا معي</div>
+      <h2 class="h1 xl">يسعدني أتعرف عليكم</h2>
+      <p class="sub">إذا عندكم متجر إلكتروني أو مشروع وتبون نتائج أوضح من إعلاناتكم، تواصلوا معي.</p>
+      <div class="avail"><span>أعمل عن بُعد</span><span>اللغات: العربية والإنجليزية</span><span>متاحة بأوقات دوام الخليج</span></div>
+    </div>
+    <div class="channels">
+      <a class="ch" href="mailto:raneemali947@gmail.com"><span class="k">الإيميل</span><span class="v">raneemali947@gmail.com</span></a>
+      <a class="ch" href="https://wa.me/213562941562"><span class="k">واتساب / جوال</span><span class="v">+213 562 941 562</span></a>
+      <a class="ch" href="https://www.linkedin.com/in/raneemali-ads/"><span class="k">لينكدإن</span><span class="v">linkedin.com/in/raneemali-ads</span></a>
+      <a class="ch" href="https://mostaql.com/u/raneemali_21"><span class="k">مستقل</span><span class="v">mostaql.com/u/raneemali_21</span></a>
+    </div>
+    <div class="qr">
+      <div class="box"><img src="assets/qr.png" alt="QR"></div>
+      <div class="cap">امسح الرمز لفتح البروفايل أونلاين</div>
+    </div>
+  </div>
+  <div class="folio"><span>رنيم علي · <bdi>Raneem Ali</bdi></span><span class="mono pg">13 / 13</span></div>
+</section>
+
+</body>
+</html>
