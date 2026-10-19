@@ -136,6 +136,19 @@ p { margin: 0; }
 @media (max-width: 420px) { .seasons { grid-template-columns: 1fr; } }
 @media print { .seasons li { break-inside: avoid; } }
 
+/* Stats strip */
+.stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--line); }
+.stats li { display: grid; gap: 2px; padding: 18px 20px; min-width: 0; }
+.stats li + li { border-inline-start: 1px solid var(--line); }
+.stats .num { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--wine); line-height: 1.2; justify-self: start; }
+.stats li span:last-child { color: var(--muted); font-size: .85rem; }
+@media (max-width: 720px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stats li:nth-child(3) { border-inline-start: 0; }
+  .stats li:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media print { .stats { break-inside: avoid; } }
+
 /* About */
 .about { display: grid; gap: 14px; }
 .about .section-head { margin-bottom: 0; }
@@ -329,6 +342,13 @@ p { margin: 0; }
       </ul>
     </div>
   </header>
+
+  <ul class="stats" aria-label="أرقام إجمالية">
+    <li><span class="num">+$1.43M</span><span>مبيعات لعملائي</span></li>
+    <li><span class="num">+20,600</span><span>عملية شراء لمتجر واحد</span></li>
+    <li><span class="num">+2,200</span><span>ليد ومحادثة مع عملاء</span></li>
+    <li><span class="num">4</span><span>منصات إعلانية</span></li>
+  </ul>
 
   <section>
     <div class="section-head">
@@ -658,6 +678,13 @@ p { margin: 0; }
       </ul>
     </div>
   </header>
+
+  <ul class="stats" aria-label="Totals">
+    <li><span class="num">+$1.43M</span><span>in sales for my clients</span></li>
+    <li><span class="num">20,600+</span><span>purchases for one store</span></li>
+    <li><span class="num">2,200+</span><span>leads and customer conversations</span></li>
+    <li><span class="num">4</span><span>ad platforms</span></li>
+  </ul>
 
   <section>
     <div class="section-head">

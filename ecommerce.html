@@ -1,0 +1,668 @@
+<title>Raneem Ali | المتاجر الإلكترونية</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column, Arabic and English versions of the same profile; portrait header, results ledger, client review, skills, working style, contact band. */
+:root {
+  --bg: #faf6f3;
+  --surface: #ffffff;
+  --ink: #2a1a20;
+  --muted: #6e5a61;
+  --line: #e8dcdd;
+  --wine: #8e1f3c;
+  --wine-soft: #f4e3e7;
+  --gold: #b48a3c;
+  --star: #d9a321;
+  --font-display: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+    --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a; --star: #e8b84a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1215; --surface: #241a1e; --ink: #f3e9ec; --muted: #b9a6ad;
+  --line: #3a2b31; --wine: #e07a96; --wine-soft: #3a1f28; --gold: #d4b06a; --star: #e8b84a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.lang-bar {
+  max-width: 920px; margin: 0 auto;
+  padding-block: 16px 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; justify-content: flex-end;
+}
+.lang-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); }
+.lang-switch button {
+  font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+  border: 0; border-radius: 999px; padding: 4px 14px; background: transparent; color: var(--muted);
+}
+.lang-switch button[aria-pressed="true"] { background: var(--wine); color: #fff; }
+.lang-switch button:focus-visible { outline: 2px solid var(--wine); outline-offset: 2px; }
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding-block: 24px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 64px;
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.3; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.1rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow {
+  font-size: .8rem; font-weight: 600; color: var(--gold);
+  letter-spacing: .04em; margin-bottom: 8px; display: block;
+}
+.num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+
+/* Header */
+.hero { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; }
+.portrait {
+  width: 210px; aspect-ratio: 1; max-width: 100%;
+  border-radius: 50%; overflow: hidden;
+  outline: 1px solid var(--gold); outline-offset: 8px;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); }
+.hero h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; color: var(--wine); }
+#en .hero .second-name { text-align: left; }
+#ar .hero .second-name { text-align: right; }
+.hero .second-name { font-family: var(--font-display); font-weight: 500; color: var(--gold); letter-spacing: .06em; font-size: .95rem; }
+.hero .role { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; margin-top: 4px; }
+.hero .lede { color: var(--muted); margin-top: 16px; max-width: 58ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding: 0; list-style: none; }
+.facts li {
+  font-size: .85rem; font-weight: 500; padding: 4px 14px; border-radius: 999px;
+  background: var(--wine-soft); color: var(--ink);
+}
+
+/* Headline stat */
+.hero .headline-stat {
+  margin-top: 14px; display: inline-block; justify-self: start;
+  font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--wine);
+  background: var(--wine-soft); border-radius: 10px; padding: 6px 14px;
+}
+
+/* Industries */
+.fits { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fit { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.fit p { color: var(--muted); font-size: .95rem; }
+.fit .fit-proof { color: var(--wine); font-weight: 600; font-size: .88rem; padding-top: 8px; border-top: 1px solid var(--line); margin-top: 4px; }
+@media (max-width: 720px) { .fits { grid-template-columns: 1fr; } }
+@media print { .fit { break-inside: avoid; } }
+
+/* Why + FAQ */
+.whys { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 40px; }
+.whys li { display: grid; gap: 6px; padding-inline-start: 16px; border-inline-start: 2px solid var(--gold); min-width: 0; }
+.whys p { color: var(--muted); font-size: .95rem; }
+.faq { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.faq > div { padding-block: 16px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.faq dt { font-family: var(--font-display); font-weight: 700; }
+.faq dd { margin: 0; color: var(--muted); max-width: 70ch; }
+@media (max-width: 720px) { .whys { grid-template-columns: 1fr; gap: 20px; } }
+@media print { .whys li, .faq > div { break-inside: avoid; } }
+
+/* Glossary */
+.glossary { margin: 16px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.glossary > div { background: var(--bg); padding: 14px 16px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.glossary dt { font-weight: 700; color: var(--wine); font-size: .9rem; }
+.glossary dd { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+@media (max-width: 720px) { .glossary { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .glossary { grid-template-columns: 1fr; } }
+@media print { .glossary { break-inside: avoid; } }
+
+/* Seasons */
+.seasons { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.seasons li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 6px; align-content: start; min-width: 0; border-top: 3px solid var(--gold); }
+.seasons p { color: var(--muted); font-size: .9rem; }
+@media (max-width: 860px) { .seasons { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .seasons { grid-template-columns: 1fr; } }
+@media print { .seasons li { break-inside: avoid; } }
+
+/* Stats strip */
+.stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--line); }
+.stats li { display: grid; gap: 2px; padding: 18px 20px; min-width: 0; }
+.stats li + li { border-inline-start: 1px solid var(--line); }
+.stats .num { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--wine); line-height: 1.2; justify-self: start; }
+.stats li span:last-child { color: var(--muted); font-size: .85rem; }
+@media (max-width: 720px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stats li:nth-child(3) { border-inline-start: 0; }
+  .stats li:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media print { .stats { break-inside: avoid; } }
+
+/* About */
+.about { display: grid; gap: 14px; }
+.about .section-head { margin-bottom: 0; }
+.about p { max-width: 65ch; font-size: 1.05rem; }
+
+/* Results */
+.section-head { display: grid; gap: 6px; margin-bottom: 28px; }
+.section-head p { color: var(--muted); max-width: 60ch; }
+.results { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.result { background: var(--surface); padding: 24px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.result.wide { grid-column: span 6; }
+.result.third { grid-column: span 4; }
+.result .big { font-family: var(--font-display); font-size: 2.1rem; font-weight: 800; color: var(--wine); line-height: 1.2; }
+.result .label { font-weight: 600; }
+.result .sub { color: var(--muted); font-size: .9rem; }
+.result .sub .num { color: var(--ink); font-weight: 600; }
+
+/* Short quotes */
+.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.quote { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 10px; align-content: space-between; min-width: 0; }
+.quote blockquote { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; line-height: 1.7; }
+.quote blockquote::before { content: "“"; color: var(--gold); font-size: 1.8rem; line-height: 0; vertical-align: -.35em; margin-inline-end: 4px; }
+.quote figcaption { color: var(--muted); font-size: .85rem; }
+.review .verified { color: var(--gold); font-size: .82rem; font-weight: 600; }
+.more-reviews { display: inline-block; margin-top: 14px; color: var(--wine); font-weight: 600; text-decoration: none; }
+.more-reviews:hover { text-decoration: underline; }
+.more-reviews:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+@media (max-width: 720px) { .quotes { grid-template-columns: 1fr; } }
+@media print { .quote { break-inside: avoid; } }
+
+/* Review */
+.review {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px;
+}
+.review > div { min-width: 0; }
+.stars { color: var(--star); letter-spacing: 2px; font-size: 1.1rem; line-height: 1; }
+.review blockquote {
+  margin: 14px 0 0; font-family: var(--font-display); font-weight: 500;
+  font-size: 1.25rem; line-height: 1.7; text-wrap: pretty;
+}
+.review blockquote::before { content: "“"; color: var(--gold); font-size: 2.4rem; line-height: 0; vertical-align: -.35em; margin-inline-end: 4px; }
+.review .who { margin-top: 18px; display: grid; gap: 2px; }
+.review .who strong { font-weight: 600; }
+.review .who span { color: var(--muted); font-size: .9rem; }
+.review .translated { color: var(--muted); font-size: .8rem; margin-top: 6px; }
+.criteria { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; align-content: start; border-inline-start: 1px solid var(--line); padding-inline-start: 28px; }
+.criteria li { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .92rem; }
+.criteria li .stars { font-size: .85rem; letter-spacing: 1px; flex: none; }
+.criteria-title { font-size: .8rem; font-weight: 600; color: var(--gold); letter-spacing: .04em; margin-bottom: 4px; }
+
+/* Case study */
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; display: grid; gap: 24px; }
+.case-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.case-top > div { display: grid; gap: 2px; min-width: 0; }
+.case-top .big { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--wine); line-height: 1.2; justify-self: start; }
+.case-top .k { color: var(--muted); font-size: .9rem; }
+.platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.platform { border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 12px; min-width: 0; }
+.p-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.p-head .num { font-weight: 600; color: var(--wine); }
+.p-bar { height: 6px; border-radius: 999px; background: var(--wine-soft); overflow: hidden; }
+.p-bar i { display: block; height: 100%; background: var(--gold); border-radius: 999px; }
+.platform dl { margin: 0; display: grid; gap: 6px; }
+.platform dl div { display: flex; justify-content: space-between; gap: 12px; font-size: .92rem; }
+.platform dt { color: var(--muted); }
+.platform dd { margin: 0; font-weight: 600; }
+.case-note { color: var(--muted); font-size: .8rem; }
+@media (max-width: 720px) {
+  .case { padding: 20px; }
+  .case-top { grid-template-columns: 1fr 1fr; }
+  .platforms { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) { .case-top { grid-template-columns: 1fr; } }
+
+/* Experience */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.two-col > div { min-width: 0; }
+.roles { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.roles li { display: grid; gap: 2px; padding-inline-start: 16px; border-inline-start: 2px solid var(--gold); }
+.roles li span { color: var(--muted); font-size: .92rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.tags li { border: 1px solid var(--line); background: var(--surface); padding: 6px 14px; border-radius: 8px; font-size: .92rem; }
+.skill-group { display: grid; gap: 10px; }
+.skill-group + .skill-group { margin-top: 24px; }
+.skill-group h3 { font-size: 1rem; color: var(--muted); font-weight: 500; }
+
+/* Steps */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.steps b { font-family: var(--font-display); color: var(--wine); font-size: 1.1rem; }
+.steps span { color: var(--muted); font-size: .93rem; }
+
+/* Closing */
+.closing {
+  background: var(--wine); color: #fff; border-radius: 18px;
+  padding: 36px; display: grid; gap: 10px;
+}
+.closing h2 { color: #fff; }
+.closing p { opacity: .9; max-width: 60ch; }
+.work-info { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; margin: 4px 0 0; font-size: .92rem; }
+.work-info li { display: flex; gap: 8px; align-items: center; }
+.work-info li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: .7; }
+.contact { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.contact-item {
+  display: flex; align-items: center; gap: 10px; min-width: 0;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+  border-radius: 12px; padding: 10px 14px;
+}
+.contact-item .k { font-size: .8rem; opacity: .8; }
+.contact-item a { color: #fff; font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+.contact-item a:hover { text-decoration: underline; }
+.contact-item button {
+  font: inherit; font-size: .8rem; cursor: pointer; color: #fff; background: transparent;
+  border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 2px 10px;
+}
+.contact-item button:focus-visible, .contact-item a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Floating WhatsApp */
+.wa-float {
+  position: fixed; z-index: 20;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  left: calc(16px + env(safe-area-inset-left, 0px));
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--wine); color: #fff; text-decoration: none; font-weight: 600; font-size: .92rem;
+  padding: 10px 16px; border-radius: 999px; box-shadow: 0 6px 20px rgba(42, 26, 32, .25);
+}
+.wa-float:hover { filter: brightness(1.08); }
+.wa-float:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.page { padding-bottom: 96px; }
+
+.qr { display: none; }
+@media print {
+  .qr { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+  .qr img { width: 96px; height: 96px; border-radius: 8px; background: #fff; padding: 4px; }
+  .qr span { font-size: .85rem; opacity: .9; }
+  .lang-bar, .wa-float, .contact-item button { display: none !important; }
+  .page { padding-block: 0; gap: 36px; }
+  :root { --bg: #ffffff; }
+  .result, .review, .case, .steps li, .closing, .roles li, .skill-group, .section-head { break-inside: avoid; }
+  .section-head { break-after: avoid; }
+}
+
+@media (max-width: 720px) {
+  .page { gap: 48px; padding-block: 16px 96px; }
+  .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 28px; }
+  .portrait { width: 170px; }
+  .facts { justify-content: center; }
+  .hero .lede { margin-inline: auto; }
+  .results { grid-template-columns: 1fr 1fr; }
+  .result.wide { grid-column: span 2; }
+  .result.third { grid-column: span 1; }
+  .result:last-child { grid-column: span 2; }
+  .review { grid-template-columns: 1fr; padding: 24px 20px; gap: 24px; }
+  .criteria { border-inline-start: 0; padding-inline-start: 0; border-top: 1px solid var(--line); padding-top: 20px; }
+  .two-col { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .closing { padding: 28px 22px; }
+}
+@media (max-width: 420px) {
+  .results { grid-template-columns: 1fr; }
+  .result.wide, .result.third, .result:last-child { grid-column: span 1; }
+  .steps { grid-template-columns: 1fr; }
+  .review blockquote { font-size: 1.1rem; }
+}
+</style>
+
+<div class="lang-bar">
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" id="btn-ar" data-lang="ar" aria-pressed="true">العربية</button>
+    <button type="button" id="btn-en" data-lang="en" aria-pressed="false">English</button>
+  </div>
+</div>
+
+<main class="page" id="ar" dir="rtl" lang="ar">
+
+  <header class="hero">
+    <div class="portrait"><img src="profile.jpg" alt="صورة رنيم علي"></div>
+    <div>
+      <span class="eyebrow">إعلانات المتاجر الإلكترونية</span>
+      <h1>رنيم علي</h1>
+      <p class="second-name" lang="en" dir="ltr">Raneem Ali</p>
+      <p class="role">مديرة حملات إعلانية</p>
+      <p class="lede">أساعد المتاجر الإلكترونية في السعودية والخليج تبيع أكثر من إعلاناتها، على سلة وزد و Shopify.</p>
+      <p class="headline-stat"><span class="num">+$1.43M</span> مبيعات لمتجر إلكتروني بعائد إعلاني <span class="num">~4x</span></p>
+      <ul class="facts">
+        <li><span class="num">4</span> سنوات خبرة</li>
+        <li>السعودية والخليج</li>
+        <li>Meta · Google · TikTok · Snapchat</li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">نتائج متاجر أدرت إعلاناتها</span>
+      <h2>أرقام حقيقية من متاجر عملائي</h2>
+    </div>
+    <div class="results">
+      <div class="result wide">
+        <span class="big num">+$1.43M</span>
+        <span class="label">مبيعات لمتجر إلكتروني</span>
+        <span class="sub">بعائد إعلاني <span class="num">~4x</span></span>
+      </div>
+      <div class="result wide">
+        <span class="big num">+20,600</span>
+        <span class="label">عملية شراء</span>
+        <span class="sub">لنفس المتجر من الإعلانات</span>
+      </div>
+      <div class="result third">
+        <span class="big num">4.93</span>
+        <span class="label">عائد على الإنفاق في Google Ads</span>
+        <span class="sub">مع أكثر من <span class="num">10,000</span> عملية شراء</span>
+      </div>
+      <div class="result third">
+        <span class="big num">20.6x</span>
+        <span class="label">عائد حملة على Meta</span>
+        <span class="sub">أعلى عائد حققته في حملة واحدة</span>
+      </div>
+      <div class="result third">
+        <span class="big num">+1,300</span>
+        <span class="label">محادثة مع عملاء</span>
+        <span class="sub">من حملات الرسائل على Meta</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">آراء أصحاب المتاجر</span>
+      <h2>ماذا يقول عملائي</h2>
+    </div>
+    <div class="review">
+      <div>
+        <div class="stars" aria-label="تقييم 5 من 5">★★★★★</div>
+        <blockquote>اشتغلت أستاذة رنيم على حملاتنا وشغلها رائع جدًا وفاهمة في عملها بشكل واضح. سهولة في التواصل وتعديلات في نظام الحملات ليناسب المتجر الخاص بنا. ليس آخر تعامل بإذن الله.</blockquote>
+        <div class="who">
+          <strong>زياد أ.</strong>
+          <span>صاحب متجر Shopify · مشروع إدارة وإطلاق حملات على TikTok و Instagram و Google و Snapchat</span>
+          <span class="verified">تقييم موثّق على منصة مستقل</span>
+        </div>
+      </div>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>الترويج البارحة كان يجنن، طلبيات كثيرة.</blockquote>
+        <figcaption>عميل متجر · من محادثة واتساب</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>والله كلمات الشكر قليلة بحقك. من بعد شغلك ربنا أكرمني وصارت ناس غريبة تتواصل معي للشغل.</blockquote>
+        <figcaption>عميل · من محادثة واتساب</figcaption>
+      </figure>
+    </div>
+    <a class="more-reviews" href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">شوفوا كل تقييماتي على مستقل ←</a>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">شو بعمل لمتجرك</span>
+      <h2>من أول إعلان حتى البيع</h2>
+    </div>
+    <ul class="whys">
+      <li><h3>ربط التتبع مع المتجر</h3><p>بضبط Pixel و GA4 و GTM مع سلة أو زد أو Shopify، حتى كل بيعة تنحسب على الإعلان اللي جابها.</p></li>
+      <li><h3>حملات مبيعات على 4 منصات</h3><p>Meta و Google و TikTok و Snapchat، والميزانية بتروح للمنصة اللي بتبيع أكثر.</p></li>
+      <li><h3>إعادة استهداف الزوار</h3><p>إعلانات للي زاروا المتجر أو حطوا منتجات بالسلة وما كملوا الشراء.</p></li>
+      <li><h3>حملات رسائل</h3><p>للمتاجر اللي بتبيع بالمحادثة، من أول سؤال لحد الطلب.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">المواسم</span>
+      <h2>جاهزة لمواسم البيع</h2>
+      <p>المواسم أعلى فترات البيع بالسنة، وبحضّر لها قبل بأسابيع.</p>
+    </div>
+    <ul class="seasons">
+      <li><h3>رمضان والعيد</h3><p>حملات بتبدأ قبل رمضان، ورسائل بتتغير مع أيام الشهر، وعروض العيد بآخر أسبوع.</p></li>
+      <li><h3>الجمعة البيضاء</h3><p>بناء جمهور قبل الموسم، وإطلاق العروض بوقتها، وإعادة استهداف اللي ما اشتروا.</p></li>
+      <li><h3>اليوم الوطني</h3><p>عروض وإعلانات بطابع وطني، ومحتوى مناسب للمناسبة على سناب وتيك توك.</p></li>
+      <li><h3>العودة للمدارس</h3><p>حملات للأهالي قبل بداية السنة الدراسية، للمتاجر ومراكز التعليم والتسجيل.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">أسئلة شائعة</span>
+      <h2>أسئلة أصحاب المتاجر</h2>
+    </div>
+    <dl class="faq">
+      <div><dt>بتشتغلي مع متاجر سلة وزد؟</dt><dd>أكيد. بشتغل مع سلة وزد و Shopify، وبربط التتبع مع المتجر حتى تنقاس المبيعات صح.</dd></div>
+      <div><dt>أي منصة أنسب لمتجري؟</dt><dd>بتعتمد على منتجك وجمهورك. Google للي بيدوّر على المنتج، و Meta لبناء الطلب، و Snapchat و TikTok للوصول الواسع بالسعودية.</dd></div>
+      <div><dt>شو بتحتاجي مني لنبلش؟</dt><dd>صلاحية على الحسابات الإعلانية والمتجر، وفكرة عن أهدافك وميزانيتك. والباقي عليّ.</dd></div>
+    </dl>
+  </section>
+
+  <section class="closing">
+    <h2>يسعدني أتعرف عليكم</h2>
+    <p>إذا عندك متجر إلكتروني وبدك مبيعات أكثر من إعلاناتك، تواصل معي.</p>
+    <ul class="work-info">
+      <li>أعمل عن بُعد</li>
+      <li>اللغات: العربية والإنجليزية</li>
+      <li>متاحة بأوقات دوام الخليج</li>
+    </ul>
+    <div class="contact">
+      <div class="contact-item">
+        <span class="k">الإيميل</span>
+        <a href="mailto:raneemali947@gmail.com" dir="ltr">raneemali947@gmail.com</a>
+        <button type="button" data-copy="raneemali947@gmail.com">نسخ</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">واتساب / جوال</span>
+        <a href="https://wa.me/213562941562" class="num" dir="ltr" target="_blank" rel="noopener">+213 562 941 562</a>
+        <button type="button" data-copy="+213562941562">نسخ</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">لينكدإن</span>
+        <a href="https://www.linkedin.com/in/raneemali-ads/" dir="ltr" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
+      </div>
+      <div class="contact-item">
+        <span class="k">مستقل</span>
+        <a href="https://mostaql.com/u/raneemali_21/reviews" dir="ltr" target="_blank" rel="noopener">mostaql.com/u/raneemali_21</a>
+      </div>
+    </div>
+    <div class="qr"><img src="profile-qr.png" alt="رمز QR للبروفايل"><span>امسح الرمز لفتح البروفايل أونلاين</span></div>
+  </section>
+
+  <a class="wa-float" href="https://wa.me/213562941562" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>واتساب</span></a>
+</main>
+
+<main class="page" id="en" dir="ltr" lang="en" hidden>
+
+  <header class="hero">
+    <div class="portrait"><img src="profile.jpg" alt="Photo of Raneem Ali"></div>
+    <div>
+      <span class="eyebrow">E-commerce advertising</span>
+      <h1>Raneem Ali</h1>
+      <p class="role">Paid Media Manager</p>
+      <p class="lede">I help e-commerce stores in Saudi Arabia and the Gulf sell more from their ads, on Salla, Zid and Shopify.</p>
+      <p class="headline-stat"><span class="num">+$1.43M</span> in sales for an online store at <span class="num">~4x</span> ROAS</p>
+      <ul class="facts">
+        <li><span class="num">4</span> years of experience</li>
+        <li>Saudi Arabia &amp; GCC</li>
+        <li>Meta · Google · TikTok · Snapchat</li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Results for stores I managed</span>
+      <h2>Real numbers from my clients' stores</h2>
+    </div>
+    <div class="results">
+      <div class="result wide">
+        <span class="big num">+$1.43M</span>
+        <span class="label">Sales for an online store</span>
+        <span class="sub">At <span class="num">~4x</span> ROAS</span>
+      </div>
+      <div class="result wide">
+        <span class="big num">20,600+</span>
+        <span class="label">Purchases</span>
+        <span class="sub">For the same store, from ads</span>
+      </div>
+      <div class="result third">
+        <span class="big num">4.93</span>
+        <span class="label">ROAS on Google Ads</span>
+        <span class="sub">With more than <span class="num">10,000</span> purchases</span>
+      </div>
+      <div class="result third">
+        <span class="big num">20.6x</span>
+        <span class="label">ROAS on a Meta campaign</span>
+        <span class="sub">My highest return on a single campaign</span>
+      </div>
+      <div class="result third">
+        <span class="big num">1,300+</span>
+        <span class="label">Customer conversations</span>
+        <span class="sub">From Meta messaging campaigns</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Reviews from store owners</span>
+      <h2>What my clients say</h2>
+    </div>
+    <div class="review">
+      <div>
+        <div class="stars" aria-label="Rated 5 out of 5">★★★★★</div>
+        <blockquote>Raneem worked on our campaigns and her work is excellent. She clearly knows what she's doing. Communication was easy, and she adapted the campaign setup to fit our store. This won't be the last time we work together.</blockquote>
+        <div class="who">
+          <strong>Ziad A.</strong>
+          <span>Shopify store owner · Campaign setup and management on TikTok, Instagram, Google and Snapchat</span>
+          <span class="verified">Verified review on Mostaql</span>
+          <p class="translated">Translated from Arabic.</p>
+        </div>
+      </div>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>Yesterday's promotion was amazing. Lots of orders.</blockquote>
+        <figcaption>Store client · from a WhatsApp chat (translated)</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>Words of thanks aren't enough. Since your work, I've been blessed with people I don't know reaching out to work with me.</blockquote>
+        <figcaption>Client · from a WhatsApp chat (translated)</figcaption>
+      </figure>
+    </div>
+    <a class="more-reviews" href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">See all my reviews on Mostaql →</a>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">What I do for your store</span>
+      <h2>From the first ad to the sale</h2>
+    </div>
+    <ul class="whys">
+      <li><h3>Tracking connected to your store</h3><p>I set up Pixel, GA4 and GTM with Salla, Zid or Shopify, so every sale is credited to the ad that brought it.</p></li>
+      <li><h3>Sales campaigns on 4 platforms</h3><p>Meta, Google, TikTok and Snapchat, with budget going to whichever platform sells best.</p></li>
+      <li><h3>Retargeting visitors</h3><p>Ads for people who visited your store or added to cart without buying.</p></li>
+      <li><h3>Messaging campaigns</h3><p>For stores that sell through conversation, from the first question to the order.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Seasons</span>
+      <h2>Ready for sales seasons</h2>
+      <p>Seasons are the biggest sales periods of the year, and I prepare for them weeks ahead.</p>
+    </div>
+    <ul class="seasons">
+      <li><h3>Ramadan &amp; Eid</h3><p>Campaigns that start before Ramadan, messaging that changes through the month, and Eid offers in the final week.</p></li>
+      <li><h3>White Friday</h3><p>Audience building before the season, offers launched on time, and retargeting people who didn't buy.</p></li>
+      <li><h3>Saudi National Day</h3><p>Offers and ads with a national theme, and content made for the occasion on Snapchat and TikTok.</p></li>
+      <li><h3>Back to school</h3><p>Campaigns for parents before the school year starts, for stores and education and registration centers.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions store owners ask</h2>
+    </div>
+    <dl class="faq">
+      <div><dt>Do you work with Salla and Zid stores?</dt><dd>Yes. I work with Salla, Zid and Shopify, and connect tracking to the store so sales are measured correctly.</dd></div>
+      <div><dt>Which platform is right for my store?</dt><dd>It depends on your product and audience. Google for people searching for it, Meta to build demand, and Snapchat and TikTok for wide reach in Saudi Arabia.</dd></div>
+      <div><dt>What do you need from me to start?</dt><dd>Access to your ad accounts and your store, and a sense of your goals and budget. I handle the rest.</dd></div>
+    </dl>
+  </section>
+
+  <section class="closing">
+    <h2>Let's get in touch</h2>
+    <p>If you run an online store and want more sales from your ads, get in touch.</p>
+    <ul class="work-info">
+      <li>Working remotely</li>
+      <li>Languages: Arabic &amp; English</li>
+      <li>Available during Gulf business hours</li>
+    </ul>
+    <div class="contact">
+      <div class="contact-item">
+        <span class="k">Email</span>
+        <a href="mailto:raneemali947@gmail.com">raneemali947@gmail.com</a>
+        <button type="button" data-copy="raneemali947@gmail.com">Copy</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">WhatsApp / Phone</span>
+        <a href="https://wa.me/213562941562" class="num" target="_blank" rel="noopener">+213 562 941 562</a>
+        <button type="button" data-copy="+213562941562">Copy</button>
+      </div>
+      <div class="contact-item">
+        <span class="k">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/raneemali-ads/" target="_blank" rel="noopener">linkedin.com/in/raneemali-ads</a>
+      </div>
+      <div class="contact-item">
+        <span class="k">Mostaql</span>
+        <a href="https://mostaql.com/u/raneemali_21/reviews" target="_blank" rel="noopener">mostaql.com/u/raneemali_21</a>
+      </div>
+    </div>
+    <div class="qr"><img src="profile-qr.png" alt="QR code for the profile"><span>Scan to open the online profile</span></div>
+  </section>
+
+  <a class="wa-float" href="https://wa.me/213562941562" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>WhatsApp</span></a>
+</main>
+
+<script>
+(function () {
+  var pages = { ar: document.getElementById('ar'), en: document.getElementById('en') };
+  var buttons = document.querySelectorAll('.lang-switch button');
+  function setLang(lang) {
+    Object.keys(pages).forEach(function (k) { pages[k].hidden = k !== lang; });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('profile-lang', lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  var initial = 'ar';
+  if (location.hash === '#en') initial = 'en';
+  else { try { initial = localStorage.getItem('profile-lang') || 'ar'; } catch (e) {} }
+  setLang(initial === 'en' ? 'en' : 'ar');
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = btn.closest('[lang="en"]') ? 'Copied' : 'تم النسخ';
+        setTimeout(function () { btn.textContent = label; }, 1600);
+      };
+      var fallback = function () {
+        var link = btn.parentElement.querySelector('a');
+        var range = document.createRange(); range.selectNodeContents(link);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      };
+      try { navigator.clipboard.writeText(btn.dataset.copy).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
