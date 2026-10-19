@@ -108,6 +108,17 @@ p { margin: 0; }
 @media (max-width: 720px) { .fits { grid-template-columns: 1fr; } }
 @media print { .fit { break-inside: avoid; } }
 
+/* Why + FAQ */
+.whys { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 40px; }
+.whys li { display: grid; gap: 6px; padding-inline-start: 16px; border-inline-start: 2px solid var(--gold); min-width: 0; }
+.whys p { color: var(--muted); font-size: .95rem; }
+.faq { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.faq > div { padding-block: 16px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.faq dt { font-family: var(--font-display); font-weight: 700; }
+.faq dd { margin: 0; color: var(--muted); max-width: 70ch; }
+@media (max-width: 720px) { .whys { grid-template-columns: 1fr; gap: 20px; } }
+@media print { .whys li, .faq > div { break-inside: avoid; } }
+
 /* About */
 .about { display: grid; gap: 14px; }
 .about .section-head { margin-bottom: 0; }
@@ -441,6 +452,19 @@ p { margin: 0; }
     </div>
   </section>
 
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">ليش تشتغلوا معي</span>
+      <h2>اللي بيميّز شغلي</h2>
+    </div>
+    <ul class="whys">
+      <li><h3>فاهمة السوق الخليجي</h3><p>أغلب خبرتي خلال 4 سنوات كانت مع عملاء في السعودية والخليج، وبعرف شو بيشد الجمهور هناك.</p></li>
+      <li><h3>كل المنصات المهمة بالخليج</h3><p>Snapchat و TikTok و Meta و Google. باختار المنصة حسب منتجكم ووين عملاءكم، مش حسب العادة.</p></li>
+      <li><h3>التتبع قبل أي إعلان</h3><p>بضبط Pixel و GA4 و GTM من البداية، حتى كل ريال ينصرف نعرف شو جاب.</p></li>
+      <li><h3>بقيس بالمبيعات</h3><p>تقاريري مبنية على تكلفة العميل وقيمته والمبيعات، مش على الإعجابات والمشاهدات.</p></li>
+    </ul>
+  </section>
+
   <section class="about">
     <div class="section-head">
       <span class="eyebrow">نبذة عني</span>
@@ -529,6 +553,20 @@ p { margin: 0; }
       <li><b>أشغّل</b><span>حملات على Meta و Google و TikTok و Snapchat، ورحلة عميل حتى البيع.</span></li>
       <li><b>أقيس وأحسّن</b><span>لوحة قياس وتقارير دورية، وتحسين مستمر مبني على الأرقام.</span></li>
     </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">أسئلة شائعة</span>
+      <h2>أسئلة بتوصلني كتير</h2>
+    </div>
+    <dl class="faq">
+      <div><dt>أي منصة أنسب لمشروعي؟</dt><dd>بتعتمد على منتجكم وجمهوركم. Google لما العميل بيدوّر بنفسه، و Meta لبناء الطلب، و Snapchat و TikTok للوصول الواسع بالسعودية. بنحددها سوا بعد ما أفهم مشروعكم.</dd></div>
+      <div><dt>بتشتغلي مع متاجر سلة وزد؟</dt><dd>أكيد. بشتغل مع سلة وزد و Shopify، وبربط التتبع مع المتجر حتى تنقاس المبيعات صح.</dd></div>
+      <div><dt>ليش تكلفة الليد مش كل شي؟</dt><dd>لأن الليد الرخيص ممكن ما يكون جاد. الأهم كم ليد بيتحول لعميل فعلي، وهاد اللي بركز عليه مع فريق المبيعات.</dd></div>
+      <div><dt>كيف منشتغل وأنا بالسعودية؟</dt><dd>بشتغل عن بُعد بأوقات دوام الخليج، والتواصل على واتساب أو الإيميل.</dd></div>
+      <div><dt>شو بتحتاجي مني لنبلش؟</dt><dd>صلاحية على الحسابات الإعلانية والمتجر أو الموقع، وفكرة عن أهدافكم وميزانيتكم. والباقي عليّ.</dd></div>
+    </dl>
   </section>
 
   <section class="closing">
@@ -725,6 +763,19 @@ p { margin: 0; }
     </div>
   </section>
 
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">Why work with me</span>
+      <h2>What sets my work apart</h2>
+    </div>
+    <ul class="whys">
+      <li><h3>I know the Gulf market</h3><p>Most of my 4 years of experience has been with clients in Saudi Arabia and the Gulf, so I know what moves audiences there.</p></li>
+      <li><h3>Every platform that matters in the Gulf</h3><p>Snapchat, TikTok, Meta and Google. I pick platforms based on your product and where your customers are.</p></li>
+      <li><h3>Tracking before any ad</h3><p>I set up Pixel, GA4 and GTM from day one, so every riyal spent can be traced to what it brought in.</p></li>
+      <li><h3>Measured in sales</h3><p>My reports are built on customer cost, customer value and sales, not likes and views.</p></li>
+    </ul>
+  </section>
+
   <section class="about">
     <div class="section-head">
       <span class="eyebrow">About me</span>
@@ -813,6 +864,20 @@ p { margin: 0; }
       <li><b>Launch</b><span>Campaigns on Meta, Google, TikTok and Snapchat, with a customer journey that ends in a sale.</span></li>
       <li><b>Measure &amp; improve</b><span>A dashboard, regular reports and ongoing optimization based on the numbers.</span></li>
     </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions I often get</h2>
+    </div>
+    <dl class="faq">
+      <div><dt>Which platform is right for my business?</dt><dd>It depends on your product and audience. Google when customers search for you, Meta to build demand, and Snapchat and TikTok for wide reach in Saudi Arabia. We decide together once I understand your business.</dd></div>
+      <div><dt>Do you work with Salla and Zid stores?</dt><dd>Yes. I work with Salla, Zid and Shopify, and connect tracking to the store so sales are measured correctly.</dd></div>
+      <div><dt>Why isn't cost per lead everything?</dt><dd>A cheap lead may not be a serious one. What matters is how many leads become real customers, and that is what I focus on with your sales team.</dd></div>
+      <div><dt>How do we work if I'm in Saudi Arabia?</dt><dd>I work remotely during Gulf business hours, and we stay in touch on WhatsApp or email.</dd></div>
+      <div><dt>What do you need from me to start?</dt><dd>Access to your ad accounts and your store or website, and a sense of your goals and budget. I handle the rest.</dd></div>
+    </dl>
   </section>
 
   <section class="closing">
