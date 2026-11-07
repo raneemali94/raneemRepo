@@ -1,4 +1,5 @@
 // HTML templates for every design. Tokens follow the ig-brand-identity skill.
+import { visual, deco } from './visuals.mjs';
 // Palette taken from the profile photo: cream backdrop, wine scarf, gold ring.
 export const T = {
   cream: '#F8F3EC', sand: '#EFE5D7', ink: '#2B1D22', wine: '#8A1E38', wineDeep: '#5E1427', gold: '#C9A66B', muted: '#8E8287',
@@ -12,6 +13,7 @@ const THEMES = {
 
 export const themeFor = (pillar) => (pillar === 'update' ? 'dark' : pillar === 'case' ? 'sand' : 'light');
 
+const ar = (n) => String(n).replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[d]);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const br = (s) => esc(s).replace(/\n/g, '<br>');
 
@@ -50,32 +52,44 @@ body{background:${th.bg};color:${th.fg};font-family:'IBM Plex Sans Arabic',sans-
 </style></head><body>${body}${footer(handles, th, footerSize)}</body></html>`;
 }
 
+// step tracker at the bottom of inner slides: one segment per slide, current one in the accent color
+function steps(day, cur, n) {
+  const th = THEMES[themeFor(day.pillar)]; const dark = th === THEMES.dark;
+  const card = dark ? 'rgba(255,255,255,.07)' : '#FFFFFF'; const line = dark ? 'rgba(255,255,255,.14)' : th.line;
+  const segs = Array.from({ length: n }, (_, k) => `<div style="flex:1;height:12px;border-radius:6px;background:${k + 1 === cur ? th.accent : k + 1 < cur ? th.accent + '66' : line}"></div>`).join('');
+  const names = day.ig.slides.map((x, k) => `<span style="flex:1;font-size:22px;color:${k + 1 === cur ? th.fg : th.muted};font-weight:${k + 1 === cur ? 700 : 400};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(x.t.replace(/\n/g, ' ').replace(/["“”]/g, ''))}</span>`).join('');
+  return `<div style="position:absolute;left:96px;right:96px;bottom:190px;background:${card};border:2px solid ${line};border-radius:28px;padding:26px 30px">
+<div style="display:flex;justify-content:space-between;margin-bottom:16px"><span style="font-size:24px;font-weight:700;color:${th.accent}">${esc(day.ig.cover.label)}</span><span style="font-size:22px;color:${th.muted}">${ar(cur)} من ${ar(n)}</span></div>
+<div style="display:flex;gap:10px;margin-bottom:14px">${segs}</div><div style="display:flex;gap:10px">${names}</div></div>`;
+}
+
 // Instagram 1080x1350 -------------------------------------------------------
 export function igCover(day, total, handles) {
-  const c = day.ig.cover;
+  const c = day.ig.cover; const th = THEMES[themeFor(day.pillar)];
   return page({ w: 1080, h: 1350, theme: themeFor(day.pillar), handles, body: `
-<div class="top"><span class="pill">${esc(c.label)}</span><span class="count">01 / ${String(total).padStart(2, '0')}</span></div>
-<div style="position:absolute;top:360px;left:96px;right:96px">
-  <div style="font-size:86px;font-weight:700;line-height:1.3">${br(c.title)}</div>
-  <div class="bar" style="margin:48px 0 40px"></div>
-  <div class="muted" style="font-size:36px;line-height:1.6">${esc(c.sub)}</div>
+<div class="top"><span class="pill">${esc(c.label)}</span><span class="count">اسحب ← &nbsp; 01 / ${String(total).padStart(2, '0')}</span></div>
+<div style="position:absolute;top:220px;left:96px;right:96px">
+  <div style="font-size:80px;font-weight:700;line-height:1.28">${br(c.title)}</div>
+  <div class="bar" style="margin:36px 0 28px"></div>
+  <div class="muted" style="font-size:34px;line-height:1.5">${esc(c.sub)}</div>
 </div>
-<div class="muted" style="position:absolute;bottom:170px;left:96px;font-size:26px">اسحب ←</div>` });
+<div style="position:absolute;top:650px;left:0;right:0;display:flex;justify-content:center">${visual(day, th, th === THEMES.dark, 1.05)}</div>` });
 }
 
 export function igSlide(day, s, i, total, handles) {
-  return page({ w: 1080, h: 1350, theme: themeFor(day.pillar), handles, body: `
-<div class="top"><span class="pill">${esc(day.ig.cover.label)}</span><span class="count">${String(i).padStart(2, '0')} / ${String(total).padStart(2, '0')}</span></div>
+  return page({ w: 1080, h: 1350, theme: themeFor(day.pillar), handles, body: `${deco(THEMES[themeFor(day.pillar)])}
+<div class="top" style="position:relative"><span class="pill">${esc(day.ig.cover.label)}</span><span class="count">${String(i).padStart(2, '0')} / ${String(total).padStart(2, '0')}</span></div>
 <div style="position:absolute;top:300px;left:96px;right:96px">
   <div class="accent" style="font-size:120px;font-weight:700;line-height:1;direction:ltr;text-align:right">${String(i - 1).padStart(2, '0')}</div>
   <div style="font-size:64px;font-weight:700;line-height:1.35;margin:48px 0 36px">${br(s.t)}</div>
   <div style="font-size:40px;line-height:1.75;opacity:.88">${br(s.b)}</div>
-</div>` });
+</div>
+${steps(day, i - 1, total - 2)}` });
 }
 
 export function igCta(day, total, handles) {
-  return page({ w: 1080, h: 1350, theme: themeFor(day.pillar), handles, body: `
-<div class="top"><span class="pill">${esc(day.ig.cover.label)}</span><span class="count">${String(total).padStart(2, '0')} / ${String(total).padStart(2, '0')}</span></div>
+  return page({ w: 1080, h: 1350, theme: themeFor(day.pillar), handles, body: `${deco(THEMES[themeFor(day.pillar)])}
+<div class="top" style="position:relative"><span class="pill">${esc(day.ig.cover.label)}</span><span class="count">${String(total).padStart(2, '0')} / ${String(total).padStart(2, '0')}</span></div>
 <div style="position:absolute;top:0;bottom:0;left:96px;right:96px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
   <svg viewBox="0 0 24 24" width="96" height="96" fill="none" style="stroke:var(--accent)" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
   <div style="font-size:66px;font-weight:700;line-height:1.4;margin-top:48px">${br(day.ig.cta)}</div>
@@ -85,24 +99,27 @@ export function igCta(day, total, handles) {
 
 // LinkedIn 1200x1200 --------------------------------------------------------
 export function liImage(day, handles) {
-  const m = day.li.image;
+  const m = day.li.image; const th = THEMES[themeFor(day.pillar)];
   return page({ w: 1200, h: 1200, theme: themeFor(day.pillar), handles, footerSize: 24, pad: 104, body: `
 <div class="top"><span class="pill">${esc(m.label)}</span></div>
-<div style="position:absolute;top:0;bottom:120px;left:104px;right:104px;display:flex;flex-direction:column;justify-content:center">
-  <div style="font-size:84px;font-weight:700;line-height:1.35">${br(m.title)}</div>
-  <div class="bar" style="margin:52px 0 40px"></div>
-  <div class="muted" style="font-size:40px;line-height:1.6">${esc(m.sub)}</div>
-</div>` });
+<div style="position:absolute;top:200px;left:104px;right:104px">
+  <div style="font-size:74px;font-weight:700;line-height:1.3">${br(m.title)}</div>
+  <div class="bar" style="margin:32px 0 24px"></div>
+  <div class="muted" style="font-size:36px;line-height:1.5">${esc(m.sub)}</div>
+</div>
+<div style="position:absolute;top:590px;left:0;right:0;display:flex;justify-content:center">${visual(day, th, th === THEMES.dark, 0.92)}</div>` });
 }
 
 // X 1600x900 ----------------------------------------------------------------
 export function xImage(day, handles) {
   const lines = day.x.image.title.split('\n');
-  const last = lines.pop();
+  const last = lines.pop(); const th = THEMES[themeFor(day.pillar)];
   return page({ w: 1600, h: 900, theme: themeFor(day.pillar), handles, footerSize: 24, pad: 110, body: `
-<div style="position:absolute;top:0;bottom:110px;left:110px;right:110px;display:flex;flex-direction:column;justify-content:center">
-  <div style="font-size:92px;font-weight:700;line-height:1.35">${lines.map(esc).join('<br>')}${lines.length ? '<br>' : ''}<span class="accent">${esc(last)}</span></div>
-</div>` });
+<div style="position:absolute;top:0;bottom:120px;right:110px;width:720px;display:flex;flex-direction:column;justify-content:center">
+  <div style="font-size:84px;font-weight:700;line-height:1.35">${lines.map(esc).join('<br>')}${lines.length ? '<br>' : ''}<span class="accent">${esc(last)}</span></div>
+  <div class="bar" style="margin-top:40px"></div>
+</div>
+<div style="position:absolute;top:0;bottom:120px;left:90px;width:680px;display:flex;align-items:center;justify-content:center">${visual(day, th, th === THEMES.dark, 0.92)}</div>` });
 }
 
 // Brand assets --------------------------------------------------------------

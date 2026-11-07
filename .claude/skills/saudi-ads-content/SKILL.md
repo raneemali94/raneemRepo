@@ -29,7 +29,7 @@ The voice is a real Saudi woman who runs ad campaigns for a living, writing her 
 `update` platform updates · `issue` real problems & mistakes · `tip` how-to · `case` worked example · `personal` behind the scenes / trust · `offer` soft call to work together. Rotate so no pillar repeats more than twice in a row.
 
 ## Adding a day to plan.json
-Copy the shape of an existing day (`id`, `pillar`, `topic`, `ig`, `li`, `x`). Then render with the `social-design-render` skill.
+Copy the shape of an existing day (`id`, `pillar`, `topic`, `visual`, `ig`, `li`, `x`). `visual` picks the illustration that matches the topic: `{type: search|form|ab|phone|metrics|chat|donut|chart|doc, ...}` with real labels from the post (see days 21–30 for examples; options in `scripts/visuals.mjs`). Then render with the `social-design-render` skill.
 
 ## Seasonal calendar (Saudi market) — tie content to what's coming in the next 2–4 weeks
 | When | Moment | Angle for ads content |

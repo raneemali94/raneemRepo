@@ -20,7 +20,8 @@ Full brand board: `brand/brand-guide.md` and `designs/brand/brand-board.png`.
 Font: **IBM Plex Sans Arabic** (700 headlines, 400 body). Latin numbers and platform names stay Latin (CPM, ROAS).
 
 ## Layout rules (keep it calm)
-- Max 3 elements per slide: label pill, headline, one short body. Lots of empty space.
+- Cover / LinkedIn / X: label pill, headline, short sub **plus one content-matched visual** (mini UI mockup drawn in brand colors: search bar, lead form, A/B cards, phone, KPI tiles, chat, donut, line chart, checklist — `scripts/visuals.mjs`). Never leave the lower half empty.
+- Inner slides: number, title, body, plus the step tracker card (progress segments + slide titles) and the soft circle/dot decoration.
 - One accent per slide (wine on light, gold on dark), never more.
 - Pillar → background: `update` wineDeep, `case` sand, everything else cream. This gives the grid a rhythm.
 - Footer on every design: thin rule + three small icons (Instagram, LinkedIn, X) each followed by the **username only** (never a URL), muted color, ~22px. Handles come from `brand/handles.json`.
