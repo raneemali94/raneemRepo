@@ -101,7 +101,9 @@
       "twitter": "6aedd6e7e45c1855cb3fb798"
     },
     "21": {
-      "linkedin": "6aedda810b0f6e64a0c28a3c"
+      "linkedin": "6aedda810b0f6e64a0c28a3c",
+      "instagram": "6aef18759214322f68eedee0",
+      "twitter": "6aef18a0a7751de7c9e855b1"
     }
   },
   "buffer_ideas": "All 60 posts (20 days x IG/LI/X) were created as Buffer Ideas on 2026-10-11 in org My organization; titles start with 'اليوم N · <platform>'.",
@@ -114,7 +116,7 @@
   "limit_note": "Buffer free plan = 10 scheduled posts PER CHANNEL (confirmed 2026-10-11).",
   "lastDue": {
     "linkedin": "2026-11-07T09:15:00+03:00",
-    "twitter": "2026-11-07T13:30:00+03:00",
-    "instagram": "2026-11-06T20:45:00+03:00"
+    "twitter": "2026-11-08T13:30:00+03:00",
+    "instagram": "2026-11-07T20:45:00+03:00"
   }
 }
